@@ -3,50 +3,170 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pies w Polsce — prawo, zdrowie i życie z psem | E-book 2026</title>
     <meta
       name="description"
-      content="Pies w Polsce — praktyczny e-book o prawie, zdrowiu i zachowaniu psa. 61 rozdziałów, 509 stron i podcasty w cenie."
+      content="61 rozdziałów o KROPiK 2026, prawie, zdrowiu, zachowaniu i kosztach opieki nad psem w Polsce. Ponad 600 stron. Przeczytaj darmowy fragment."
     />
-    <meta name="theme-color" content="#f8f3ea" />
-    <meta property="og:title" content="Pies w Polsce — kompletny przewodnik" />
+    <meta name="author" content="Mykola Hrytskov" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#3a3733" />
+    <link rel="canonical" href="https://pieswpolsce.pl/" />
+
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:type" content="book" />
+    <meta property="og:site_name" content="Pies w Polsce" />
+    <meta property="og:title" content="Pies w Polsce. Prawo · Obowiązki · Miłość" />
     <meta
       property="og:description"
-      content="Prawo, zdrowie i zachowanie psa — wyjaśnione po ludzku, w jednym miejscu."
+      content="Ponad 600 stron wiedzy dla opiekunów psów: prawo 2026, zdrowie, zachowanie, koszty i codzienne decyzje."
     />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/okladka-pies-w-polsce.jpg" />
-    <title>Pies w Polsce — przewodnik dla świadomych opiekunów</title>
+    <meta property="og:url" content="https://pieswpolsce.pl/" />
+    <meta property="og:image" content="https://pieswpolsce.pl/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Pies w Polsce — Prawo, Obowiązki, Miłość" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pies w Polsce. Prawo · Obowiązki · Miłość" />
+    <meta
+      name="twitter:description"
+      content="61 rozdziałów o prawie, zdrowiu, zachowaniu i życiu z psem w Polsce."
+    />
+    <meta name="twitter:image" content="https://pieswpolsce.pl/assets/og.png" />
+
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" as="image" href="assets/okladka-pies-w-polsce.jpg" fetchpriority="high" />
     <link rel="stylesheet" href="styles.css" />
     <script defer src="script.js"></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://pieswpolsce.pl/#website",
+            "url": "https://pieswpolsce.pl/",
+            "name": "Pies w Polsce",
+            "inLanguage": "pl-PL"
+          },
+          {
+            "@type": "Book",
+            "@id": "https://pieswpolsce.pl/#book",
+            "url": "https://pieswpolsce.pl/",
+            "name": "Pies w Polsce. Prawo · Obowiązki · Miłość",
+            "author": { "@type": "Person", "name": "Mykola Hrytskov" },
+            "datePublished": "2026",
+            "inLanguage": "pl-PL",
+            "bookFormat": "https://schema.org/EBook",
+            "numberOfPages": 619,
+            "image": "https://pieswpolsce.pl/assets/okladka-pies-w-polsce.jpg",
+            "description": "Obszerny poradnik dla opiekunów psów w Polsce: prawo i odpowiedzialność, weterynaria, zachowanie, styl życia i ekonomia opieki."
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://pieswpolsce.pl/#faq-schema",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Co to jest KROPiK?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "KROPiK to Krajowy Rejestr Oznakowanych Psów i Kotów, który ma być prowadzony przez ARiMR. System ma łączyć numer transpondera z danymi zwierzęcia i informacjami potrzebnymi do ustalenia jego właściciela."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Czy czipowanie psa jest obowiązkowe w Polsce w 2026 roku?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Ustawa wprowadzająca powszechny obowiązek została ogłoszona w czerwcu 2026 roku, ale zasadnicza część przepisów ma wejść w życie 11 czerwca 2028 roku. Znaczenie mają terminy wejścia w życie oraz przepisy przejściowe."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Ile kosztuje utrzymanie psa w Polsce?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Nie istnieje jedna kwota dla każdego psa. W orientacyjnym modelu dwanaście lat opieki to około 80–200 tys. zł, czyli mniej więcej 550–1400 zł miesięcznie. Faktyczny koszt zależy między innymi od zdrowia i wielkości psa, żywienia, miejsca zamieszkania, usług i nieprzewidzianego leczenia."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Czy właściciel mieszkania może zakazać psa najemcy?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Punktem wyjścia jest umowa najmu i uzgodnienia z wynajmującym. Znaczenie mogą mieć również szkody, hałas i sposób korzystania z lokalu. W konkretnym sporze trzeba ocenić treść umowy i okoliczności."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Kto odpowiada za ugryzienie przez psa?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Artykuł 431 Kodeksu cywilnego przewiduje szczególną odpowiedzialność osoby, która zwierzę chowa albo się nim posługuje. Wynik konkretnej sprawy zależy od nadzoru, przebiegu zdarzenia, zachowania poszkodowanego i rozmiaru szkody."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Jak przewozić psa pociągiem PKP?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Warunki zależą od konkretnego przewoźnika i rodzaju połączenia. Przed podróżą trzeba sprawdzić aktualny regulamin dotyczący transportera, smyczy, kagańca, biletu i zajmowania miejsca. Osobne zasady dotyczą psów asystujących."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Czy książka zastępuje poradę prawnika lub lekarza weterynarii?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Nie. Książka ma charakter edukacyjny: pomaga zrozumieć temat, przygotować pytania i rozpoznać sytuacje wymagające pomocy specjalisty. Nie zastępuje indywidualnej porady prawnej, diagnozy ani leczenia."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Co zawiera bezpłatny fragment?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Fragment ma 52 strony i obejmuje pięć pierwszych rozdziałów, pełny spis wszystkich 61 rozdziałów oraz informacje o pełnym wydaniu. Można go czytać na stronie albo pobrać jako PDF."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Jak kupić i otrzymać e-booka?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Przycisk Kup e-booka prowadzi do sklepu autora na Etsy. Płatność i dostawa pliku odbywają się na platformie Etsy; strona pieswpolsce.pl nie przetwarza płatności."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
 
   <body>
     <a class="skip-link" href="#main">Przejdź do treści</a>
 
-    <div class="top-note" aria-label="Najważniejsze informacje o e-booku">
-      <div class="container top-note__inner">
-        <span><strong>E-book PDF</strong> na każde urządzenie</span>
-        <span aria-hidden="true">•</span>
+    <div class="status-bar" role="note">
+      <div class="shell status-bar__inner">
+        <span>Stan prawny książki: <strong>czerwiec 2026</strong></span>
+        <span aria-hidden="true">·</span>
         <span>61 rozdziałów</span>
-        <span aria-hidden="true">•</span>
-        <span>Podcasty w cenie</span>
+        <span aria-hidden="true">·</span>
+        <span>E-book PDF</span>
       </div>
     </div>
 
     <header class="site-header" data-header>
-      <div class="container site-header__inner">
-        <a class="brand" href="#start" aria-label="Pies w Polsce — strona główna">
-          <span class="brand__mark" aria-hidden="true">
-            <svg viewBox="0 0 32 32" role="img">
-              <ellipse cx="9" cy="10" rx="3" ry="4" transform="rotate(-30 9 10)" />
-              <ellipse cx="16" cy="7" rx="3" ry="4" />
-              <ellipse cx="23" cy="10" rx="3" ry="4" transform="rotate(30 23 10)" />
-              <ellipse cx="26" cy="17" rx="2.8" ry="3.8" transform="rotate(38 26 17)" />
-              <path d="M16 13c-5 0-9 5-9 9.1 0 3.3 2.5 5.4 5.3 4.6 1.4-.4 2.3-1.3 3.7-1.3s2.3.9 3.7 1.3c2.8.8 5.3-1.3 5.3-4.6C25 18 21 13 16 13Z" />
-            </svg>
+      <div class="shell site-header__inner">
+        <a class="wordmark" href="#start" aria-label="Pies w Polsce — strona główna">
+          <span class="wordmark__seal" aria-hidden="true">P</span>
+          <span class="wordmark__text">
+            <strong>Pies w Polsce</strong>
+            <small>Kochaj · Rozum · Szanuj</small>
           </span>
-          <span class="brand__text">Pies w Polsce</span>
         </a>
 
         <button
@@ -57,535 +177,687 @@
           aria-label="Otwórz menu"
           data-menu-toggle
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
 
         <nav class="site-nav" id="site-nav" aria-label="Główna nawigacja" data-nav>
           <a href="#o-ksiazce">O książce</a>
-          <a href="#srodek">Co znajdziesz</a>
-          <a href="#dla-kogo">Dla kogo</a>
+          <a href="#spis">Spis treści</a>
+          <a href="#kropik">KROPiK 2026</a>
+          <a href="#fragment">Fragment</a>
           <a href="#faq">FAQ</a>
-          <button class="button button--small button--primary" type="button" data-checkout>
-            Kup e-book
-          </button>
+          <a class="button button--primary button--compact" href="https://angelread.etsy.com" data-buy>
+            Kup e-booka
+          </a>
         </nav>
       </div>
     </header>
 
     <main id="main">
       <section class="hero" id="start" aria-labelledby="hero-title">
-        <div class="hero__glow hero__glow--peach" aria-hidden="true"></div>
-        <div class="hero__glow hero__glow--blue" aria-hidden="true"></div>
-        <div class="hero__glow hero__glow--lilac" aria-hidden="true"></div>
-
-        <div class="container hero__grid">
+        <div class="shell hero__inner">
           <div class="hero__copy reveal">
-            <p class="eyebrow"><span></span> Przewodnik dla świadomych opiekunów psów</p>
+            <p class="kicker">Prawo · Zdrowie · Zachowanie · Codzienność</p>
             <h1 id="hero-title">
-              <span class="hero__title-main">Pies w Polsce</span>
-              <span class="hero__title-sub">Prawo, zdrowie i zachowanie psa — <em>wyjaśnione po ludzku.</em></span>
+              <span>Pies w Polsce.</span>
+              <em>Prawo · Obowiązki · Miłość</em>
             </h1>
             <p class="hero__lead">
-              Jedno uporządkowane źródło wiedzy na chwile, w których chcesz wiedzieć więcej,
-              działać spokojniej i lepiej zadbać o swojego psa.
+              Pies jest rodziną. Prawo widzi także odpowiedzialność. Ten obszerny almanach łączy jedno
+              z drugim — od KROPiK i odpowiedzialności za szkody po zdrowie, zachowanie, podróże i
+              realne koszty życia z psem.
             </p>
-
-            <ul class="hero__facts" aria-label="Zawartość e-booka">
-              <li><strong>61</strong><span>rozdziałów</span></li>
-              <li><strong>509</strong><span>stron</span></li>
-              <li><strong>61</strong><span>podcastów</span></li>
-            </ul>
-
             <div class="hero__actions">
-              <button class="button button--primary button--purchase" type="button" data-checkout>
-                <span>
-                  <small>Kup e-book PDF</small>
-                  <strong>19 zł</strong>
-                </span>
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M5 12h14M14 7l5 5-5 5" />
-                </svg>
-              </button>
-              <a class="text-link" href="#srodek">
-                Zobacz, co jest w środku
-                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7.5 5 5 5-5" /></svg>
+              <a class="button button--primary button--large" href="https://angelread.etsy.com" data-buy>
+                <span>Kup e-booka</span>
+                <span class="button__arrow" aria-hidden="true">↗</span>
               </a>
+              <a class="text-link" href="#fragment">Przeczytaj bezpłatny fragment <span aria-hidden="true">↓</span></a>
             </div>
-
-            <p class="hero__microcopy">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M5 10V8a7 7 0 0 1 14 0v2M5 10h14v11H5z" />
-              </svg>
-              Płatność jeszcze nieaktywna — przycisk nie pobiera opłaty.
-            </p>
+            <p class="hero__micro">E-book PDF · ponad 600 stron · zakup i dostawa pliku przez Etsy</p>
           </div>
 
           <div class="hero__visual reveal" data-delay="1">
-            <div class="book-stage">
-              <div class="book-stage__halo" aria-hidden="true"></div>
-
-              <div class="floating-note floating-note--audio" aria-hidden="true">
-                <span class="floating-note__icon">
-                  <svg viewBox="0 0 24 24">
-                    <path d="M12 18a6 6 0 0 0 6-6V7a6 6 0 0 0-12 0v5a6 6 0 0 0 6 6Zm0 0v4M8 22h8" />
-                  </svg>
-                </span>
-                <span><strong>Podcast</strong> do każdego rozdziału</span>
-              </div>
-
-              <figure class="book" aria-label="Okładka e-booka Pies w Polsce">
-                <div class="book__pages" aria-hidden="true"></div>
-                <div class="book__cover">
-                  <img
-                    src="assets/okladka-pies-w-polsce.jpg"
-                    width="1024"
-                    height="1536"
-                    alt="Okładka e-booka Pies w Polsce z golden retrieverem"
-                    fetchpriority="high"
-                  />
-                </div>
-              </figure>
-
-              <div class="floating-note floating-note--update" aria-hidden="true">
-                <span class="floating-note__year">2026</span>
-                <span>Stan prawny<br />czerwiec 2026</span>
-              </div>
-
-              <svg class="hero-paw" viewBox="0 0 64 64" aria-hidden="true">
-                <ellipse cx="18" cy="17" rx="6" ry="9" transform="rotate(-30 18 17)" />
-                <ellipse cx="32" cy="12" rx="6" ry="9" />
-                <ellipse cx="46" cy="17" rx="6" ry="9" transform="rotate(30 46 17)" />
-                <ellipse cx="53" cy="31" rx="5" ry="8" transform="rotate(35 53 31)" />
-                <path d="M32 26c-11 0-19 11-19 20 0 7 6 11 12 9 3-1 5-3 7-3s4 2 7 3c6 2 12-2 12-9 0-9-8-20-19-20Z" />
-              </svg>
+            <div class="hero__photo" aria-hidden="true">
+              <img src="assets/photos/hero-wide.webp" alt="" width="1672" height="941" />
             </div>
-          </div>
-        </div>
-
-        <div class="container reassurance reveal" data-delay="2">
-          <div>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M12 4v16" /></svg>
-            <span><strong>Zdrowie</strong> — sygnały, profilaktyka, pierwsza pomoc</span>
-          </div>
-          <div>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 7h14M7 7l-4 7h8L7 7Zm10 0-4 7h8l-4-7Z" /></svg>
-            <span><strong>Prawo</strong> — obowiązki i realne sytuacje</span>
-          </div>
-          <div>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" /></svg>
-            <span><strong>Relacja</strong> — zachowanie i lepsze zrozumienie psa</span>
+            <figure class="hero__book">
+              <img
+                src="assets/okladka-pies-w-polsce.jpg"
+                width="1024"
+                height="1536"
+                alt="Okładka e-booka Pies w Polsce. Prawo, Obowiązki, Miłość"
+                fetchpriority="high"
+              />
+              <figcaption><span>wydanie pierwsze</span><strong>2026</strong></figcaption>
+            </figure>
+            <p class="hero__visual-note"><span>Stan prawny książki</span><strong>czerwiec 2026</strong></p>
           </div>
         </div>
       </section>
 
-      <section class="section section--problem" id="o-ksiazce" aria-labelledby="problem-title">
-        <div class="container">
-          <div class="section-heading section-heading--center reveal">
-            <p class="eyebrow"><span></span> Dobrze wiedzieć wcześniej</p>
-            <h2 id="problem-title">Mniej szukania. Więcej spokoju w ważnych chwilach.</h2>
+      <section class="metrics" aria-label="Najważniejsze liczby o książce">
+        <div class="shell metrics__grid">
+          <p class="metrics__intro">Jedna książka.<br /><strong>Całe życie z psem.</strong></p>
+          <div class="metric"><strong data-count="61">61</strong><span>rozdziałów</span></div>
+          <div class="metric"><strong data-count="5">5</strong><span>części</span></div>
+          <div class="metric"><strong data-count="600" data-suffix="+">600+</strong><span>stron</span></div>
+          <div class="metric"><strong data-count="200" data-suffix="+">200+</strong><span>ilustracji</span></div>
+          <div class="metric metric--date"><strong>VI 2026</strong><span>stan prawny</span></div>
+        </div>
+      </section>
+
+      <section class="section manifesto" id="o-ksiazce" aria-labelledby="manifesto-title">
+        <div class="shell manifesto__grid">
+          <div class="section-heading reveal">
+            <p class="kicker">Nie kolejna lista porad</p>
+            <h2 id="manifesto-title">Miłość nie odpowie na każde pytanie. <em>Wiedza może.</em></h2>
+          </div>
+
+          <div class="manifesto__copy reveal" data-delay="1">
+            <p class="lead-copy">
+              Co zrobić po ugryzieniu? Czy wspólnota może zakazać psa? Kiedy aktualizować dane w
+              rejestrze? Jak rozpoznać objawy babeszjozy? Ile naprawdę kosztuje dwanaście lat opieki?
+            </p>
             <p>
-              Gdy chodzi o psa, odpowiedzi często są rozrzucone między przepisami, gabinetem
-              weterynaryjnym i poradami behawioralnymi. Ten przewodnik porządkuje je w jednym miejscu.
+              Życie z psem nie dzieli się na osobne zakładki „prawo”, „zdrowie” i „zachowanie”. Jedna
+              sytuacja często dotyka ich wszystkich. Dlatego ta książka porządkuje je w jednym miejscu —
+              konkretnie, spokojnie i po ludzku.
+            </p>
+            <p class="not-moving-guide">
+              <strong>To nie jest poradnik o przeprowadzce do Polski.</strong> To polski, codzienny
+              przewodnik dla tych, którzy chcą opiekować się psem świadomie — bez zgadywania i
+              dziesiątek sprzecznych odpowiedzi z internetu.
+            </p>
+          </div>
+        </div>
+
+        <div class="shell promise-grid">
+          <article class="promise reveal">
+            <span>01</span>
+            <h3>Zrozum prawo</h3>
+            <p>Dowiedz się, gdzie kończy się zwyczaj, a zaczyna obowiązek.</p>
+          </article>
+          <article class="promise reveal" data-delay="1">
+            <span>02</span>
+            <h3>Podejmuj lepsze decyzje</h3>
+            <p>Rozpoznawaj ryzyko wcześniej, zamiast szukać odpowiedzi dopiero w kryzysie.</p>
+          </article>
+          <article class="promise reveal" data-delay="2">
+            <span>03</span>
+            <h3>Zobacz pełny obraz</h3>
+            <p>Połącz zdrowie, emocje, finanse i odpowiedzialność w jedną świadomą opiekę.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section book-parts" id="spis" aria-labelledby="parts-title">
+        <div class="shell">
+          <div class="section-heading section-heading--split section-heading--light reveal">
+            <div>
+              <p class="kicker kicker--light">61 rozdziałów · 5 części</p>
+              <h2 id="parts-title">Od pierwszej decyzji do wspólnej starości</h2>
+            </div>
+            <p>
+              Czytaj od początku albo wracaj do konkretnego tematu wtedy, gdy go potrzebujesz. Każda
+              część łączy kontekst, reguły i praktykę codziennej opieki.
             </p>
           </div>
 
-          <div class="scenario-grid">
-            <article class="scenario-card reveal">
-              <span class="scenario-card__number">01</span>
-              <div class="line-icon" aria-hidden="true">
-                <svg viewBox="0 0 40 40">
-                  <path d="M20 5v30M8 11h24M11 11 5 23h12L11 11Zm18 0-6 12h12l-6-12ZM13 34h14" />
-                </svg>
-              </div>
-              <p class="scenario-card__label">Prawo</p>
-              <h3>Wiesz, za co naprawdę odpowiadasz?</h3>
-              <p>
-                Szkoda wyrządzona przez psa, najem mieszkania, rozstanie czy nowe obowiązki rejestracyjne
-                — poznaj zasady i terminy bez prawniczego żargonu.
-              </p>
-            </article>
+          <div class="parts" data-parts>
+            <div class="parts__tabs" role="tablist" aria-label="Części książki">
+              <button id="part-tab-1" type="button" role="tab" aria-selected="true" aria-controls="part-panel-1">
+                <span>01</span> Kontekst
+              </button>
+              <button id="part-tab-2" type="button" role="tab" aria-selected="false" aria-controls="part-panel-2" tabindex="-1">
+                <span>02</span> Prawo
+              </button>
+              <button id="part-tab-3" type="button" role="tab" aria-selected="false" aria-controls="part-panel-3" tabindex="-1">
+                <span>03</span> Weterynaria
+              </button>
+              <button id="part-tab-4" type="button" role="tab" aria-selected="false" aria-controls="part-panel-4" tabindex="-1">
+                <span>04</span> Zachowanie
+              </button>
+              <button id="part-tab-5" type="button" role="tab" aria-selected="false" aria-controls="part-panel-5" tabindex="-1">
+                <span>05</span> Styl życia
+              </button>
+            </div>
 
-            <article class="scenario-card scenario-card--featured reveal" data-delay="1">
-              <span class="scenario-card__number">02</span>
-              <div class="line-icon" aria-hidden="true">
-                <svg viewBox="0 0 40 40">
-                  <path d="M13 5v11a7 7 0 0 0 14 0V5M10 5h6M24 5h6M20 23v3a8 8 0 0 0 16 0v-5M36 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-                </svg>
-              </div>
-              <p class="scenario-card__label">Zdrowie</p>
-              <h3>Rozpoznajesz sygnały, których nie warto ignorować?</h3>
-              <p>
-                Od profilaktyki i alergii po neurologię, serce i pierwszą pomoc — zrozum, o co zapytać
-                lekarza weterynarii i kiedy nie zwlekać z wizytą.
-              </p>
-            </article>
+            <div class="parts__panels">
+              <article class="part-panel" id="part-panel-1" role="tabpanel" aria-labelledby="part-tab-1" tabindex="0">
+                <p class="part-panel__number" aria-hidden="true">I</p>
+                <div>
+                  <p class="part-panel__eyebrow">Część pierwsza</p>
+                  <h3>Kontekst</h3>
+                  <p>
+                    Rynek, statystyki, społeczne zmiany i ekonomia opieki. Ile kosztuje pies, skąd biorą
+                    się te wydatki i dlaczego cena zakupu lub adopcji jest dopiero początkiem.
+                  </p>
+                  <ul>
+                    <li>Polska kultura „psiecka”</li>
+                    <li>Realne liczby 2024–2026</li>
+                    <li>Ekonomia całego życia psa</li>
+                  </ul>
+                </div>
+              </article>
 
-            <article class="scenario-card reveal" data-delay="2">
-              <span class="scenario-card__number">03</span>
-              <div class="line-icon" aria-hidden="true">
-                <svg viewBox="0 0 40 40">
-                  <path d="M15 8c-5 0-9 4-9 9 0 3 2 6 5 7-1 5 3 9 8 8 2 4 8 4 10 0 5 1 9-3 8-8 3-1 5-4 5-7 0-5-4-9-9-9M20 9v23M12 17h8M20 23h9" />
-                </svg>
-              </div>
-              <p class="scenario-card__label">Zachowanie</p>
-              <h3>Rozumiesz, co pies próbuje Ci powiedzieć?</h3>
-              <p>
-                Lęk separacyjny, socjalizacja i język ciała stają się łatwiejsze, gdy widzisz przyczynę,
-                a nie tylko trudne zachowanie.
-              </p>
-            </article>
+              <article class="part-panel" id="part-panel-2" role="tabpanel" aria-labelledby="part-tab-2" tabindex="0">
+                <p class="part-panel__number" aria-hidden="true">II</p>
+                <div>
+                  <p class="part-panel__eyebrow">Część druga</p>
+                  <h3>Prawo i odpowiedzialność</h3>
+                  <p>
+                    KROPiK, czipowanie, odpowiedzialność za ugryzienie, pies w najmie i we wspólnocie,
+                    rozwód, dziedziczenie oraz transport — z wyraźnym rozróżnieniem etapów zmian prawa.
+                  </p>
+                  <ul>
+                    <li>KROPiK i terminy wdrożenia</li>
+                    <li>Art. 431 KC i odpowiedzialność za szkody</li>
+                    <li>Mieszkanie, rodzina i podróż</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="part-panel" id="part-panel-3" role="tabpanel" aria-labelledby="part-tab-3" tabindex="0">
+                <p class="part-panel__number" aria-hidden="true">III</p>
+                <div>
+                  <p class="part-panel__eyebrow">Część trzecia</p>
+                  <h3>Weterynaria</h3>
+                  <p>
+                    Profilaktyka, kleszcze i babeszjoza, stomatologia, onkologia oraz pierwsza pomoc. Co
+                    obserwować, kiedy działać szybko i jak przygotować się do rozmowy z lekarzem.
+                  </p>
+                  <ul>
+                    <li>Profilaktyka bez chaosu</li>
+                    <li>Objawy, których nie warto ignorować</li>
+                    <li>Pierwsza pomoc i opieka specjalistyczna</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="part-panel" id="part-panel-4" role="tabpanel" aria-labelledby="part-tab-4" tabindex="0">
+                <p class="part-panel__number" aria-hidden="true">IV</p>
+                <div>
+                  <p class="part-panel__eyebrow">Część czwarta</p>
+                  <h3>Zachowanie</h3>
+                  <p>
+                    Lęk separacyjny, socjalizacja, trening i agresja. Zachowanie jako informacja o
+                    potrzebach psa — bez prostych etykiet i internetowych cudownych metod.
+                  </p>
+                  <ul>
+                    <li>Mowa ciała i emocje</li>
+                    <li>Socjalizacja i trening</li>
+                    <li>Agresja, lęk i praca ze specjalistą</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="part-panel" id="part-panel-5" role="tabpanel" aria-labelledby="part-tab-5" tabindex="0">
+                <p class="part-panel__number" aria-hidden="true">V</p>
+                <div>
+                  <p class="part-panel__eyebrow">Część piąta</p>
+                  <h3>Styl życia i rynek</h3>
+                  <p>
+                    Żywienie, podróże, ubezpieczenia, wybór psa, schroniska i codzienne decyzje zakupowe.
+                    Praktyka wspólnego życia, nie katalog idealnego opiekuna.
+                  </p>
+                  <ul>
+                    <li>Żywienie i rynek zoologiczny</li>
+                    <li>Podróże i ubezpieczenia</li>
+                    <li>Adopcja, wybór psa i wspólna starość</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
           </div>
 
-          <div class="editorial-quote reveal">
-            <svg viewBox="0 0 42 34" aria-hidden="true"><path d="M18 3C9 7 4 14 4 23c0 5 3 8 7 8 5 0 8-3 8-8 0-4-3-7-7-7 1-4 4-8 8-11L18 3Zm20 0c-9 4-14 11-14 20 0 5 3 8 7 8 5 0 8-3 8-8 0-4-3-7-7-7 1-4 4-8 8-11l-2-2Z" /></svg>
-            <p>
-              „Pies w Polsce” powstał po to, by dać Ci spokojny punkt odniesienia — bez przekopywania
-              forów i porównywania sprzecznych porad.
-            </p>
+          <div class="center-action reveal">
+            <a class="text-link text-link--light" href="#fragment">Zobacz pełny spis 61 rozdziałów we fragmencie <span aria-hidden="true">→</span></a>
           </div>
         </div>
       </section>
 
-      <section class="section section--contents" id="srodek" aria-labelledby="contents-title">
-        <div class="container">
-          <div class="section-heading section-heading--light reveal">
-            <p class="eyebrow eyebrow--light"><span></span> 509 stron konkretnej wiedzy</p>
-            <div class="section-heading__row">
-              <h2 id="contents-title">Cztery części. Jedna pełniejsza perspektywa.</h2>
-              <p>
-                Od przepisów po codzienną relację — wybierz temat i zobacz, czego dowiesz się z e-booka.
-              </p>
-            </div>
+      <aside class="sample-teaser" aria-labelledby="sample-teaser-title">
+        <div class="shell sample-teaser__grid">
+          <div class="sample-teaser__preview reveal" aria-hidden="true">
+            <img src="pliki/podglad/str-01.webp" width="950" height="1344" alt="" loading="lazy" />
+            <span>52 strony</span>
           </div>
-
-          <div class="topics reveal" data-topics>
-            <div class="topics__nav" role="tablist" aria-label="Części e-booka">
-              <button id="tab-law" type="button" role="tab" aria-selected="true" aria-controls="panel-law" tabindex="0">
-                <span>01</span> Prawo
-              </button>
-              <button id="tab-health" type="button" role="tab" aria-selected="false" aria-controls="panel-health" tabindex="-1">
-                <span>02</span> Medycyna
-              </button>
-              <button id="tab-mind" type="button" role="tab" aria-selected="false" aria-controls="panel-mind" tabindex="-1">
-                <span>03</span> Psychologia
-              </button>
-              <button id="tab-life" type="button" role="tab" aria-selected="false" aria-controls="panel-life" tabindex="-1">
-                <span>04</span> Codzienność
-              </button>
-            </div>
-
-            <div class="topics__panels">
-              <article class="topic-panel" id="panel-law" role="tabpanel" aria-labelledby="tab-law" tabindex="0">
-                <div class="topic-panel__top">
-                  <div class="topic-panel__icon" aria-hidden="true">
-                    <svg viewBox="0 0 48 48"><path d="M24 6v36M10 13h28M13 13 5 29h16L13 13Zm22 0-8 16h16l-8-16ZM15 42h18" /></svg>
-                  </div>
-                  <div>
-                    <p>Część I</p>
-                    <h3>Prawo i odpowiedzialność</h3>
-                  </div>
-                </div>
-                <p class="topic-panel__intro">
-                  Zrozum swoje prawa i obowiązki w sytuacjach, które naprawdę zdarzają się opiekunom psów.
-                </p>
-                <ul class="check-list check-list--two-columns">
-                  <li>Odpowiedzialność cywilna i karna opiekuna</li>
-                  <li>Szkody wyrządzone przez psa i art. 431 KC</li>
-                  <li>Ustawa o KROPiK i harmonogram jej wejścia w życie</li>
-                  <li>Najem mieszkania i korzystanie z części wspólnych</li>
-                  <li>Pies a rozstanie oraz podział opieki</li>
-                  <li>Ochrona zwierząt i warunki utrzymywania psa</li>
-                </ul>
-              </article>
-
-              <article class="topic-panel" id="panel-health" role="tabpanel" aria-labelledby="tab-health" tabindex="0">
-                <div class="topic-panel__top">
-                  <div class="topic-panel__icon" aria-hidden="true">
-                    <svg viewBox="0 0 48 48"><path d="M15 7v14a9 9 0 0 0 18 0V7M11 7h8M29 7h8M24 30v3a9 9 0 0 0 18 0v-6M42 27a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" /></svg>
-                  </div>
-                  <div>
-                    <p>Część II</p>
-                    <h3>Zdrowie i medycyna</h3>
-                  </div>
-                </div>
-                <p class="topic-panel__intro">
-                  Poznaj najważniejsze sygnały, badania i zasady profilaktyki, by lepiej rozmawiać ze specjalistą.
-                </p>
-                <ul class="check-list check-list--two-columns">
-                  <li>Onkologia — objawy, diagnostyka i leczenie</li>
-                  <li>Kardiologia i choroby serca w różnym wieku</li>
-                  <li>Epilepsja i inne zaburzenia neurologiczne</li>
-                  <li>Dysplazja — profilaktyka i możliwości leczenia</li>
-                  <li>Alergie pokarmowe i skórne</li>
-                  <li>Pierwsza pomoc i regularne badania kontrolne</li>
-                </ul>
-              </article>
-
-              <article class="topic-panel" id="panel-mind" role="tabpanel" aria-labelledby="tab-mind" tabindex="0">
-                <div class="topic-panel__top">
-                  <div class="topic-panel__icon" aria-hidden="true">
-                    <svg viewBox="0 0 48 48"><path d="M18 8c-6 0-10 5-10 11 0 4 2 7 6 8-2 6 3 11 9 10 3 5 10 5 13 0 6 1 11-4 9-10 4-1 6-4 6-8 0-6-4-11-10-11M24 9v29M14 19h10M24 26h11" /></svg>
-                  </div>
-                  <div>
-                    <p>Część III</p>
-                    <h3>Psychologia i zachowanie</h3>
-                  </div>
-                </div>
-                <p class="topic-panel__intro">
-                  Zobacz zachowanie psa jako komunikat i buduj relację opartą na zaufaniu, nie na domysłach.
-                </p>
-                <ul class="check-list check-list--two-columns">
-                  <li>Lęk separacyjny — przyczyny i możliwa terapia</li>
-                  <li>Socjalizacja szczeniaka krok po kroku</li>
-                  <li>Język ciała i sygnały wysyłane przez psa</li>
-                  <li>Relacja oparta na poczuciu bezpieczeństwa</li>
-                  <li>Najczęstsze błędy wychowawcze</li>
-                  <li>Codzienne nawyki wspierające dobrostan</li>
-                </ul>
-              </article>
-
-              <article class="topic-panel" id="panel-life" role="tabpanel" aria-labelledby="tab-life" tabindex="0">
-                <div class="topic-panel__top">
-                  <div class="topic-panel__icon" aria-hidden="true">
-                    <svg viewBox="0 0 48 48"><path d="M6 23 24 8l18 15M11 20v21h26V20M19 41V28h10v13M14 12V7h7" /></svg>
-                  </div>
-                  <div>
-                    <p>Część IV</p>
-                    <h3>Życie z psem na co dzień</h3>
-                  </div>
-                </div>
-                <p class="topic-panel__intro">
-                  Praktyczne wsparcie od decyzji o pierwszym psie aż po troskliwą opiekę nad seniorem.
-                </p>
-                <ul class="check-list check-list--two-columns">
-                  <li>Wybór psa dopasowanego do stylu życia</li>
-                  <li>Bezpieczne wprowadzenie psa do domu z dzieckiem</li>
-                  <li>Podróże i wspólne wyjazdy</li>
-                  <li>Zmiany potrzeb psa na kolejnych etapach życia</li>
-                  <li>Komfort i profilaktyka u psiego seniora</li>
-                  <li>Dobre przygotowanie na nagłe sytuacje</li>
-                </ul>
-              </article>
-
-              <div class="topics__counter" aria-hidden="true"><span data-topic-current>01</span> / 04</div>
+          <div class="sample-teaser__copy reveal" data-delay="1">
+            <p class="kicker">Sprawdź przed zakupem</p>
+            <h2 id="sample-teaser-title">Najpierw zajrzyj do środka.</h2>
+            <p>Pięć pełnych rozdziałów i spis wszystkich 61 tematów — bez formularza, bez zapisu i bez podawania e-maila.</p>
+            <div class="sample-teaser__actions">
+              <a class="button button--primary" href="#fragment">Czytaj na stronie</a>
+              <a class="text-link" href="pliki/Pies-w-Polsce-fragment-rozdzialy-1-5.pdf" download>Pobierz PDF <span aria-hidden="true">↓</span></a>
             </div>
           </div>
         </div>
-      </section>
+      </aside>
 
-      <section class="section section--benefits" aria-labelledby="benefits-title">
-        <div class="container benefits-grid">
-          <div class="benefits-story reveal">
-            <p class="eyebrow"><span></span> Wiedza dopasowana do życia</p>
-            <h2 id="benefits-title">Czytaj, gdy masz chwilę. Słuchaj, gdy jesteś w drodze.</h2>
-            <p>
-              Każdy z 61 rozdziałów ma wersję podcastową. Wracaj do potrzebnego tematu na spacerze,
-              w samochodzie albo przy porannej kawie.
-            </p>
-            <div class="audio-card" aria-label="61 rozdziałów dostępnych również w wersji audio">
-              <span class="audio-card__play" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6V6Z" /></svg>
-              </span>
-              <div class="audio-card__wave" aria-hidden="true">
-                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-              </div>
-              <div><strong>61</strong><span>odcinków audio</span></div>
+      <section class="section kropik" id="kropik" aria-labelledby="kropik-title">
+        <div class="shell">
+          <div class="section-heading section-heading--split reveal">
+            <div>
+              <p class="kicker">Najważniejsza reforma dla opiekunów</p>
+              <h2 id="kropik-title">KROPiK 2026: 10 rzeczy, które zmienia ustawa — <em>i kiedy</em></h2>
+            </div>
+            <div class="kropik__intro">
+              <p>
+                Ustawę ogłoszono 10 czerwca 2026 roku. Nie oznacza to, że wszystkie obowiązki zaczęły
+                działać tego dnia. Zasadnicza część ma wejść w życie 11 czerwca 2028 roku, a wybrane
+                przepisy mają własne terminy.
+              </p>
+              <p><strong>W książce rozdzielamy: co już obowiązuje, co czeka na wdrożenie i jak się przygotować.</strong></p>
             </div>
           </div>
 
-          <div class="benefit-list reveal" data-delay="1">
-            <article>
+          <div class="law-timeline reveal" aria-label="Najważniejsze daty ustawy o KROPiK">
+            <div><time datetime="2026-06-10">10 VI 2026</time><span>ogłoszenie ustawy</span></div>
+            <div class="law-timeline__line" aria-hidden="true"><span></span></div>
+            <div><time datetime="2028-06-11">11 VI 2028</time><span>zasadnicze wejście w życie</span></div>
+          </div>
+
+          <ol class="law-grid">
+            <li class="law-card reveal">
               <span>01</span>
-              <div><h3>Wszystko w jednym miejscu</h3><p>Prawo, zdrowie, zachowanie i codzienna opieka w jednym, uporządkowanym przewodniku.</p></div>
-            </article>
-            <article>
+              <div><h3>Jeden państwowy rejestr</h3><p>KROPiK ma być centralnym rejestrem prowadzonym przez ARiMR.</p></div>
+            </li>
+            <li class="law-card reveal" data-delay="1">
               <span>02</span>
-              <div><h3>Przystępny język</h3><p>Trudne tematy wyjaśnione konkretnie i spokojnie — bez nadmiaru żargonu.</p></div>
-            </article>
-            <article>
+              <div><h3>Czip i rejestracja to dwa kroki</h3><p>Oznakowanie zwierzęcia nie jest tym samym co wpis danych do systemu.</p></div>
+            </li>
+            <li class="law-card reveal">
               <span>03</span>
-              <div><h3>Aktualizacja 2026</h3><p>Stan prawny na czerwiec 2026, z uwzględnieniem ustawy o KROPiK i terminów wdrożenia.</p></div>
-            </article>
-            <article>
+              <div><h3>Obowiązek obejmie wszystkie psy</h3><p>Po wejściu właściwych przepisów powszechna zasada obejmie psy niezależnie od rasy.</p></div>
+            </li>
+            <li class="law-card reveal" data-delay="1">
               <span>04</span>
-              <div><h3>PDF zawsze pod ręką</h3><p>Czytaj na telefonie, tablecie, komputerze lub czytniku obsługującym pliki PDF.</p></div>
-            </article>
+              <div><h3>Terminy zależą od sytuacji</h3><p>Inne reguły dotyczą szczenięcia, dorosłego psa, zmiany właściciela i okresu przejściowego.</p></div>
+            </li>
+            <li class="law-card reveal">
+              <span>05</span>
+              <div><h3>Ważne będzie pierwsze szczepienie</h3><p>Dla szczeniąt termin ma być powiązany między innymi ze szczepieniem przeciw wściekliźnie.</p></div>
+            </li>
+            <li class="law-card reveal" data-delay="1">
+              <span>06</span>
+              <div><h3>Dorosłe psy mają przepisy przejściowe</h3><p>Ustawa przewiduje czas na dostosowanie, ale wcześniejsze zdarzenia mogą skrócić termin.</p></div>
+            </li>
+            <li class="law-card reveal">
+              <span>07</span>
+              <div><h3>Istniejący czip może wystarczyć</h3><p>Czytelnego, zgodnego transpondera nie trzeba wszczepiać ponownie; potrzebna będzie rejestracja.</p></div>
+            </li>
+            <li class="law-card reveal" data-delay="1">
+              <span>08</span>
+              <div><h3>Rejestr zapisze więcej danych</h3><p>System ma obejmować nie tylko numer czipa, lecz także wybrane informacje o zwierzęciu i zdarzeniach.</p></div>
+            </li>
+            <li class="law-card reveal">
+              <span>09</span>
+              <div><h3>Dane trzeba będzie aktualizować</h3><p>Zmiana właściciela i inne wskazane zdarzenia będą wiązać się z określoną procedurą.</p></div>
+            </li>
+            <li class="law-card reveal" data-delay="1">
+              <span>10</span>
+              <div><h3>System przewiduje kontrolę</h3><p>Ustawa określa uprawnione organy oraz konsekwencje niewykonania obowiązków.</p></div>
+            </li>
+          </ol>
+
+          <div class="source-note reveal">
+            <div>
+              <strong>KROPiK nie jest jedną datą ani jednym obowiązkiem.</strong>
+              <span>To system terminów, danych i odpowiedzialności.</span>
+            </div>
+            <a href="https://eli.gov.pl/eli/DU/2026/755/ogl/pol" target="_blank" rel="noopener noreferrer">
+              Oficjalny tekst: Dz.U. 2026 poz. 755 <span aria-hidden="true">↗</span>
+            </a>
           </div>
         </div>
       </section>
 
-      <section class="section section--audience" id="dla-kogo" aria-labelledby="audience-title">
-        <div class="container audience-grid">
-          <div class="audience-copy reveal">
-            <p class="eyebrow"><span></span> Dla Ciebie, jeśli…</p>
-            <h2 id="audience-title">Chcesz opiekować się z czułością — i podejmować decyzje z większą pewnością.</h2>
+      <section class="section cost" id="koszty" aria-labelledby="cost-title">
+        <div class="shell cost__grid">
+          <div class="cost__copy reveal">
+            <p class="kicker">Interaktywny model</p>
+            <h2 id="cost-title">Ile naprawdę kosztuje pies w Polsce?</h2>
+            <p class="lead-copy">Nie licz tylko karmy. Policz wspólne życie.</p>
             <p>
-              Nie musisz wiedzieć wszystkiego. Warto jednak mieć dobre źródło, do którego możesz wrócić,
-              gdy pojawia się pytanie.
+              Zmień miesięczny budżet i liczbę lat. Kalkulator pokazuje skalę — od regularnych wydatków
+              po opiekę, leczenie, transport i nieprzewidziane zdarzenia.
+            </p>
+            <ul class="cost__categories" aria-label="Kategorie kosztów">
+              <li>Żywienie</li><li>Profilaktyka</li><li>Leczenie</li><li>Akcesoria</li>
+              <li>Pielęgnacja</li><li>Szkolenie</li><li>Transport</li><li>Opieka podczas wyjazdów</li>
+            </ul>
+          </div>
+
+          <div class="calculator reveal" data-delay="1" data-calculator>
+            <div class="calculator__result" aria-live="polite">
+              <span>Łącznie przez <strong data-years-label>12 lat</strong></span>
+              <output data-total>129 600 zł</output>
+              <small><span data-monthly-label>900 zł</span> miesięcznie · <span data-daily>30 zł</span> dziennie</small>
+            </div>
+
+            <div class="range-field">
+              <div class="range-field__label">
+                <label for="monthly-cost">Miesięczny budżet</label>
+                <output for="monthly-cost" data-monthly-output>900 zł</output>
+              </div>
+              <input id="monthly-cost" type="range" min="550" max="1400" step="50" value="900" data-monthly />
+              <div class="range-field__scale"><span>550 zł</span><span>1 400 zł</span></div>
+            </div>
+
+            <div class="range-field">
+              <div class="range-field__label">
+                <label for="years-cost">Liczba wspólnych lat</label>
+                <output for="years-cost" data-years-output>12 lat</output>
+              </div>
+              <input id="years-cost" type="range" min="8" max="16" step="1" value="12" data-years />
+              <div class="range-field__scale"><span>8 lat</span><span>16 lat</span></div>
+            </div>
+
+            <p class="calculator__note">
+              Model edukacyjny, nie indywidualna wycena. Faktyczny koszt zależy od wielkości i zdrowia
+              psa, miejsca zamieszkania, sposobu żywienia, usług i zdarzeń losowych.
             </p>
           </div>
-
-          <ul class="audience-list reveal" data-delay="1">
-            <li><span aria-hidden="true">✓</span><p><strong>Planujesz pierwszego psa</strong> i chcesz dobrze przygotować dom oraz codzienność.</p></li>
-            <li><span aria-hidden="true">✓</span><p><strong>Jesteś już opiekunką</strong> i chcesz znać swoje prawa, obowiązki i możliwości.</p></li>
-            <li><span aria-hidden="true">✓</span><p><strong>Łączysz opiekę nad psem z życiem rodzinnym</strong> — także z małym dzieckiem.</p></li>
-            <li><span aria-hidden="true">✓</span><p><strong>Mierzysz się z trudnym zachowaniem</strong> i chcesz lepiej rozumieć jego przyczynę.</p></li>
-            <li><span aria-hidden="true">✓</span><p><strong>Opiekujesz się psim seniorem</strong> i chcesz świadomie reagować na zmieniające się potrzeby.</p></li>
-          </ul>
-        </div>
-
-        <div class="container audience-note reveal">
-          <span class="audience-note__paw" aria-hidden="true">
-            <svg viewBox="0 0 32 32">
-              <ellipse cx="9" cy="10" rx="3" ry="4" transform="rotate(-30 9 10)" />
-              <ellipse cx="16" cy="7" rx="3" ry="4" />
-              <ellipse cx="23" cy="10" rx="3" ry="4" transform="rotate(30 23 10)" />
-              <path d="M16 13c-5 0-9 5-9 9 0 4 3 6 6 5 1-.5 2-1.5 3-1.5s2 1 3 1.5c3 1 6-1 6-5 0-4-4-9-9-9Z" />
-            </svg>
-          </span>
-          <p><strong>Od pierwszego dnia ze szczeniakiem po spokojną opiekę nad seniorem.</strong> Jeden przewodnik może towarzyszyć Ci przez wiele wspólnych etapów.</p>
         </div>
       </section>
 
-      <section class="section section--offer" id="kup" aria-labelledby="offer-title">
-        <div class="container">
-          <div class="offer-card reveal">
-            <div class="offer-card__pattern" aria-hidden="true"></div>
-            <div class="offer-card__copy">
-              <p class="eyebrow eyebrow--gold"><span></span> Cały przewodnik + podcasty</p>
-              <h2 id="offer-title">Wiedza, do której możesz wracać.</h2>
-              <p>
-                E-book „Pies w Polsce” w formacie PDF oraz podcast do każdego z 61 rozdziałów.
-              </p>
-              <ul class="offer-card__list">
-                <li><span>✓</span> 509 stron praktycznej wiedzy</li>
-                <li><span>✓</span> 61 nagrań audio w cenie</li>
-                <li><span>✓</span> Dostęp na telefonie i komputerze</li>
-                <li><span>✓</span> Stan prawny: czerwiec 2026</li>
-              </ul>
+      <section class="section life" aria-labelledby="life-title">
+        <div class="shell">
+          <div class="section-heading section-heading--split reveal">
+            <div>
+              <p class="kicker">Kochaj · Rozum · Szanuj</p>
+              <h2 id="life-title">Życie z psem nie mieści się w jednej poradzie</h2>
+            </div>
+            <p>Dom, zdrowie, relacja i prawo nie istnieją osobno. Jedna decyzja często wpływa na wszystkie naraz.</p>
+          </div>
+
+          <div class="photo-carousel" data-photo-carousel aria-label="Galeria życia z psem">
+            <div class="photo-carousel__track" data-photo-track tabindex="0">
+              <figure class="photo-card">
+                <img src="assets/photos/portret.webp" width="941" height="1672" alt="Golden retriever siedzący na kremowym tle" loading="lazy" />
+                <figcaption><span>01</span><strong>Rodzina</strong><small>Pies jako pełnoprawny domownik.</small></figcaption>
+              </figure>
+              <figure class="photo-card">
+                <img src="assets/photos/prawo.webp" width="941" height="1672" alt="Golden retriever na spacerze po polskim mieście" loading="lazy" />
+                <figcaption><span>02</span><strong>Prawo</strong><small>Obowiązki zaczynają się przed problemem.</small></figcaption>
+              </figure>
+              <figure class="photo-card">
+                <img src="assets/photos/zdrowie.webp" width="941" height="1672" alt="Golden retriever podczas badania weterynaryjnego" loading="lazy" />
+                <figcaption><span>03</span><strong>Zdrowie</strong><small>Obserwuj wcześniej. Reaguj świadomie.</small></figcaption>
+              </figure>
+              <figure class="photo-card">
+                <img src="assets/photos/psiecko.webp" width="941" height="1672" alt="Golden retriever odpoczywający z opiekunką czytającą książkę" loading="lazy" />
+                <figcaption><span>04</span><strong>Codzienność</strong><small>Wspólne życie od decyzji do starości.</small></figcaption>
+              </figure>
             </div>
 
-            <div class="offer-card__checkout">
-              <p class="offer-card__label">Cena e-booka</p>
-              <p class="price"><strong>19</strong><span>zł</span></p>
-              <p class="price-note">płatność jednorazowa</p>
-              <button class="button button--gold button--wide" type="button" data-checkout>
-                Kupuję e-book
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5" /></svg>
-              </button>
-              <p class="checkout-status" data-checkout-status>
-                <span aria-hidden="true"></span>
-                Sprzedaż w przygotowaniu — ten przycisk nie pobiera opłaty.
-              </p>
+            <div class="carousel-controls" aria-label="Sterowanie galerią">
+              <button type="button" data-photo-prev aria-label="Poprzednie zdjęcie">←</button>
+              <div class="carousel-dots" data-photo-dots aria-hidden="true"></div>
+              <button type="button" data-photo-next aria-label="Następne zdjęcie">→</button>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section section--faq" id="faq" aria-labelledby="faq-title">
-        <div class="container faq-grid">
-          <div class="faq-heading reveal">
-            <p class="eyebrow"><span></span> Warto wiedzieć</p>
-            <h2 id="faq-title">Najczęściej zadawane pytania</h2>
-            <p>Najważniejsze informacje o formacie, aktualności treści i sposobie korzystania z poradnika.</p>
+      <section class="section sample" id="fragment" aria-labelledby="sample-title">
+        <div class="shell">
+          <div class="section-heading section-heading--split section-heading--light reveal">
+            <div>
+              <p class="kicker kicker--light">Zajrzyj do środka — bez formularza</p>
+              <h2 id="sample-title">Przeczytaj pięć pierwszych rozdziałów</h2>
+            </div>
+            <div>
+              <p>
+                52 strony, pełny spis wszystkich 61 rozdziałów i pięć rozdziałów w całości. Czytaj tutaj
+                albo pobierz PDF — bez rejestracji i bez podawania adresu e-mail.
+              </p>
+              <a class="text-link text-link--light" href="pliki/Pies-w-Polsce-fragment-rozdzialy-1-5.pdf" download>
+                Pobierz fragment PDF <span aria-hidden="true">↓</span>
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="reader reveal"
+            data-reader
+            data-pages="52"
+            data-pattern="pliki/podglad/str-NN.webp"
+            aria-label="Czytnik bezpłatnego fragmentu książki"
+          >
+            <div class="reader__topbar">
+              <div>
+                <span class="reader__dot" aria-hidden="true"></span>
+                <strong>Pies w Polsce</strong>
+                <small>bezpłatny fragment</small>
+              </div>
+              <button type="button" data-reader-fullscreen aria-label="Pokaż czytnik na pełnym ekranie">
+                Pełny ekran <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+
+            <div class="reader__stage" data-reader-stage tabindex="0">
+              <button class="reader__arrow reader__arrow--prev" type="button" data-reader-prev aria-label="Poprzednia strona">←</button>
+              <div class="reader__spread">
+                <img
+                  src="pliki/podglad/str-01.webp"
+                  width="950"
+                  height="1344"
+                  alt="Strona 1 bezpłatnego fragmentu książki Pies w Polsce"
+                  data-reader-primary
+                />
+                <img
+                  src="pliki/podglad/str-02.webp"
+                  width="950"
+                  height="1344"
+                  alt="Strona 2 bezpłatnego fragmentu książki Pies w Polsce"
+                  data-reader-secondary
+                />
+              </div>
+              <button class="reader__arrow reader__arrow--next" type="button" data-reader-next aria-label="Następna strona">→</button>
+            </div>
+
+            <div class="reader__controls">
+              <p class="reader__counter" aria-live="polite">
+                <span data-reader-current>1–2</span> <i>/</i> 52
+              </p>
+              <input type="range" min="1" max="52" value="1" step="1" aria-label="Przejdź do strony" data-reader-range />
+              <p class="reader__hint">Przesuń palcem · użyj strzałek · wybierz stronę</p>
+            </div>
+          </div>
+
+          <div class="sample__after reveal">
+            <p><strong>Pełne wydanie nie jest udostępniane na stronie.</strong> Zakup i dostawa e-booka odbywają się wyłącznie przez Etsy.</p>
+            <a class="button button--gold" href="https://angelread.etsy.com" data-buy>Kup pełne wydanie <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section checklist" id="checklista" aria-labelledby="checklist-title">
+        <div class="shell checklist__grid">
+          <div class="checklist__preview reveal">
+            <div class="checklist__paper">
+              <img
+                src="assets/checklista-podglad.webp"
+                width="950"
+                height="1344"
+                alt="Podgląd checklisty właściciela psa w Polsce 2026"
+                loading="lazy"
+              />
+            </div>
+            <span class="checklist__badge">2 strony · PDF</span>
+          </div>
+
+          <div class="checklist__copy reveal" data-delay="1">
+            <p class="kicker">Bezpłatnie</p>
+            <h2 id="checklist-title">15 rzeczy, które warto sprawdzić jako właściciel psa w Polsce</h2>
+            <p class="lead-copy">
+              Dwie strony konkretów do zapisania w telefonie lub wydrukowania. Krótka lista spraw, o
+              których łatwo pamiętać dopiero wtedy, gdy stają się pilne.
+            </p>
+            <ul class="checklist__list">
+              <li>Identyfikacja i aktualne dane</li>
+              <li>Zdrowie, profilaktyka i plan awaryjny</li>
+              <li>Dokumenty, dom i odpowiedzialność</li>
+            </ul>
+            <a class="button button--primary button--large" href="pliki/Checklista-pies-w-Polsce-2026.pdf" download>
+              Pobierz bezpłatną checklistę <span aria-hidden="true">↓</span>
+            </a>
+            <p class="checklist__micro">Bez zapisu. Bez newslettera. Plik otworzy się na telefonie i komputerze.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section author" aria-labelledby="author-title">
+        <div class="shell author__grid">
+          <aside class="author__index reveal" aria-label="Jak zbudowana jest książka">
+            <p><span>01</span><strong>Pełny kontekst</strong><small>Prawo, zdrowie, zachowanie i codzienność w jednym miejscu.</small></p>
+            <p><span>02</span><strong>Bez prostych recept</strong><small>Konkretne pytania, zależności i granice odpowiedzialności.</small></p>
+            <p><span>03</span><strong>Do wielokrotnego powrotu</strong><small>61 rozdziałów na różne etapy wspólnego życia.</small></p>
+          </aside>
+          <div class="author__copy reveal" data-delay="1">
+            <p class="kicker">Almanach odpowiedzialnego opiekuna</p>
+            <h2 id="author-title">Wiedza, do której można wrócić</h2>
+            <p class="lead-copy">
+              „Pies w Polsce” nie próbuje sprowadzić odpowiedzialnej opieki do kilku uniwersalnych rad.
+            </p>
+            <p>
+              Porządkuje 61 tematów, pokazuje ich wzajemne zależności i pomaga zadawać właściwe pytania
+              — prawnikowi, lekarzowi weterynarii, behawioryście, przewoźnikowi albo wynajmującemu.
+            </p>
+            <div class="author__signature">
+              <span>Autor</span>
+              <strong>Mykola Hrytskov</strong>
+              <small>wydanie pierwsze · 2026</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section faq" id="faq" aria-labelledby="faq-title">
+        <div class="shell faq__grid">
+          <div class="section-heading faq__heading reveal">
+            <p class="kicker">Pytania, które wpisujemy w Google</p>
+            <h2 id="faq-title">Krótko, konkretnie, bez fałszywej pewności</h2>
+            <p>Prawo i regulaminy się zmieniają. Odpowiedzi poniżej wskazują kierunek, a książka daje pełny kontekst.</p>
           </div>
 
           <div class="faq-list reveal" data-delay="1">
             <details>
-              <summary><span>Czy PDF mogę czytać na telefonie?</span><i aria-hidden="true"></i></summary>
-              <div><p>Tak. E-book jest przygotowany jako plik PDF, który otworzysz na telefonie, tablecie, komputerze i większości czytników obsługujących ten format.</p></div>
+              <summary>Co to jest KROPiK?<span aria-hidden="true"></span></summary>
+              <p>KROPiK to Krajowy Rejestr Oznakowanych Psów i Kotów, który ma być prowadzony przez ARiMR. System ma łączyć numer transpondera z danymi zwierzęcia i informacjami potrzebnymi do ustalenia jego właściciela.</p>
             </details>
             <details>
-              <summary><span>Czy informacje prawne są aktualne?</span><i aria-hidden="true"></i></summary>
-              <div><p>Treść opisuje stan prawny na czerwiec 2026 roku, w tym ustawę o KROPiK oraz harmonogram wejścia jej przepisów w życie. Prawo może się zmieniać, dlatego przed podjęciem ważnej decyzji sprawdź aktualne źródła lub skonsultuj się z prawnikiem.</p></div>
+              <summary>Czy czipowanie psa jest obowiązkowe w Polsce w 2026 roku?<span aria-hidden="true"></span></summary>
+              <p>Ustawa wprowadzająca powszechny obowiązek została ogłoszona w czerwcu 2026 roku, ale zasadnicza część przepisów ma wejść w życie 11 czerwca 2028 roku. Dlatego zdanie „od 2026 każdy właściciel musi już zaczipować psa” jest zbyt dużym uproszczeniem. Znaczenie mają terminy wejścia w życie oraz przepisy przejściowe.</p>
             </details>
             <details>
-              <summary><span>Czy podcast jest dodatkowo płatny?</span><i aria-hidden="true"></i></summary>
-              <div><p>Nie. Podcast do każdego z 61 rozdziałów jest częścią pakietu i nie wymaga dodatkowej opłaty.</p></div>
+              <summary>Czy już zaczipowanego psa trzeba czipować ponownie?<span aria-hidden="true"></span></summary>
+              <p>Zgodnie z ustawą ponowne oznakowanie nie będzie potrzebne, jeżeli istniejący transponder można odczytać zgodnym czytnikiem. Zwierzę trzeba będzie jednak zarejestrować zgodnie z właściwą procedurą i terminem.</p>
             </details>
             <details>
-              <summary><span>Jak szybko otrzymam e-book?</span><i aria-hidden="true"></i></summary>
-              <div><p>Po uruchomieniu sprzedaży plik będzie wysyłany na podany adres e-mail po potwierdzeniu płatności. Dokładny sposób dostawy zostanie opisany przed finalizacją zamówienia.</p></div>
+              <summary>Ile kosztuje utrzymanie psa w Polsce?<span aria-hidden="true"></span></summary>
+              <p>Nie istnieje jedna kwota dla każdego psa. W orientacyjnym modelu użytym na stronie dwanaście lat opieki to około 80–200 tys. zł, czyli mniej więcej 550–1400 zł miesięcznie. Wpływ mają między innymi zdrowie i wielkość psa, żywienie, miasto, usługi oraz nieprzewidziane leczenie.</p>
             </details>
             <details>
-              <summary><span>Czy książka zastępuje wizytę u weterynarza lub prawnika?</span><i aria-hidden="true"></i></summary>
-              <div><p>Nie. To materiał edukacyjny, który pomaga zrozumieć temat i przygotować właściwe pytania. Nie zastępuje badania, diagnozy ani indywidualnej porady prawnej. W nagłym stanie zdrowotnym skontaktuj się z lekarzem weterynarii.</p></div>
+              <summary>Czy właściciel mieszkania może zakazać psa najemcy?<span aria-hidden="true"></span></summary>
+              <p>Punktem wyjścia jest umowa najmu i uzgodnienia z wynajmującym. Znaczenie mogą mieć również szkody, hałas i sposób korzystania z lokalu. W konkretnym sporze trzeba ocenić treść umowy oraz okoliczności, dlatego ogólne „zawsze wolno” albo „zawsze nie wolno” może wprowadzać w błąd.</p>
+            </details>
+            <details>
+              <summary>Czy wspólnota mieszkaniowa może zakazać psa w bloku?<span aria-hidden="true"></span></summary>
+              <p>Wspólnota może regulować korzystanie z części wspólnych i reagować na rzeczywiste uciążliwości. Zakres jej uprawnień zależy jednak od podstawy prawnej, treści uchwały i okoliczności. Informacja wywieszona na klatce nie zawsze oznacza skuteczny zakaz posiadania psa w prywatnym lokalu.</p>
+            </details>
+            <details>
+              <summary>Kto odpowiada za ugryzienie przez psa?<span aria-hidden="true"></span></summary>
+              <p>Artykuł 431 Kodeksu cywilnego przewiduje szczególną odpowiedzialność osoby, która zwierzę chowa albo się nim posługuje. Wynik konkretnej sprawy zależy między innymi od nadzoru, przebiegu zdarzenia, zachowania poszkodowanego i rozmiaru szkody.</p>
+            </details>
+            <details>
+              <summary>Jak przewozić psa pociągiem PKP?<span aria-hidden="true"></span></summary>
+              <p>Warunki zależą od konkretnego przewoźnika i rodzaju połączenia. Przed podróżą trzeba sprawdzić aktualny regulamin dotyczący transportera, smyczy, kagańca, biletu oraz zajmowania miejsca. Osobne zasady dotyczą psów asystujących.</p>
+            </details>
+            <details>
+              <summary>Czy w 2026 roku wolno trzymać psa na łańcuchu?<span aria-hidden="true"></span></summary>
+              <p>W czerwcu 2026 roku trwał kolejny etap prac nad pełniejszym zakazem trzymania psów na uwięzi. Uchwalenie ustawy nie jest tym samym co jej wejście w życie, a status może się zmienić po zamknięciu wydania. Przed podjęciem decyzji trzeba sprawdzić aktualny tekst ustawy o ochronie zwierząt.</p>
+            </details>
+            <details>
+              <summary>Czy książka zastępuje poradę prawnika lub lekarza weterynarii?<span aria-hidden="true"></span></summary>
+              <p>Nie. Książka ma charakter edukacyjny: pomaga zrozumieć temat, przygotować pytania i rozpoznać sytuacje wymagające pomocy specjalisty. Nie zastępuje indywidualnej porady prawnej, diagnozy ani leczenia.</p>
+            </details>
+            <details>
+              <summary>Co zawiera bezpłatny fragment?<span aria-hidden="true"></span></summary>
+              <p>Fragment ma 52 strony i obejmuje pięć pierwszych rozdziałów, pełny spis wszystkich 61 rozdziałów oraz informacje o pełnym wydaniu. Można go czytać na stronie albo pobrać jako PDF.</p>
+            </details>
+            <details>
+              <summary>Jak kupić i otrzymać e-booka?<span aria-hidden="true"></span></summary>
+              <p>Przycisk „Kup e-booka” prowadzi do sklepu autora na Etsy. Płatność i dostawa pliku odbywają się na platformie Etsy; strona pieswpolsce.pl nie przetwarza płatności.</p>
             </details>
           </div>
         </div>
       </section>
 
-      <section class="closing" aria-label="Podsumowanie">
-        <div class="container closing__inner reveal">
-          <svg viewBox="0 0 54 54" aria-hidden="true">
-            <ellipse cx="15" cy="15" rx="5" ry="7" transform="rotate(-30 15 15)" />
-            <ellipse cx="27" cy="11" rx="5" ry="7" />
-            <ellipse cx="39" cy="15" rx="5" ry="7" transform="rotate(30 39 15)" />
-            <path d="M27 23c-9 0-16 9-16 17 0 6 5 10 10 8 2-1 4-3 6-3s4 2 6 3c5 2 10-2 10-8 0-8-7-17-16-17Z" />
-          </svg>
-          <p>Kochaj <span>•</span> Rozumiej <span>•</span> Szanuj</p>
+      <section class="final-cta" id="kup" aria-labelledby="buy-title">
+        <div class="final-cta__texture" aria-hidden="true"></div>
+        <div class="shell final-cta__grid">
+          <div class="final-cta__book reveal">
+            <img
+              src="assets/okladka-pies-w-polsce.jpg"
+              width="1024"
+              height="1536"
+              alt="Okładka e-booka Pies w Polsce"
+              loading="lazy"
+            />
+          </div>
+          <div class="final-cta__copy reveal" data-delay="1">
+            <p class="kicker kicker--light">Dobra opieka zaczyna się przed pierwszym problemem</p>
+            <h2 id="buy-title">Miej odpowiedzi pod ręką.</h2>
+            <p>
+              Prawo się zmienia. Koszty rosną. Pies komunikuje potrzeby, zanim pojawi się kryzys. Ten
+              e-book porządkuje wiedzę, do której możesz wracać przez całe wspólne życie.
+            </p>
+            <ul>
+              <li>61 rozdziałów</li>
+              <li>5 części</li>
+              <li>ponad 600 stron</li>
+              <li>200+ ilustracji</li>
+            </ul>
+            <a class="button button--gold button--large" href="https://angelread.etsy.com" data-buy>
+              Kup e-booka „Pies w Polsce” <span aria-hidden="true">↗</span>
+            </a>
+            <p class="final-cta__micro">Bezpieczna płatność i dostawa pliku cyfrowego przez Etsy.</p>
+          </div>
         </div>
+        <p class="final-cta__motto">Kochaj <span>·</span> Rozum <span>·</span> Szanuj</p>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="container site-footer__top">
-        <div>
-          <a class="brand brand--footer" href="#start">
-            <span class="brand__mark" aria-hidden="true">
-              <svg viewBox="0 0 32 32">
-                <ellipse cx="9" cy="10" rx="3" ry="4" transform="rotate(-30 9 10)" />
-                <ellipse cx="16" cy="7" rx="3" ry="4" />
-                <ellipse cx="23" cy="10" rx="3" ry="4" transform="rotate(30 23 10)" />
-                <path d="M16 13c-5 0-9 5-9 9 0 4 3 6 6 5 1-.5 2-1.5 3-1.5s2 1 3 1.5c3 1 6-1 6-5 0-4-4-9-9-9Z" />
-              </svg>
-            </span>
-            <span class="brand__text">Pies w Polsce</span>
-          </a>
-          <p>Przewodnik napisany z myślą o prawdziwym życiu z psem.</p>
-        </div>
-        <nav aria-label="Nawigacja w stopce">
-          <a href="#o-ksiazce">O książce</a>
-          <a href="#srodek">Spis treści</a>
-          <a href="#dla-kogo">Dla kogo</a>
+      <div class="shell site-footer__top">
+        <a class="wordmark wordmark--footer" href="#start">
+          <span class="wordmark__seal" aria-hidden="true">P</span>
+          <span class="wordmark__text"><strong>Pies w Polsce</strong><small>Mykola Hrytskov · 2026</small></span>
+        </a>
+        <div class="site-footer__links">
+          <a href="#fragment">Darmowy fragment</a>
+          <a href="#checklista">Checklista</a>
           <a href="#faq">FAQ</a>
-        </nav>
+          <a href="https://angelread.etsy.com">Sklep Etsy</a>
+        </div>
       </div>
-      <div class="container site-footer__bottom">
-        <p>© 2026 Pies w Polsce</p>
-        <p>Materiał edukacyjny — nie zastępuje indywidualnej porady specjalisty.</p>
+      <div class="shell site-footer__legal">
+        <p>
+          Treści na stronie i w książce mają charakter informacyjny oraz edukacyjny. Nie stanowią
+          indywidualnej porady prawnej ani weterynaryjnej. Przepisy, regulaminy przewoźników i zalecenia
+          mogą się zmieniać; przed podjęciem decyzji sprawdź aktualne źródła lub skonsultuj się ze
+          specjalistą.
+        </p>
+        <p>© 2026 Mykola Hrytskov</p>
       </div>
     </footer>
 
-    <div class="mobile-buy" data-mobile-buy hidden>
-      <div><small>E-book + podcasty</small><strong>19 zł</strong></div>
-      <button class="button button--primary" type="button" data-checkout>Kup e-book</button>
-    </div>
-
-    <dialog class="checkout-dialog" id="checkout-dialog" aria-labelledby="checkout-title">
-      <div class="checkout-dialog__inner">
-        <button class="dialog-close" type="button" aria-label="Zamknij okno" data-dialog-close>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg>
-        </button>
-        <div class="checkout-dialog__icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48">
-            <path d="M8 13h32v24H8zM8 20h32M14 30h8M33 7v12M28 12l5-5 5 5" />
-          </svg>
-        </div>
-        <p class="eyebrow"><span></span> Jeszcze chwila</p>
-        <h2 id="checkout-title">Płatność nie jest jeszcze podłączona.</h2>
-        <p>
-          Ten przycisk nie pobrał żadnej opłaty. Gdy wybierzemy operatora, w tym miejscu otworzy się
-          bezpieczny checkout, a po potwierdzeniu płatności e-book trafi na e-mail.
-        </p>
-        <div class="checkout-dialog__note">
-          <strong>Co będzie potrzebne?</strong>
-          <span>Link do płatności oraz automatyczna wysyłka pliku i danych do podcastów.</span>
-        </div>
-        <button class="button button--primary button--wide" type="button" data-dialog-close>Rozumiem</button>
-      </div>
-    </dialog>
+    <a class="mobile-buy" href="https://angelread.etsy.com" data-mobile-buy data-buy hidden>
+      <span><small>E-book PDF</small><strong>Kup e-booka</strong></span>
+      <span aria-hidden="true">↗</span>
+    </a>
   </body>
 </html>

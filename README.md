@@ -1,10 +1,10 @@
-# „Pies w Polsce” — strona sprzedażowa
+# Pies w Polsce — strona książki
 
-Gotowa, responsywna strona statyczna napisana w HTML, CSS i JavaScript.
+Responsywna strona statyczna książki **„Pies w Polsce. Prawo · Obowiązki · Miłość”** autorstwa Mykoli Hrytskova.
 
 ## Podgląd lokalny
 
-Najprościej otworzyć `index.html` w przeglądarce. Można też uruchomić lokalny serwer w tym katalogu:
+Strona nie wymaga budowania ani instalowania zależności. Można otworzyć `index.html` bezpośrednio albo uruchomić prosty serwer w katalogu projektu:
 
 ```powershell
 python -m http.server 8080
@@ -12,29 +12,29 @@ python -m http.server 8080
 
 Następnie otworzyć `http://localhost:8080`.
 
-## Podłączenie płatności
+## Najważniejsze pliki
 
-W pliku `script.js` na początku znajduje się stała:
+- `index.html` — treść, metadane SEO i dane strukturalne.
+- `styles.css` — pełny wygląd strony i wersja mobilna.
+- `script.js` — menu, kalkulator kosztów, karuzela, zakładki i czytnik fragmentu.
+- `pliki/Pies-w-Polsce-fragment-rozdzialy-1-5.pdf` — darmowy fragment, 52 strony.
+- `pliki/Checklista-pies-w-Polsce-2026.pdf` — darmowa checklista, 2 strony.
+- `pliki/podglad/str-01.webp` … `str-52.webp` — strony czytnika online.
+- `assets/photos/` — zoptymalizowane zdjęcia strony.
 
-```js
-const CHECKOUT_URL = "";
-```
+Nie zmieniać nazw PDF ani plików `str-NN.webp`: czytnik korzysta z tego wzorca.
 
-Po wybraniu operatora płatności należy wkleić tu adres hostowanego checkoutu. Dopóki adres jest pusty, przyciski otwierają uczciwy komunikat demonstracyjny i nie pobierają opłaty. Po podaniu adresu wszystkie przyciski zakupu automatycznie zaczną przekierowywać do płatności, a informacja o trybie demonstracyjnym zniknie.
+## Sprzedaż
 
-Do pełnej sprzedaży treści cyfrowej potrzebne są trzy elementy:
+Wszystkie przyciski „Kup e-booka” są zwykłymi linkami prowadzącymi do:
 
-1. hostowany checkout operatora płatności,
-2. automatyczna wiadomość e-mail po potwierdzeniu płatności,
-3. bezpieczny link do PDF oraz materiałów audio.
+`https://angelread.etsy.com`
 
-## Przed publikacją
+Płatność i dostawa pliku odbywają się na Etsy. Strona nie obsługuje płatności i nie zbiera danych kupujących.
 
-- potwierdź: 509 stron, 61 rozdziałów i 61 nagrań,
-- uzupełnij dane sprzedawcy, kontakt, regulamin, politykę prywatności i zasady reklamacji,
-- opisz sposób dostępu do podcastów i ważność linków,
-- zweryfikuj treści prawne, medyczne i behawioralne ze specjalistami,
-- potwierdź prawa do okładki i wizerunku psa,
-- przy natychmiastowym dostarczeniu treści cyfrowej zadbaj o prawidłową zgodę konsumenta dotyczącą rozpoczęcia świadczenia przed upływem terminu odstąpienia.
+## GitHub Pages
 
-Strona celowo nie zawiera fikcyjnych opinii, danych autora ani atrap formularzy płatniczych.
+Projekt jest gotowy do publikacji z katalogu głównego gałęzi `main`. Pliki `CNAME`, `.nojekyll`, `robots.txt` i `sitemap.xml` są już przygotowane dla domeny `pieswpolsce.pl`.
+
+Po zmianie domeny trzeba zaktualizować canonical, Open Graph, JSON-LD, `robots.txt`, `sitemap.xml` oraz `CNAME`.
+
