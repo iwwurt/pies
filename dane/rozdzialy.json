@@ -1,0 +1,101 @@
+{
+  "playlist": "",
+  "czesci": [
+    {
+      "rzymska": "I",
+      "nazwa": "Kontekst",
+      "podtytul": "Polska — rynek, statystyka i ekonomika posiadania",
+      "rozdzialy": [
+        { "nr": 1, "tytul": "Polska — europejski lider w posiadaniu psów", "strona": 2, "yt": "" },
+        { "nr": 2, "tytul": "Ekonomia posiadania: rzeczywiste liczby 2024–2026", "strona": 9, "yt": "" },
+        { "nr": 3, "tytul": "Polska — światowa fabryka karmy", "strona": 17, "yt": "" },
+        { "nr": 4, "tytul": "Polska 2030: klimat, prawo i rynek — co się zmieni", "strona": 25, "yt": "" }
+      ]
+    },
+    {
+      "rzymska": "II",
+      "nazwa": "Prawo i odpowiedzialność",
+      "podtytul": "Ustawy, sądy, sąsiedzi i granice kontroli nad psem w Polsce",
+      "rozdzialy": [
+        { "nr": 5, "tytul": "Odpowiedzialność za pogryzienie i atak psa: art. 431 Kodeksu cywilnego i powiązane przepisy", "strona": 33, "yt": "" },
+        { "nr": 6, "tytul": "KROPiK: aktualna wersja 2026 (państwowy rejestr zwierząt)", "strona": 47, "yt": "" },
+        { "nr": 7, "tytul": "„Ustawa łańcuchowa”: niedokończona historia i obowiązujące przepisy", "strona": 56, "yt": "" },
+        { "nr": 8, "tytul": "Mieszkanie z psem: wspólnota mieszkaniowa i najem — wyczerpujący przewodnik prawny", "strona": 61, "yt": "" },
+        { "nr": 9, "tytul": "Psy asystujące i miejsca publiczne", "strona": 81, "yt": "" },
+        { "nr": 10, "tytul": "Pies i transport w Polsce: samochód, PKP, autobusy, tramwaje i metro warszawskie", "strona": 90, "yt": "" },
+        { "nr": 11, "tytul": "Rozwód i podział psa: praktyka sądowa", "strona": 103, "yt": "" },
+        { "nr": 12, "tytul": "Pies jako część spadku: co dzieje się po śmierci właściciela", "strona": 109, "yt": "" },
+        { "nr": 13, "tytul": "Administracyjne odebranie psa: pełna procedura", "strona": 114, "yt": "" },
+        { "nr": 14, "tytul": "Dyskryminacja rasowa: wykaz MSWiA, ubezpieczenia i naukowa krytyka BSL", "strona": 120, "yt": "" },
+        { "nr": 15, "tytul": "Zagraniczny właściciel psa w Polsce: wjazd, dokumenty, obowiązki", "strona": 128, "yt": "" },
+        { "nr": 16, "tytul": "Pies i dziecko: bezpieczeństwo, protokoły zapoznania oraz prawo", "strona": 134, "yt": "" },
+        { "nr": 17, "tytul": "Pies w miejscu pracy: próżnia prawna i praktyka biur dog-friendly", "strona": 139, "yt": "" }
+      ]
+    },
+    {
+      "rzymska": "III",
+      "nazwa": "Weterynaria",
+      "podtytul": "Zdrowie, profilaktyka, choroby i opieka nad psem",
+      "rozdzialy": [
+        { "nr": 18, "tytul": "Zagrożenia naturalne: kleszcze, trucizny, babeszjoza, borelioza", "strona": 152, "yt": "" },
+        { "nr": 19, "tytul": "Sen, odpoczynek, dysfunkcja poznawcza", "strona": 163, "yt": "" },
+        { "nr": 20, "tytul": "Etapy życia i CCD: rozdział końcowy", "strona": 177, "yt": "" },
+        { "nr": 21, "tytul": "Aktywność fizyczna i spacery", "strona": 192, "yt": "" },
+        { "nr": 22, "tytul": "Pielęgnacja sierści, łap i zębów", "strona": 204, "yt": "" },
+        { "nr": 23, "tytul": "Inne choroby zakaźne", "strona": 212, "yt": "" },
+        { "nr": 24, "tytul": "Medycyna profilaktyczna w Polsce", "strona": 221, "yt": "" },
+        { "nr": 25, "tytul": "Pomoc w nagłych wypadkach, apteczka i zatrucie", "strona": 238, "yt": "" },
+        { "nr": 26, "tytul": "Stomatologia weterynaryjna", "strona": 260, "yt": "" },
+        { "nr": 27, "tytul": "Śmierć psa: aspekt prawny i praktyczny", "strona": 273, "yt": "" },
+        { "nr": 28, "tytul": "Rehabilitacja psów w Polsce", "strona": 286, "yt": "" },
+        { "nr": 29, "tytul": "Onkologia u psów: diagnostyka, leczenie i prawo w Polsce", "strona": 300, "yt": "" },
+        { "nr": 30, "tytul": "Ortopedia i dysplazja stawów: diagnostyka i leczenie w Polsce", "strona": 308, "yt": "" },
+        { "nr": 31, "tytul": "Alergie i dermatologia: diagnostyka i terapia w warunkach polskich", "strona": 312, "yt": "" },
+        { "nr": 32, "tytul": "Kardiologia psów: predyspozycje rasowe, badania przesiewowe, leczenie", "strona": 325, "yt": "" },
+        { "nr": 33, "tytul": "Neurologia psów: epilepsja, mielopatia zwyrodnieniowa, przepukliny krążka międzykręgowego", "strona": 329, "yt": "" },
+        { "nr": 34, "tytul": "Reprodukcja i krycie: umowa, ryzyka, prawo", "strona": 334, "yt": "" }
+      ]
+    },
+    {
+      "rzymska": "IV",
+      "nazwa": "Zachowanie",
+      "podtytul": "Psychologia, szkolenie, socjalizacja i korekta zachowania",
+      "rozdzialy": [
+        { "nr": 35, "tytul": "Lęk separacyjny: fizjologia, diagnostyka i kompletny protokół terapii", "strona": 343, "yt": "" },
+        { "nr": 36, "tytul": "Mowa ciała i inteligencja emocjonalna", "strona": 358, "yt": "" },
+        { "nr": 37, "tytul": "Szkolenie: nauka kontra mity", "strona": 369, "yt": "" },
+        { "nr": 38, "tytul": "Krytyczne okno socjalizacji", "strona": 385, "yt": "" },
+        { "nr": 39, "tytul": "Wielopsie gospodarstwo domowe: integracja, zasoby, prawo", "strona": 392, "yt": "" },
+        { "nr": 40, "tytul": "Agresja u psów: klasyfikacja kliniczna i protokoły postępowania", "strona": 400, "yt": "" },
+        { "nr": 41, "tytul": "Wolontariat i ochrona zwierząt w Polsce: organizacje, prawa, procedury", "strona": 413, "yt": "" },
+        { "nr": 42, "tytul": "Kynoterapia (dogoterapia): certyfikacja, praktyka, prawo", "strona": 418, "yt": "" }
+      ]
+    },
+    {
+      "rzymska": "V",
+      "nazwa": "Styl życia i rynek",
+      "podtytul": "Żywienie, podróże, ubezpieczenie, wybór psa i rynek zoologiczny",
+      "rozdzialy": [
+        { "nr": 43, "tytul": "Żywienie, suplementy, karmy dietetyczne", "strona": 423, "yt": "" },
+        { "nr": 44, "tytul": "Podróże i PetTech: GPS, telemedycyna, EU Pet Passport", "strona": 443, "yt": "" },
+        { "nr": 45, "tytul": "Ubezpieczenia i finanse: OC, zdrowie, podróże i zbiórki na leczenie", "strona": 455, "yt": "" },
+        { "nr": 46, "tytul": "Rynek zoologiczny: zawody, BARF, handel detaliczny", "strona": 469, "yt": "" },
+        { "nr": 47, "tytul": "Ekosystem miejski i infrastruktura", "strona": 480, "yt": "" },
+        { "nr": 48, "tytul": "Wybór psa: hodowla, testy, koszty", "strona": 491, "yt": "" },
+        { "nr": 49, "tytul": "Adopcja i przygotowanie domu", "strona": 510, "yt": "" },
+        { "nr": 50, "tytul": "Rejestracja i dokumenty", "strona": 518, "yt": "" },
+        { "nr": 51, "tytul": "Cykl płciowy i zachowania reprodukcyjne psów w warunkach miejskich", "strona": 529, "yt": "" },
+        { "nr": 52, "tytul": "Kynologiczne sporty w Polsce", "strona": 545, "yt": "" },
+        { "nr": 53, "tytul": "Wystawy ZKwP: jak brać udział", "strona": 552, "yt": "" },
+        { "nr": 54, "tytul": "Opieka tymczasowa i petsitting pod nieobecność właściciela", "strona": 558, "yt": "" },
+        { "nr": 55, "tytul": "Zagubienie psa: system poszukiwań w Polsce", "strona": 564, "yt": "" },
+        { "nr": 56, "tytul": "Mieszańce i kundle — najbardziej polski pies", "strona": 568, "yt": "" },
+        { "nr": 57, "tytul": "Ekologia a pies: „zielony” aspekt posiadania", "strona": 576, "yt": "" },
+        { "nr": 58, "tytul": "Zdrowie psychiczne opiekuna", "strona": 583, "yt": "" },
+        { "nr": 59, "tytul": "Pies a starszy właściciel: szczególne potrzeby, pomoc społeczna i planowanie prawne", "strona": 594, "yt": "" },
+        { "nr": 60, "tytul": "Bezdomne psy w Polsce: system, jego niedociągnięcia i spory prawne", "strona": 605, "yt": "" },
+        { "nr": 61, "tytul": "Polska kynologia: rasy narodowe, ich historia i status", "strona": 609, "yt": "" }
+      ]
+    }
+  ]
+}

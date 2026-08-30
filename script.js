@@ -419,7 +419,7 @@ document.querySelectorAll(".faq-list details").forEach((item) => {
 });
 
 const hero = document.querySelector(".hero");
-const finalOffer = document.querySelector("#kup");
+const finalOffer = document.querySelector("#pobierz");
 const mobileBuy = document.querySelector("[data-mobile-buy]");
 let mobileBuyTicking = false;
 
@@ -442,3 +442,20 @@ function requestMobileBuyUpdate() {
 updateMobileBuy();
 window.addEventListener("scroll", requestMobileBuyUpdate, { passive: true });
 window.addEventListener("resize", requestMobileBuyUpdate);
+
+/* Linki, ktore czekaja na uzupelnienie (playlista YouTube, wsparcie autora). */
+document.querySelectorAll("[data-donate]").forEach((element) => {
+  if ((element.getAttribute("href") || "").startsWith("{{")) element.remove();
+});
+
+document.querySelectorAll("[data-yt-playlist]").forEach((element) => {
+  const href = element.getAttribute("href") || "";
+  if (!/^https?:/.test(href)) return;
+
+  element.target = "_blank";
+  element.rel = "noopener";
+  const label = element.querySelector("[data-yt-playlist-label]");
+  if (label) label.textContent = "Playlista na YouTube";
+  const arrow = element.querySelector(".button__arrow");
+  if (arrow) arrow.textContent = "↗";
+});
