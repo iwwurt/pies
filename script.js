@@ -455,7 +455,7 @@ document.querySelectorAll("[data-yt-playlist]").forEach((element) => {
   element.target = "_blank";
   element.rel = "noopener";
   const label = element.querySelector("[data-yt-playlist-label]");
-  if (label) label.textContent = "Playlista na YouTube";
+  if (label) label.textContent = "Podcast na YouTube";
   const arrow = element.querySelector(".button__arrow");
   if (arrow) arrow.textContent = "↗";
 });
