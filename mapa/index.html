@@ -26,6 +26,27 @@
 
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="../styles.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Pies w Polsce",
+            "item": "https://pieswpolsce.pl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Weterynarz i schronisko w pobliżu",
+            "item": "https://pieswpolsce.pl/mapa/"
+          }
+        ]
+      }
+    </script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
@@ -346,6 +367,9 @@
     <main id="main">
       <section class="mapa-hero">
         <div class="shell">
+          <p class="okruchy">
+            <a href="../">Pies w Polsce</a> <span aria-hidden="true">/</span> Mapa
+          </p>
           <p class="kicker">Mapa · dane OpenStreetMap</p>
           <h1>Weterynarz i schronisko w pobliżu</h1>
           <p class="mapa-hero__lead">
@@ -430,6 +454,11 @@
               <p>
                 Krótka lista rzeczy, które trują psa, i co robić w pierwszych minutach:
                 <a href="../zatrucia/">zjadł coś trującego</a>.
+              </p>
+              <p>
+                Wizyta interwencyjna to wydatek, którego nikt nie planuje — operacje potrafią
+                kosztować od 3 do 10 tysięcy złotych. Ile realnie kosztuje pies przez całe życie,
+                z tą pozycją włącznie: <a href="../koszty/">pełne wyliczenie</a>.
               </p>
             </div>
           </div>

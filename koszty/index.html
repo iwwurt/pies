@@ -30,6 +30,27 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Pies w Polsce",
+            "item": "https://pieswpolsce.pl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Ile kosztuje pies",
+            "item": "https://pieswpolsce.pl/koszty/"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
         "@type": "FAQPage",
         "@id": "https://pieswpolsce.pl/koszty/#faq",
         "mainEntity": [
@@ -101,17 +122,6 @@
         color: var(--ink);
       }
 
-      .okruchy {
-        margin: 0 0 22px;
-        color: var(--muted-light);
-        font-size: 0.74rem;
-        letter-spacing: 0.04em;
-      }
-
-      .okruchy a {
-        border-bottom: 1px solid var(--line);
-        color: var(--muted);
-      }
 
       .scenariusze-przyciski {
         display: flex;

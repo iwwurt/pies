@@ -3412,3 +3412,37 @@ a.rozdzial__podcast:hover {
   font-weight: 700;
   white-space: nowrap;
 }
+
+/* Okruchy chleba - wspolne dla wszystkich podstron */
+
+.okruchy {
+  margin: 0 0 22px;
+  color: var(--muted-light);
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+}
+
+.okruchy a {
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  transition: color 160ms ease, border-color 160ms ease;
+}
+
+.okruchy a:hover {
+  border-bottom-color: var(--gold);
+  color: var(--ink);
+}
+
+.okruchy--jasne {
+  color: rgba(255, 246, 240, 0.55);
+}
+
+.okruchy--jasne a {
+  border-bottom-color: rgba(255, 246, 240, 0.32);
+  color: rgba(255, 246, 240, 0.82);
+}
+
+.okruchy--jasne a:hover {
+  border-bottom-color: currentColor;
+  color: #fff6f0;
+}

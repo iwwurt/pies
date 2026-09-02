@@ -30,6 +30,27 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Pies w Polsce",
+            "item": "https://pieswpolsce.pl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "KROPiK 2026",
+            "item": "https://pieswpolsce.pl/kropik/"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
         "@type": "FAQPage",
         "@id": "https://pieswpolsce.pl/kropik/#faq",
         "mainEntity": [
@@ -251,17 +272,6 @@
         line-height: 1.6;
       }
 
-      .okruchy {
-        padding: 22px 0 0;
-        color: var(--muted-light);
-        font-size: 0.74rem;
-        letter-spacing: 0.04em;
-      }
-
-      .okruchy a {
-        border-bottom: 1px solid var(--line);
-        color: var(--muted);
-      }
 
       @media (max-width: 700px) {
         .kropik-kroki__lista li {
@@ -311,7 +321,7 @@
     <main id="main">
       <section class="kropik-hero">
         <div class="shell">
-          <p class="okruchy" style="padding-top:0;margin:0 0 22px">
+          <p class="okruchy">
             <a href="../">Pies w Polsce</a> <span aria-hidden="true">/</span> KROPiK 2026
           </p>
           <p class="kicker">Najważniejsza reforma dla opiekunów</p>

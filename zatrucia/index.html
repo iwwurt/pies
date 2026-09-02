@@ -27,6 +27,27 @@
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="../styles.css" />
 
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Pies w Polsce",
+            "item": "https://pieswpolsce.pl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Pies zjadł coś trującego",
+            "item": "https://pieswpolsce.pl/zatrucia/"
+          }
+        ]
+      }
+    </script>
+
     <style>
       .alarm {
         padding-block: clamp(40px, 5vw, 72px);
@@ -350,6 +371,9 @@
     <main id="main">
       <section class="alarm">
         <div class="shell">
+          <p class="okruchy okruchy--jasne">
+            <a href="../">Pies w Polsce</a> <span aria-hidden="true">/</span> Zatrucia
+          </p>
           <p class="alarm__kicker">Nagły wypadek</p>
           <h1>Pies zjadł coś trującego</h1>
           <p class="alarm__lead">
@@ -650,6 +674,7 @@
                 <li><a href="../pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf" download>Cała książka w PDF — za darmo</a></li>
                 <li><a href="../#rozdzialy">Rozdział 25: pomoc w nagłych wypadkach</a></li>
                 <li><a href="../#rozdzialy">Rozdział 18: kleszcze, trucizny, babeszjoza</a></li>
+                <li><a href="../koszty/">Ile kosztuje leczenie i cała opieka nad psem</a></li>
               </ul>
             </div>
           </div>
