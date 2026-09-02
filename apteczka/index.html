@@ -1,0 +1,970 @@
+<!doctype html>
+<html lang="pl" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Apteczka dla psa — lista kontrolna do odhaczenia | Pies w Polsce</title>
+    <meta
+      name="description"
+      content="Co powinno być w domowej apteczce dla psa: pełna lista do odhaczenia, czego nigdy nie podawać na własną rękę i listy kontrolne na nagły wypadek. Zaznaczenia zapisują się w przeglądarce."
+    />
+    <meta name="author" content="Mykola Hrytskov" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#3a3733" />
+    <link rel="canonical" href="https://pieswpolsce.pl/apteczka/" />
+
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Pies w Polsce" />
+    <meta property="og:title" content="Apteczka dla psa — lista kontrolna" />
+    <meta
+      property="og:description"
+      content="Pełna lista wyposażenia apteczki, lista rzeczy zakazanych i checklisty na nagły wypadek. Do odhaczenia i wydruku."
+    />
+    <meta property="og:url" content="https://pieswpolsce.pl/apteczka/" />
+    <meta property="og:image" content="https://pieswpolsce.pl/assets/og.png" />
+
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../styles.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Pies w Polsce",
+            "item": "https://pieswpolsce.pl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Apteczka dla psa",
+            "item": "https://pieswpolsce.pl/apteczka/"
+          }
+        ]
+      }
+    </script>
+
+    <style>
+      .apt-hero {
+        padding-block: clamp(48px, 6vw, 90px) clamp(30px, 4vw, 46px);
+        border-bottom: 1px solid var(--line);
+        background: var(--cream);
+      }
+
+      .apt-hero h1 {
+        margin: 0 0 20px;
+        font-size: clamp(2.3rem, 5vw, 4.2rem);
+      }
+
+      .apt-hero__lead {
+        max-width: 64ch;
+        margin: 0 0 16px;
+        color: var(--muted);
+        font-size: 1.02rem;
+        line-height: 1.72;
+      }
+
+      .apt-hero__lead strong {
+        color: var(--ink);
+      }
+
+      .apt-pasek {
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
+        gap: 16px 26px;
+        flex-wrap: wrap;
+      }
+
+      .apt-postep {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+
+      .apt-postep__tor {
+        overflow: hidden;
+        width: 150px;
+        height: 6px;
+        border-radius: 999px;
+        background: var(--line);
+      }
+
+      .apt-postep__wypelnienie {
+        width: 0;
+        height: 100%;
+        background: var(--gold);
+        transition: width 260ms ease;
+      }
+
+      .apt-przycisk-tekst {
+        border: 0;
+        background: none;
+        color: var(--muted);
+        cursor: pointer;
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
+      .apt-przycisk-tekst:hover {
+        color: var(--ink);
+      }
+
+      .apt-sekcja {
+        padding-block: clamp(48px, 5vw, 82px);
+      }
+
+      .apt-sekcja h2 {
+        margin: 0 0 12px;
+        font-size: clamp(1.8rem, 3.4vw, 2.8rem);
+      }
+
+      .apt-sekcja__wstep {
+        max-width: 66ch;
+        margin: 0 0 34px;
+        color: var(--muted);
+        line-height: 1.72;
+      }
+
+      .apt-lista {
+        display: grid;
+        margin: 0;
+        padding: 0;
+        border-top: 1px solid var(--line);
+        gap: 0;
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        list-style: none;
+      }
+
+      .apt-pozycja {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .apt-pozycja label {
+        display: grid;
+        align-items: start;
+        padding: 18px 14px 18px 4px;
+        cursor: pointer;
+        gap: 4px 16px;
+        grid-template-columns: 24px minmax(0, 1fr);
+      }
+
+      .apt-pozycja input {
+        width: 20px;
+        height: 20px;
+        margin: 2px 0 0;
+        accent-color: var(--gold-dark);
+        cursor: pointer;
+      }
+
+      .apt-pozycja__nazwa {
+        font-size: 0.95rem;
+        font-weight: 700;
+        line-height: 1.4;
+      }
+
+      .apt-pozycja__opis {
+        grid-column: 2;
+        color: var(--muted);
+        font-size: 0.81rem;
+        line-height: 1.6;
+      }
+
+      .apt-pozycja input:checked ~ .apt-pozycja__nazwa {
+        color: var(--muted-light);
+        text-decoration: line-through;
+      }
+
+      .apt-zakaz {
+        padding-block: clamp(48px, 5vw, 82px);
+        background: var(--ink-deep);
+        color: var(--paper);
+      }
+
+      .apt-zakaz h2 {
+        margin: 0 0 12px;
+        font-size: clamp(1.8rem, 3.4vw, 2.8rem);
+      }
+
+      .apt-zakaz > .shell > p {
+        max-width: 64ch;
+        margin: 0 0 34px;
+        color: rgba(248, 245, 239, 0.68);
+        line-height: 1.72;
+      }
+
+      .apt-zakaz ul {
+        display: grid;
+        margin: 0;
+        padding: 0;
+        gap: 0 40px;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        list-style: none;
+      }
+
+      .apt-zakaz li {
+        position: relative;
+        padding: 13px 0 13px 30px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+        color: rgba(248, 245, 239, 0.82);
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .apt-zakaz li::before {
+        position: absolute;
+        top: 13px;
+        left: 4px;
+        color: #d98b74;
+        content: "×";
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+
+      .apt-uwaga {
+        margin-top: 38px;
+        padding: 30px 34px;
+        border-left: 3px solid var(--gold);
+        background: rgba(176, 131, 63, 0.1);
+      }
+
+      .apt-uwaga strong {
+        display: block;
+        margin-bottom: 10px;
+        font-family: var(--display);
+        font-size: 1.3rem;
+        font-weight: 500;
+      }
+
+      .apt-uwaga p {
+        margin: 0 0 12px;
+        color: rgba(248, 245, 239, 0.78);
+        font-size: 0.9rem;
+        line-height: 1.72;
+      }
+
+      .apt-uwaga p:last-child {
+        margin-bottom: 0;
+      }
+
+      .apt-karty {
+        display: grid;
+        gap: 22px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+
+      .apt-karta {
+        padding: 32px 34px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        background: var(--white);
+      }
+
+      .apt-karta--pilne {
+        border-left: 3px solid #a24a2c;
+      }
+
+      .apt-karta h3 {
+        margin: 0 0 6px;
+        font-family: var(--display);
+        font-size: 1.28rem;
+        font-weight: 500;
+      }
+
+      .apt-karta__pod {
+        margin: 0 0 18px;
+        color: var(--muted-light);
+        font-size: 0.76rem;
+        line-height: 1.5;
+      }
+
+      .apt-karta ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .apt-karta li {
+        position: relative;
+        padding: 0 0 10px 20px;
+        color: var(--muted);
+        font-size: 0.86rem;
+        line-height: 1.55;
+      }
+
+      .apt-karta li::before {
+        position: absolute;
+        top: 0.62em;
+        left: 0;
+        width: 9px;
+        height: 1px;
+        background: var(--gold);
+        content: "";
+      }
+
+      .apt-dalej {
+        padding-block: clamp(46px, 5vw, 78px);
+        border-top: 1px solid var(--line);
+        background: var(--cream);
+      }
+
+      .apt-dalej__grid {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+
+      .apt-dalej a {
+        display: block;
+        padding: 28px 30px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        background: var(--white);
+        transition: border-color 180ms ease, transform 180ms ease;
+      }
+
+      .apt-dalej a:hover {
+        border-color: var(--gold);
+        transform: translateY(-2px);
+      }
+
+      .apt-dalej strong {
+        display: block;
+        margin-bottom: 8px;
+        font-family: var(--display);
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+
+      .apt-dalej small {
+        color: var(--muted);
+        font-size: 0.82rem;
+        line-height: 1.6;
+      }
+
+      .apt-zastrzezenie {
+        margin-top: 34px;
+        padding: 24px 28px;
+        border-left: 3px solid var(--gold);
+        background: var(--cream);
+        color: var(--muted);
+        font-size: 0.84rem;
+        line-height: 1.7;
+      }
+
+      @media print {
+        .site-header,
+        .site-footer,
+        .apt-dalej,
+        .apt-pasek,
+        .skip-link {
+          display: none !important;
+        }
+
+        .apt-hero,
+        .apt-zakaz,
+        .apt-sekcja {
+          padding-block: 14pt;
+          background: #fff !important;
+          color: #000 !important;
+        }
+
+        .apt-zakaz li,
+        .apt-zakaz > .shell > p,
+        .apt-uwaga p {
+          color: #000 !important;
+        }
+
+        .apt-uwaga {
+          background: none;
+          border-left: 2pt solid #000;
+        }
+
+        .apt-lista {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .apt-pozycja {
+          break-inside: avoid;
+        }
+
+        .apt-karta {
+          break-inside: avoid;
+        }
+
+        h1 {
+          font-size: 22pt !important;
+        }
+
+        h2 {
+          font-size: 15pt !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Przejdź do treści</a>
+
+    <header class="site-header" data-header>
+      <div class="shell site-header__inner">
+        <a class="wordmark" href="../" aria-label="Pies w Polsce — strona główna">
+          <span class="wordmark__seal" aria-hidden="true">P</span>
+          <span class="wordmark__text">
+            <strong>Pies w Polsce</strong>
+            <small>Kochaj · Rozum · Szanuj</small>
+          </span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Otwórz menu"
+          data-menu-toggle
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Główna nawigacja" data-nav>
+          <a href="../">Książka</a>
+          <a href="../#rozdzialy">Rozdziały</a>
+          <a href="../narzedzia/">Narzędzia</a>
+          <a href="../zatrucia/">Zatrucia</a>
+          <a href="../mapa/">Mapa</a>
+          <a class="button button--primary button--compact" href="../pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf" download>
+            Pobierz za darmo
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="apt-hero">
+        <div class="shell">
+          <p class="okruchy">
+            <a href="../">Pies w Polsce</a> <span aria-hidden="true">/</span> Apteczka dla psa
+          </p>
+          <p class="kicker">Lista kontrolna · zaznaczenia zapisują się same</p>
+          <h1>Apteczka dla psa</h1>
+          <p class="apt-hero__lead">
+            Domowa apteczka nie jest mini przychodnią ani zestawem leków „na wszelki wypadek”.
+            <strong>Ma zatamować krwawienie, przemyć ranę, zabezpieczyć ją, zmierzyć temperaturę
+            i pozwolić bezpiecznie dojechać do lekarza.</strong> Tyle. Wszystko poza tym należy
+            do weterynarza.
+          </p>
+          <p class="apt-hero__lead">
+            Odhacz to, co już masz. Zaznaczenia zostają w tej przeglądarce — nic nie wysyłamy
+            i nie ma tu żadnego formularza. Listę można też wydrukować i powiesić przy apteczce.
+          </p>
+
+          <div class="apt-pasek">
+            <div class="apt-postep">
+              <div class="apt-postep__tor" role="presentation">
+                <div class="apt-postep__wypelnienie" data-postep-wypelnienie></div>
+              </div>
+              <span data-postep-tekst aria-live="polite">0 z 0 skompletowane</span>
+            </div>
+            <button class="button button--primary" type="button" data-drukuj>Wydrukuj listę</button>
+            <button class="apt-przycisk-tekst" type="button" data-wyczysc>Odznacz wszystko</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="apt-sekcja">
+        <div class="shell">
+          <h2>Podstawowy skład</h2>
+          <p class="apt-sekcja__wstep">
+            To jest trzon apteczki — rzeczy, które realnie robią różnicę w pierwszych minutach
+            i których nie kupisz w nocy.
+          </p>
+
+          <ul class="apt-lista" data-lista>
+            <li class="apt-pozycja">
+              <label>
+                <input type="checkbox" data-poz="termometr" />
+                <span class="apt-pozycja__nazwa">Termometr cyfrowy z elastyczną końcówką</span>
+                <span class="apt-pozycja__opis">Elastyczna końcówka jest bezpieczniejsza przy szarpnięciu.</span>
+              </label>
+            </li>
+            <li class="apt-pozycja">
+              <label>
+                <input type="checkbox" data-poz="rekawiczki" />
+                <span class="apt-pozycja__nazwa">Rękawiczki jednorazowe</span>
+                <span class="apt-pozycja__opis">Chronią ranę przed twoją florą, a ciebie przed jej zawartością.</span>
+              </label>
+            </li>
+            <li class="apt-pozycja">
+              <label>
+                <input type="checkbox" data-poz="gaza" />
+                <span class="apt-pozycja__nazwa">Sterylne chusteczki z gazy</span>
+                <span class="apt-pozycja__opis">Do tamowania krwawienia i osłonięcia rany.</span>
+              </label>
+            </li>
+            <li class="apt-pozycja">
+              <label>
+                <input type="checkbox" data-poz="bandaze" />
+                <span class="apt-pozycja__nazwa">Bandaże o różnych szerokościach</span>
+                <span class="apt-pozycja__opis">Inna szerokość na łapę, inna na tułów.</span>
+              </label>
+            </li>
+            <li class="apt-pozycja">
+              <label>
+                <input type="checkbox" data-poz="bandaz-samoprzylepny" />
+                <span class="apt-pozycja__nazwa">Bandaż elastyczny samoprzylepny</span>
+                <span class="apt-pozycja__opis">Klei się do siebie, a nie do sierści — to kluczowa różnica.</span>
+              </label>
+            </li>
+            <li class="apt-pozycja">
+              <label>
+                <input type="checkbox" data-poz="plaster" />
+                <span class="apt-pozycja__nazwa">Plaster samoprzylepny</span>
+                <span class="apt-pozycja__opis">Do mocowania na bandażu, nigdy bezpośrednio na sierści.</span>
+              </label>
+            </li>
+            <li class="apt-pozycja">
+              <label>
+                <input type="checkbox" data-poz="nozyczki" />
+                <span class="apt-pozycja__nazwa">Nożyczki z tępym końcem</span>
+                <span class="apt-pozycja__opis">Do cięcia bandaża i wystrzygania sierści wokół rany.</span>
+              </label>
+            </li>
+            <li class="apt-pozycja">
+              <label>
+                <input type="checkbox" data-poz="pinceta" />
+                <span class="apt-pozycja__nazwa">Pinceta</span>
+                <span class="apt-pozycja__opis">Do drzazg i ciał obcych leżących płytko.</span>
+              </label>
+            </li>
+            <li class="apt-pozycja">
+              <label>
+                <input type="checkbox" data-poz="strzykawki" />
+                <span class="apt-pozycja__nazwa">Strzykawki bez igieł 5, 10 i 20 ml</span>
+                <span class="apt-pozycja__opis">Do płukania rany, nie do podawania czegokolwiek doustnie bez zalecenia.</span>
+              </label>
+            </li>
+            <li class="apt-pozycja">
+              <label>
+                <input type="checkbox" data-poz="sol" />
+                <span class="apt-pozycja__nazwa">Sterylna sól fizjologiczna 0,9%</span>
+                <span class="apt-pozycja__opis">W ampułkach albo butelce. Podstawowy płyn do przemywania.</span>
+              </label>
+            </li>
+            <li class="apt-pozycja">
+              <label>
+                <input type="checkbox" data-poz="antyseptyk" />
+                <span class="apt-pozycja__nazwa">Środek antyseptyczny dla zwierząt</span>
+                <span class="apt-pozycja__opis">Na przykład chlorheksydyna w odpowiednim rozcieńczeniu.</span>
+              </label>
+            </li>
+            <li class="apt-pozycja">
+              <label>
+                <input type="checkbox" data-poz="kaganiec" />
+                <span class="apt-pozycja__nazwa">Miękki kaganiec lub pętla z gazy</span>
+                <span class="apt-pozycja__opis">Z ważnym zastrzeżeniem — przeczytaj ramkę niżej, zanim użyjesz.</span>
+              </label>
+            </li>
+            <li class="apt-pozycja">
+              <label>
+                <input type="checkbox" data-poz="koc-termiczny" />
+                <span class="apt-pozycja__nazwa">Koc termiczny</span>
+                <span class="apt-pozycja__opis">Wychłodzenie po urazie bywa groźniejsze niż sam uraz.</span>
+              </label>
+            </li>
+            <li class="apt-pozycja">
+              <label>
+                <input type="checkbox" data-poz="koc-nosze" />
+                <span class="apt-pozycja__nazwa">Koc, który posłuży za nosze</span>
+                <span class="apt-pozycja__opis">Zwykły gruby koc. Pozwala przenieść psa bez zginania kręgosłupa.</span>
+              </label>
+            </li>
+            <li class="apt-pozycja">
+              <label>
+                <input type="checkbox" data-poz="smycz" />
+                <span class="apt-pozycja__nazwa">Zapasowa smycz</span>
+                <span class="apt-pozycja__opis">Bo pierwsza zawsze zostaje w drugiej kurtce.</span>
+              </label>
+            </li>
+            <li class="apt-pozycja">
+              <label>
+                <input type="checkbox" data-poz="miska" />
+                <span class="apt-pozycja__nazwa">Składana miska</span>
+                <span class="apt-pozycja__opis">Woda w drodze i przy dłuższym czekaniu w lecznicy.</span>
+              </label>
+            </li>
+            <li class="apt-pozycja">
+              <label>
+                <input type="checkbox" data-poz="latarka" />
+                <span class="apt-pozycja__nazwa">Latarka</span>
+                <span class="apt-pozycja__opis">Do obejrzenia rany, gardła i źrenic. Telefon zajmuje wtedy rękę.</span>
+              </label>
+            </li>
+            <li class="apt-pozycja">
+              <label>
+                <input type="checkbox" data-poz="torebki" />
+                <span class="apt-pozycja__nazwa">Torebki na próbki</span>
+                <span class="apt-pozycja__opis">Na wymiociny, przynętę, resztki tego, co pies zjadł.</span>
+              </label>
+            </li>
+            <li class="apt-pozycja">
+              <label>
+                <input type="checkbox" data-poz="dokumenty" />
+                <span class="apt-pozycja__nazwa">Kopia dokumentów i lista leków</span>
+                <span class="apt-pozycja__opis">Książeczka zdrowia i spis tego, co pies aktualnie przyjmuje.</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="apt-sekcja" style="background:var(--cream);border-block:1px solid var(--line)">
+        <div class="shell">
+          <h2>Warto dołożyć</h2>
+          <p class="apt-sekcja__wstep">
+            Rzeczy, które nie ratują życia w pierwszej minucie, ale bardzo ułatwiają wszystko,
+            co dzieje się potem.
+          </p>
+
+          <ul class="apt-lista" data-lista>
+            <li class="apt-pozycja">
+              <label>
+                <input type="checkbox" data-poz="waga" />
+                <span class="apt-pozycja__nazwa">Aktualna waga psa</span>
+                <span class="apt-pozycja__opis">Waga elektroniczna dla małych psów albo po prostu liczba zapisana w telefonie. Od niej zależy dawkowanie.</span>
+              </label>
+            </li>
+            <li class="apt-pozycja">
+              <label>
+                <input type="checkbox" data-poz="kontakty" />
+                <span class="apt-pozycja__nazwa">Kontakty do lecznicy</span>
+                <span class="apt-pozycja__opis">Swojej i jednej całodobowej. Zapisane w telefonie i na kartce w apteczce.</span>
+              </label>
+            </li>
+            <li class="apt-pozycja">
+              <label>
+                <input type="checkbox" data-poz="kolnierz" />
+                <span class="apt-pozycja__nazwa">Kołnierz ochronny</span>
+                <span class="apt-pozycja__opis">Sztywny albo nadmuchiwany. Lizanie nie dezynfekuje rany.</span>
+              </label>
+            </li>
+            <li class="apt-pozycja">
+              <label>
+                <input type="checkbox" data-poz="pazury" />
+                <span class="apt-pozycja__nazwa">Obcinacz do pazurów i proszek hemostatyczny</span>
+                <span class="apt-pozycja__opis">Złamany pazur krwawi obficie i wygląda gorzej, niż jest.</span>
+              </label>
+            </li>
+            <li class="apt-pozycja">
+              <label>
+                <input type="checkbox" data-poz="kleszcze" />
+                <span class="apt-pozycja__nazwa">Przyrząd do usuwania kleszczy</span>
+                <span class="apt-pozycja__opis">Haczyk albo pęseta kleszczowa. O kleszczach i babeszjozie — rozdział 18.</span>
+              </label>
+            </li>
+            <li class="apt-pozycja">
+              <label>
+                <input type="checkbox" data-poz="sol-oczy" />
+                <span class="apt-pozycja__nazwa">Sterylna sól do płukania oczu</span>
+                <span class="apt-pozycja__opis">Osobne opakowanie, nieotwierane wcześniej do niczego innego.</span>
+              </label>
+            </li>
+            <li class="apt-pozycja">
+              <label>
+                <input type="checkbox" data-poz="dieta" />
+                <span class="apt-pozycja__nazwa">Dieta weterynaryjna lub probiotyk</span>
+                <span class="apt-pozycja__opis">Wyłącznie taka, którą wcześniej ustaliłeś z lekarzem.</span>
+              </label>
+            </li>
+            <li class="apt-pozycja">
+              <label>
+                <input type="checkbox" data-poz="sorbent" />
+                <span class="apt-pozycja__nazwa">Sorbent</span>
+                <span class="apt-pozycja__opis">Trzymać można, ale podawać wyłącznie po telefonicznej konsultacji z lekarzem — nigdy automatycznie.</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="apt-zakaz">
+        <div class="shell">
+          <h2>Czego nie podawać na własną rękę</h2>
+          <p>
+            Najczęstsza szkoda w domowym leczeniu nie bierze się z braku apteczki, tylko z jej
+            nadmiaru. Przepisane leki nie powinny stawać się rodzinnym zestawem do samoleczenia.
+            Poniższe rzeczy podaje się psu wyłącznie z polecenia lekarza — albo wcale.
+          </p>
+
+          <ul>
+            <li>Antybiotyki „które zostały z poprzedniego razu”</li>
+            <li>Ludzkie środki przeciwbólowe</li>
+            <li>Leki hormonalne</li>
+            <li>Leki moczopędne</li>
+            <li>Leki na serce</li>
+            <li>Środki uspokajające</li>
+            <li>Leki przeciwwymiotne bez diagnozy</li>
+            <li>Loperamid bez recepty</li>
+            <li>Olejki eteryczne</li>
+            <li>Alkohol do przemywania ran</li>
+            <li>Stężona woda utleniona</li>
+            <li>Nadmanganian potasu</li>
+            <li>Maści wieloskładnikowe o nieznanym działaniu</li>
+          </ul>
+
+          <div class="apt-uwaga">
+            <strong>Osobno o kagańcu</strong>
+            <p>
+              Ranny pies potrafi z bólu ugryźć własnego opiekuna — dlatego kaganiec jest
+              w apteczce. Ale to narzędzie warunkowe: pomaga przy opatrywaniu i przenoszeniu
+              psa, który <em>oddycha normalnie</em>.
+            </p>
+            <p>
+              Jest natomiast niebezpieczny przy wymiotach, duszeniu się, udarze cieplnym,
+              ciężkiej duszności oraz u ras brachycefalicznych w kryzysie oddechowym.
+              W takiej sytuacji lepiej owinąć głowę ręcznikiem lub kocem, nie zamykając pyska,
+              albo po prostu poczekać na pomoc.
+            </p>
+          </div>
+
+          <div class="apt-uwaga">
+            <strong>Skąd kupować leki</strong>
+            <p>
+              Obrót weterynaryjnymi produktami leczniczymi rządzi się w Polsce własnymi
+              zasadami: leki na receptę wydaje się wyłącznie na receptę lekarza weterynarii,
+              a preparaty bez recepty mogą być sprzedawane tylko w przewidziany prawem sposób.
+            </p>
+            <p>
+              Dla opiekuna wniosek jest prosty: kupuj z legalnego źródła i nie sięgaj po leki
+              na receptę bez recepty. Na portalach aukcyjnych notowano podrabiane obroże
+              i tabletki z zaniżoną dawką substancji czynnej.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="apt-sekcja">
+        <div class="shell">
+          <h2>Listy kontrolne na nagły wypadek</h2>
+          <p class="apt-sekcja__wstep">
+            Cztery listy z rozdziału 25. Pierwsza jest najważniejsza: to sytuacje, w których
+            nie zastanawiasz się i nie szukasz w internecie, tylko jedziesz.
+          </p>
+
+          <div class="apt-karty">
+            <div class="apt-karta apt-karta--pilne">
+              <h3>Jedziemy teraz</h3>
+              <p class="apt-karta__pod">Każdy z tych objawów to powód, żeby ruszyć bez czekania</p>
+              <ul>
+                <li>Trudności w oddychaniu</li>
+                <li>Zaburzona świadomość</li>
+                <li>Dziąsła blade, niebieskie lub szare</li>
+                <li>Drgawki</li>
+                <li>Silny ból</li>
+                <li>Krwawienie</li>
+                <li>Podejrzenie trucizny, w tym ksylitolu</li>
+                <li>Podejrzenie skrętu żołądka</li>
+                <li>Udar cieplny</li>
+                <li>Podtopienie</li>
+                <li>Wypadek drogowy</li>
+                <li>Niemożność oddania moczu</li>
+                <li>Uraz oka</li>
+                <li>Ukąszenie żmii</li>
+                <li>Szczeniak z wymiotami lub biegunką</li>
+                <li>Pies brachycefaliczny z głośnym oddechem</li>
+              </ul>
+            </div>
+
+            <div class="apt-karta">
+              <h3>Telefon do lecznicy</h3>
+              <p class="apt-karta__pod">Powiedz to od razu, oszczędzisz kilka minut</p>
+              <ul>
+                <li>Kto dzwoni</li>
+                <li>Waga, rasa i wiek psa</li>
+                <li>Co się stało i kiedy</li>
+                <li>Główny objaw</li>
+                <li>Co już zostało zrobione</li>
+                <li>Ile czasu zajmie wam dojazd</li>
+                <li>Czy potrzebne jest przyjęcie poza kolejnością</li>
+                <li>Czy na miejscu jest chirurg, tlen i możliwość hospitalizacji</li>
+                <li>Zapisz otrzymane instrukcje</li>
+                <li>Jeśli odsyłają gdzie indziej — poproś o adres i uprzedź drugą lecznicę</li>
+              </ul>
+            </div>
+
+            <div class="apt-karta">
+              <h3>Co zabrać do auta</h3>
+              <p class="apt-karta__pod">Zanim wyjedziesz</p>
+              <ul>
+                <li>Pies, smycz albo nosidło</li>
+                <li>Koc</li>
+                <li>Dokumenty i lista leków</li>
+                <li>Opakowania po substancji, którą pies zjadł</li>
+                <li>Próbka wymiocin lub przynęty w torebce</li>
+                <li>Naładowany telefon</li>
+                <li>Druga osoba, jeśli to możliwe</li>
+                <li>Nie karm psa po drodze</li>
+                <li>Nie podawaj żadnych nowych leków</li>
+              </ul>
+            </div>
+
+            <div class="apt-karta">
+              <h3>Po ustabilizowaniu</h3>
+              <p class="apt-karta__pod">Kiedy najgorsze już minęło</p>
+              <ul>
+                <li>Poproś o wypis albo kartę informacyjną</li>
+                <li>Upewnij się, że rozumiesz diagnozę i rokowanie</li>
+                <li>Dopytaj o sygnały ostrzegawcze i termin kontroli</li>
+                <li>Zachowaj rachunki</li>
+                <li>Uzupełnij apteczkę z powrotem</li>
+                <li>Zapisz, co zadziałało, a co nie</li>
+                <li>Przy zdarzeniu z udziałem osób trzecich zachowaj zdjęcia, dane świadków i numer sprawy</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="apt-zastrzezenie">
+            Lista pochodzi z rozdziału 25 książki „Pies w Polsce”. Ma charakter informacyjny
+            i nie zastępuje badania ani porady lekarza weterynarii — nie stawia diagnozy
+            i nie zawiera zaleceń leczenia. W każdej sytuacji nagłej o postępowaniu decyduje
+            lekarz, najlepiej po telefonicznym opisaniu tego, co się stało.
+          </p>
+        </div>
+      </section>
+
+      <section class="apt-dalej">
+        <div class="shell">
+          <div class="section-heading reveal" style="margin-bottom:30px">
+            <p class="kicker">Idź dalej</p>
+            <h2 style="font-size:clamp(1.8rem,3.2vw,2.6rem);margin:0">Zanim będzie potrzebne</h2>
+          </div>
+          <div class="apt-dalej__grid">
+            <a href="../zatrucia/">
+              <strong>Zjadł coś trującego</strong>
+              <small>Pierwsze minuty, czego nie robić nigdy i lista substancji.</small>
+            </a>
+            <a href="../mapa/">
+              <strong>Mapa lecznic</strong>
+              <small>Znajdź najbliższą i zapisz numer, zanim będzie pilnie.</small>
+            </a>
+            <a href="../narzedzia/">
+              <strong>Terminarz szczepień</strong>
+              <small>Profilaktyka to najtańsza część całej opieki.</small>
+            </a>
+            <a href="../pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf" download>
+              <strong>Cała książka za darmo</strong>
+              <small>Rozdział 25 w całości: pierwsza pomoc i nagłe wypadki.</small>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell site-footer__top">
+        <a class="wordmark wordmark--footer" href="../">
+          <span class="wordmark__seal" aria-hidden="true">P</span>
+          <span class="wordmark__text"><strong>Pies w Polsce</strong><small>Mykola Hrytskov · 2026</small></span>
+        </a>
+        <div class="site-footer__links">
+          <a href="../pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf" download>Pobierz książkę</a>
+          <a href="../#rozdzialy">Rozdziały</a>
+          <a href="../koszty/">Koszty</a>
+          <a href="../kropik/">KROPiK</a>
+          <a href="../narzedzia/">Narzędzia</a>
+          <a href="../mapa/">Mapa</a>
+          <a href="../zatrucia/">Zatrucia</a>
+        </div>
+      </div>
+      <div class="shell site-footer__legal">
+        <p>
+          Treści na stronie i w książce mają charakter informacyjny oraz edukacyjny. Nie stanowią
+          indywidualnej porady weterynaryjnej ani zaleceń leczenia.
+        </p>
+        <p>© 2026 Mykola Hrytskov</p>
+      </div>
+    </footer>
+
+    <script src="../script.js" defer></script>
+    <script>
+      (function () {
+        "use strict";
+
+        var KLUCZ = "pieswpolsce-apteczka";
+        var pola = [].slice.call(document.querySelectorAll("[data-poz]"));
+        var wypelnienie = document.querySelector("[data-postep-wypelnienie]");
+        var tekst = document.querySelector("[data-postep-tekst]");
+
+        function odczytaj() {
+          try {
+            var surowe = window.localStorage.getItem(KLUCZ);
+            return surowe ? JSON.parse(surowe) : [];
+          } catch (e) {
+            return [];
+          }
+        }
+
+        function zapisz(lista) {
+          try {
+            window.localStorage.setItem(KLUCZ, JSON.stringify(lista));
+          } catch (e) {
+            /* tryb prywatny albo zablokowane dane witryny - lista dziala bez zapisu */
+          }
+        }
+
+        function odswiezPostep() {
+          var zaznaczone = pola.filter(function (p) {
+            return p.checked;
+          }).length;
+          var procent = pola.length ? Math.round((zaznaczone / pola.length) * 100) : 0;
+          if (wypelnienie) wypelnienie.style.width = procent + "%";
+          if (tekst) tekst.textContent = zaznaczone + " z " + pola.length + " skompletowane";
+        }
+
+        var zapisane = odczytaj();
+        pola.forEach(function (pole) {
+          if (zapisane.indexOf(pole.getAttribute("data-poz")) !== -1) pole.checked = true;
+          pole.addEventListener("change", function () {
+            zapisz(
+              pola
+                .filter(function (p) {
+                  return p.checked;
+                })
+                .map(function (p) {
+                  return p.getAttribute("data-poz");
+                })
+            );
+            odswiezPostep();
+          });
+        });
+        odswiezPostep();
+
+        var drukuj = document.querySelector("[data-drukuj]");
+        if (drukuj) {
+          drukuj.addEventListener("click", function () {
+            window.print();
+          });
+        }
+
+        var wyczysc = document.querySelector("[data-wyczysc]");
+        if (wyczysc) {
+          wyczysc.addEventListener("click", function () {
+            pola.forEach(function (p) {
+              p.checked = false;
+            });
+            zapisz([]);
+            odswiezPostep();
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
