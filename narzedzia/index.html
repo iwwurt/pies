@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Narzędzia dla właściciela psa — wiek, szczepienia, KROPiK | Pies w Polsce</title>
+    <title>Narzędzia dla właściciela psa — wiek, szczepienia, KROPiK, opłata | Pies w Polsce</title>
     <meta
       name="description"
-      content="Kalkulator wieku psa, terminarz szczepień i odrobaczania, ściąga gdzie wolno wejść z psem oraz sprawdzenie obowiązku rejestracji w KROPiK. Bezpłatnie, bez zapisu."
+      content="Kalkulator wieku psa, terminarz szczepień, ściąga gdzie wolno wejść z psem, obowiązek rejestracji w KROPiK i opłata od posiadania psów w gminie. Bezpłatnie, bez zapisu."
     />
     <meta name="author" content="Mykola Hrytskov" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -19,7 +19,7 @@
     <meta property="og:title" content="Narzędzia dla właściciela psa" />
     <meta
       property="og:description"
-      content="Wiek psa, terminarz szczepień, gdzie wolno wejść z psem, obowiązek rejestracji w KROPiK — cztery praktyczne narzędzia."
+      content="Wiek psa, terminarz szczepień, gdzie wolno wejść z psem, KROPiK i opłata gminna — pięć praktycznych narzędzi."
     />
     <meta property="og:url" content="https://pieswpolsce.pl/narzedzia/" />
     <meta property="og:image" content="https://pieswpolsce.pl/assets/og.png" />
@@ -443,7 +443,7 @@
           <p class="okruchy">
             <a href="../">Pies w Polsce</a> <span aria-hidden="true">/</span> Narzędzia
           </p>
-          <p class="kicker">Cztery narzędzia · nic nie trzeba instalować</p>
+          <p class="kicker">Pięć narzędzi · nic nie trzeba instalować</p>
           <h1>Narzędzia dla właściciela psa</h1>
           <p>
             Rzeczy, które w książce zajmują rozdział, a w praktyce potrzebne są na minutę.
@@ -456,6 +456,7 @@
             <button role="tab" id="tab-szczepienia" aria-controls="panel-szczepienia" aria-selected="false" tabindex="-1">Szczepienia</button>
             <button role="tab" id="tab-wstep" aria-controls="panel-wstep" aria-selected="false" tabindex="-1">Gdzie z psem</button>
             <button role="tab" id="tab-kropik" aria-controls="panel-kropik" aria-selected="false" tabindex="-1">KROPiK</button>
+            <button role="tab" id="tab-oplata" aria-controls="panel-oplata" aria-selected="false" tabindex="-1">Opłata od psa</button>
           </div>
         </div>
       </section>
@@ -751,6 +752,158 @@
               zmienić po jej wydaniu — przed decyzją sprawdź aktualne brzmienie ustawy
               w <a href="https://isap.sejm.gov.pl/" target="_blank" rel="noopener" style="border-bottom:1px solid var(--gold);color:var(--ink);font-weight:700">Internetowym Systemie Aktów Prawnych</a>.
               Pełny obraz: <a href="../kropik/" style="border-bottom:1px solid var(--gold);color:var(--ink);font-weight:700">osobna strona o KROPiK</a>, rozdział 6 książki i odcinek 6 podcastu.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ OPLATA OD POSIADANIA PSOW ============ -->
+      <section class="narz-panel" id="panel-oplata" role="tabpanel" aria-labelledby="tab-oplata" tabindex="0" hidden>
+        <div class="shell">
+          <div style="max-width:68ch;margin-bottom:clamp(30px,4vw,46px)">
+            <h2>Czy muszę płacić za psa w mojej gminie?</h2>
+            <p class="lead-copy">
+              Zacznijmy od nazwy, bo to ona jest źródłem połowy nieporozumień. To nie jest
+              podatek od psa, tylko <strong>opłata od posiadania psów</strong> — opłata lokalna.
+              Różnica nie jest czysto językowa: podatek nakłada państwo, a o opłacie decyduje
+              samodzielnie rada każdej gminy.
+            </p>
+            <p>
+              Dlatego nie istnieje jedna odpowiedź dla całej Polski i nie da się jej wyliczyć
+              kalkulatorem. Warszawa, Poznań i Gdańsk zniosły opłatę całkowicie. W innych
+              gminach obowiązuje, ale w różnej wysokości i z różnymi zwolnieniami. Jedyna
+              wiążąca odpowiedź jest w uchwale twojej rady gminy — poniżej pokazujemy,
+              jak do niej dotrzeć w dwie minuty.
+            </p>
+          </div>
+
+          <div class="narz-uklad">
+            <div>
+              <div class="narz-karta">
+                <label class="narz-pole" style="margin-bottom:18px">
+                  <span>Twoja gmina lub miasto</span>
+                  <input type="text" id="op-gmina" placeholder="np. Piaseczno" autocomplete="off" />
+                </label>
+
+                <p style="margin:0 0 10px;color:var(--gold-dark);font-size:0.68rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase">
+                  Wpisz to w wyszukiwarkę
+                </p>
+                <p id="op-fraza" style="margin:0 0 18px;padding:16px 18px;border:1px dashed var(--line);border-radius:var(--radius-sm);background:var(--paper-deep);color:var(--ink);font-size:0.92rem;word-break:break-word">
+                  opłata od posiadania psów BIP
+                </p>
+
+                <div style="display:flex;align-items:center;gap:14px 20px;flex-wrap:wrap">
+                  <button class="button button--primary" type="button" id="op-kopiuj">Kopiuj frazę</button>
+                  <a class="text-link" id="op-szukaj" href="https://duckduckgo.com/?q=op%C5%82ata%20od%20posiadania%20ps%C3%B3w%20BIP" target="_blank" rel="noopener">
+                    Szukaj od razu <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+
+              <p class="narz-zastrzezenie">
+                <strong>BIP</strong> to Biuletyn Informacji Publicznej — obowiązkowy serwis
+                każdego urzędu, w którym publikowane są uchwały. Szukaj tam uchwały rady gminy
+                w sprawie opłaty od posiadania psów. Jeśli takiej uchwały nie ma, opłaty
+                w twojej gminie najprawdopodobniej po prostu nie ma.
+              </p>
+            </div>
+
+            <div>
+              <ol class="narz-lista-krokow">
+                <li class="narz-krok">
+                  <span class="narz-krok__kiedy">Krok 1</span>
+                  <p class="narz-krok__co">Sprawdź, czy opłata w ogóle obowiązuje</p>
+                  <p class="narz-krok__opis">
+                    Uchwała rady gminy w BIP albo telefon do urzędu. Wiele gmin, w tym duże
+                    miasta, nie pobiera opłaty wcale.
+                  </p>
+                </li>
+                <li class="narz-krok">
+                  <span class="narz-krok__kiedy">Krok 2</span>
+                  <p class="narz-krok__co">Sprawdź stawkę i termin płatności</p>
+                  <p class="narz-krok__opis">
+                    Gmina ustala je sama, ale nie może przekroczyć górnej granicy z obwieszczenia
+                    Ministra Finansów — na 2026 rok jest to 186,29 zł rocznie od jednego psa.
+                  </p>
+                </li>
+                <li class="narz-krok">
+                  <span class="narz-krok__kiedy">Krok 3</span>
+                  <p class="narz-krok__co">Zgłoś psa w ciągu 14 dni</p>
+                  <p class="narz-krok__opis">
+                    Licząc od nabycia psa. Osobiście w urzędzie gminy albo przez ePUAP pismem
+                    ogólnym. Dokładny tryb określa lokalna uchwała.
+                  </p>
+                </li>
+                <li class="narz-krok">
+                  <span class="narz-krok__kiedy">Krok 4</span>
+                  <p class="narz-krok__co">Sprawdź, czy nie masz zwolnienia</p>
+                  <p class="narz-krok__opis">
+                    Ustawowe zwolnienia są niżej. Gmina może dorzucić własne — Kraków zwalnia
+                    na przykład opiekunów psów wykastrowanych i przygarniętych ze schroniska.
+                  </p>
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <div style="margin-top:clamp(38px,4vw,58px)">
+            <h2 style="font-size:clamp(1.5rem,2.6vw,2.1rem);margin-bottom:10px">Ustawowe zwolnienia z opłaty</h2>
+            <p style="max-width:64ch;margin:0 0 26px;color:var(--muted);line-height:1.7">
+              Pięć grup zwolnionych wprost przez art. 18a ustawy o podatkach i opłatach
+              lokalnych. Przy każdej podajemy dokument, którym zwolnienie się wykazuje —
+              bo zwykle właśnie na nim sprawa się zatrzymuje.
+            </p>
+
+            <div style="overflow-x:auto">
+              <table class="narz-tabela">
+                <thead>
+                  <tr><th scope="col">Kto</th><th scope="col">Zakres</th><th scope="col">Czym się wykazać</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Osoby ze znacznym stopniem niepełnosprawności</td>
+                    <td>Jeden pies dowolnej rasy</td>
+                    <td>Orzeczenie o znacznym stopniu niepełnosprawności</td>
+                  </tr>
+                  <tr>
+                    <td>Opiekunowie certyfikowanych psów asystujących</td>
+                    <td>Wszystkie psy asystujące, bez ograniczenia liczby</td>
+                    <td>Certyfikat psa asystującego</td>
+                  </tr>
+                  <tr>
+                    <td>Samotni emeryci powyżej 65. roku życia</td>
+                    <td>Jeden pies, przy samodzielnym prowadzeniu gospodarstwa domowego</td>
+                    <td>Dowód tożsamości i oświadczenie</td>
+                  </tr>
+                  <tr>
+                    <td>Producenci rolni płacący podatek rolny</td>
+                    <td>Do dwóch psów na jedno gospodarstwo rolne</td>
+                    <td>Deklaracja podatku rolnego</td>
+                  </tr>
+                  <tr>
+                    <td>Personel dyplomatyczny państw obcych</td>
+                    <td>Pełne zwolnienie na zasadzie wzajemności</td>
+                    <td>Karta dyplomatyczna lub paszport</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p class="narz-zastrzezenie">
+              <strong>Nieznajomość opłaty nie zwalnia z odpowiedzialności za jej nieterminowe
+              uiszczenie.</strong> Kara wraz z odsetkami potrafi wielokrotnie przewyższyć samą
+              opłatę, która sama w sobie jest drobna — dlatego warto poświęcić te dwie minuty
+              na sprawdzenie, zamiast zakładać, że u nas na pewno nie ma.
+            </p>
+
+            <p class="narz-zastrzezenie">
+              Podstawa prawna: ustawa z 12 stycznia 1991 r. o podatkach i opłatach lokalnych,
+              w szczególności art. 18a. Górna granica stawki na 2026 rok: obwieszczenie Ministra
+              Finansów z 1 sierpnia 2025 r. (M.P. 2025 poz. 726). Stan prawny opisany w książce
+              to czerwiec 2026 — aktualne brzmienie sprawdzisz w
+              <a href="https://isap.sejm.gov.pl/" target="_blank" rel="noopener" style="border-bottom:1px solid var(--gold);color:var(--ink);font-weight:700">ISAP</a>.
+              Opłata na tle wszystkich kosztów psa —
+              <a href="../koszty/" style="border-bottom:1px solid var(--gold);color:var(--ink);font-weight:700">strona o kosztach</a>.
             </p>
           </div>
         </div>

@@ -17,6 +17,20 @@
     });
   }
 
+  function otworzZKotwicy() {
+    // pozwala wejsc prosto w konkretne narzedzie z innej strony,
+    // np. /koszty/ -> /narzedzia/#panel-oplata
+    var hash = window.location.hash.replace("#", "");
+    if (!hash) return;
+    var tab = zakladki.filter(function (t) {
+      return t.getAttribute("aria-controls") === hash || t.id === hash;
+    })[0];
+    if (!tab) return;
+    pokaz(tab);
+    var panel = document.getElementById(tab.getAttribute("aria-controls"));
+    if (panel) panel.scrollIntoView({ block: "start" });
+  }
+
   zakladki.forEach(function (tab, i) {
     tab.addEventListener("click", function () {
       pokaz(tab);
@@ -30,6 +44,9 @@
       next.focus();
     });
   });
+
+  otworzZKotwicy();
+  window.addEventListener("hashchange", otworzZKotwicy);
 
   /* --------------------------------------------------------- wiek psa --- */
 
@@ -263,4 +280,66 @@
   [krCzip, krWiek, krZmiana].forEach(function (el) {
     if (el) el.addEventListener("change", ocenKropik);
   });
+
+  /* ------------------------------------------- oplata od psa --- */
+
+  var opGmina = document.getElementById("op-gmina");
+  var opFraza = document.getElementById("op-fraza");
+  var opSzukaj = document.getElementById("op-szukaj");
+  var opKopiuj = document.getElementById("op-kopiuj");
+
+  function frazaWyszukiwania() {
+    var gmina = opGmina ? opGmina.value.trim() : "";
+    return gmina
+      ? "opłata od posiadania psów " + gmina + " BIP"
+      : "opłata od posiadania psów BIP";
+  }
+
+  function odswiezFraze() {
+    var fraza = frazaWyszukiwania();
+    if (opFraza) opFraza.textContent = fraza;
+    if (opSzukaj) opSzukaj.href = "https://duckduckgo.com/?q=" + encodeURIComponent(fraza);
+  }
+
+  if (opGmina) {
+    opGmina.addEventListener("input", odswiezFraze);
+    odswiezFraze();
+  }
+
+  if (opKopiuj) {
+    opKopiuj.addEventListener("click", function () {
+      var fraza = frazaWyszukiwania();
+      var potwierdz = function () {
+        var byl = opKopiuj.textContent;
+        opKopiuj.textContent = "Skopiowane";
+        setTimeout(function () {
+          opKopiuj.textContent = byl;
+        }, 1600);
+      };
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(fraza).then(potwierdz, zapasoweKopiowanie);
+      } else {
+        zapasoweKopiowanie();
+      }
+
+      function zapasoweKopiowanie() {
+        // starsze przegladarki i strony bez bezpiecznego kontekstu
+        var pole = document.createElement("textarea");
+        pole.value = fraza;
+        pole.setAttribute("readonly", "");
+        pole.style.position = "fixed";
+        pole.style.opacity = "0";
+        document.body.appendChild(pole);
+        pole.select();
+        try {
+          document.execCommand("copy");
+          potwierdz();
+        } catch (e) {
+          opKopiuj.textContent = "Zaznacz i skopiuj ręcznie";
+        }
+        document.body.removeChild(pole);
+      }
+    });
+  }
 })();
