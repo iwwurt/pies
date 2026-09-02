@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="pl" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KROPiK 2026 — czipowanie psów: co, kiedy i dla kogo | Pies w Polsce</title>
+    <meta
+      name="description"
+      content="KROPiK — Krajowy Rejestr Oznakowanych Psów i Kotów. Co zmienia ustawa, od kiedy obowiązuje, czy trzeba czipować psa ponownie i jak się przygotować. Stan prawny: czerwiec 2026."
+    />
+    <meta name="author" content="Mykola Hrytskov" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#3a3733" />
+    <link rel="canonical" href="https://pieswpolsce.pl/kropik/" />
+
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Pies w Polsce" />
+    <meta property="og:title" content="KROPiK 2026 — czipowanie psów: co, kiedy i dla kogo" />
+    <meta
+      property="og:description"
+      content="Ogłoszenie ustawy to nie to samo co jej wejście w życie. Dziesięć rzeczy, które zmienia KROPiK, i kiedy naprawdę zaczną obowiązywać."
+    />
+    <meta property="og:url" content="https://pieswpolsce.pl/kropik/" />
+    <meta property="og:image" content="https://pieswpolsce.pl/assets/og.png" />
+
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../styles.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://pieswpolsce.pl/kropik/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Co to jest KROPiK?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "KROPiK to Krajowy Rejestr Oznakowanych Psów i Kotów, który ma być prowadzony przez ARiMR. System ma łączyć numer transpondera z danymi zwierzęcia i informacjami potrzebnymi do ustalenia jego właściciela."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czy czipowanie psa jest obowiązkowe w Polsce w 2026 roku?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ustawa wprowadzająca powszechny obowiązek została ogłoszona w czerwcu 2026 roku, ale zasadnicza część przepisów ma wejść w życie 11 czerwca 2028 roku. Dlatego zdanie „od 2026 każdy właściciel musi już zaczipować psa” jest zbyt dużym uproszczeniem. Znaczenie mają terminy wejścia w życie oraz przepisy przejściowe."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czy już zaczipowanego psa trzeba czipować ponownie?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Zgodnie z ustawą ponowne oznakowanie nie będzie potrzebne, jeżeli istniejący transponder można odczytać zgodnym czytnikiem. Zwierzę trzeba będzie jednak zarejestrować zgodnie z właściwą procedurą i terminem."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czym różni się oznakowanie psa od rejestracji?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "To dwa osobne kroki. Oznakowanie polega na wszczepieniu psu transpondera przez lekarza weterynarii. Rejestracja to wpisanie numeru tego transpondera wraz z danymi zwierzęcia i opiekuna do systemu. Sam czip bez wpisu do rejestru nie pozwala ustalić właściciela."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <style>
+      .kropik-hero {
+        padding-block: clamp(48px, 6vw, 92px) clamp(32px, 4vw, 52px);
+        border-bottom: 1px solid var(--line);
+        background: var(--cream);
+      }
+
+      .kropik-hero h1 {
+        margin: 0 0 20px;
+        font-size: clamp(2.3rem, 5vw, 4.3rem);
+      }
+
+      .kropik-hero__lead {
+        max-width: 64ch;
+        margin: 0 0 26px;
+        color: var(--muted);
+        font-size: 1.02rem;
+        line-height: 1.72;
+      }
+
+      .kropik-hero__lead strong {
+        color: var(--ink);
+      }
+
+      .kropik-akcje {
+        display: flex;
+        align-items: center;
+        gap: 16px 30px;
+        flex-wrap: wrap;
+      }
+
+      .kropik-mit {
+        padding-block: clamp(46px, 5vw, 78px);
+      }
+
+      .kropik-mit__grid {
+        display: grid;
+        gap: 22px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+
+      .kropik-mit__karta {
+        padding: 30px 32px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        background: var(--white);
+      }
+
+      .kropik-mit__karta > span {
+        display: inline-block;
+        margin-bottom: 12px;
+        padding: 4px 12px;
+        border-radius: 999px;
+        font-size: 0.62rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .kropik-mit__karta--mit > span {
+        background: rgba(212, 103, 67, 0.16);
+        color: #a24a2c;
+      }
+
+      .kropik-mit__karta--fakt > span {
+        background: rgba(93, 128, 101, 0.18);
+        color: #3f5d46;
+      }
+
+      .kropik-mit__karta strong {
+        display: block;
+        margin-bottom: 10px;
+        font-family: var(--display);
+        font-size: 1.18rem;
+        font-weight: 500;
+        line-height: 1.35;
+      }
+
+      .kropik-mit__karta p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.88rem;
+        line-height: 1.68;
+      }
+
+      .kropik-kroki {
+        padding-block: clamp(50px, 6vw, 86px);
+        background: var(--ink-deep);
+        color: var(--paper);
+      }
+
+      .kropik-kroki h2 {
+        margin: 0 0 36px;
+        font-size: clamp(1.9rem, 3.6vw, 3rem);
+      }
+
+      .kropik-kroki__lista {
+        margin: 0;
+        padding: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+        list-style: none;
+      }
+
+      .kropik-kroki__lista li {
+        display: grid;
+        padding: 28px 4px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+        gap: 6px 30px;
+        grid-template-columns: 56px minmax(0, 1fr);
+      }
+
+      .kropik-kroki__lista b {
+        color: var(--gold);
+        font-family: var(--display);
+        font-size: 1.7rem;
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .kropik-kroki__lista strong {
+        font-family: var(--display);
+        font-size: 1.24rem;
+        font-weight: 500;
+      }
+
+      .kropik-kroki__lista p {
+        margin: 6px 0 0;
+        grid-column: 2;
+        color: rgba(248, 245, 239, 0.68);
+        font-size: 0.88rem;
+        line-height: 1.68;
+      }
+
+      .kropik-faq {
+        padding-block: clamp(50px, 6vw, 86px);
+      }
+
+      .kropik-faq h2 {
+        margin: 0 0 30px;
+        font-size: clamp(1.9rem, 3.6vw, 3rem);
+      }
+
+      .kropik-dalej {
+        padding-block: clamp(46px, 5vw, 80px);
+        border-top: 1px solid var(--line);
+        background: var(--cream);
+      }
+
+      .kropik-dalej__grid {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      }
+
+      .kropik-dalej a {
+        display: block;
+        padding: 28px 30px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        background: var(--white);
+        transition: border-color 180ms ease, transform 180ms ease;
+      }
+
+      .kropik-dalej a:hover {
+        border-color: var(--gold);
+        transform: translateY(-2px);
+      }
+
+      .kropik-dalej strong {
+        display: block;
+        margin-bottom: 8px;
+        font-family: var(--display);
+        font-size: 1.22rem;
+        font-weight: 500;
+      }
+
+      .kropik-dalej small {
+        color: var(--muted);
+        font-size: 0.82rem;
+        line-height: 1.6;
+      }
+
+      .okruchy {
+        padding: 22px 0 0;
+        color: var(--muted-light);
+        font-size: 0.74rem;
+        letter-spacing: 0.04em;
+      }
+
+      .okruchy a {
+        border-bottom: 1px solid var(--line);
+        color: var(--muted);
+      }
+
+      @media (max-width: 700px) {
+        .kropik-kroki__lista li {
+          grid-template-columns: 42px minmax(0, 1fr);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Przejdź do treści</a>
+
+    <header class="site-header" data-header>
+      <div class="shell site-header__inner">
+        <a class="wordmark" href="../" aria-label="Pies w Polsce — strona główna">
+          <span class="wordmark__seal" aria-hidden="true">P</span>
+          <span class="wordmark__text">
+            <strong>Pies w Polsce</strong>
+            <small>Kochaj · Rozum · Szanuj</small>
+          </span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Otwórz menu"
+          data-menu-toggle
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Główna nawigacja" data-nav>
+          <a href="../">Książka</a>
+          <a href="../#rozdzialy">Rozdziały</a>
+          <a href="../#podcast">Podcast</a>
+          <a href="../narzedzia/">Narzędzia</a>
+          <a href="../mapa/">Mapa</a>
+          <a class="button button--primary button--compact" href="../pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf" download>
+            Pobierz za darmo
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="kropik-hero">
+        <div class="shell">
+          <p class="okruchy" style="padding-top:0;margin:0 0 22px">
+            <a href="../">Pies w Polsce</a> <span aria-hidden="true">/</span> KROPiK 2026
+          </p>
+          <p class="kicker">Najważniejsza reforma dla opiekunów</p>
+          <h1>KROPiK 2026: co zmienia ustawa — i kiedy</h1>
+          <p class="kropik-hero__lead">
+            Wokół czipowania psów narosło więcej zamieszania niż wokół jakiegokolwiek innego
+            przepisu ostatnich lat. Powód jest prozaiczny: <strong>ogłoszenie ustawy myli się
+            z jej wejściem w życie</strong>. To dwie różne daty i dzielą je prawie dwa lata.
+          </p>
+          <p class="kropik-hero__lead">
+            Ta strona porządkuje, co ustawa wprowadza, od kiedy, i co z tego wynika
+            konkretnie dla ciebie.
+          </p>
+
+          <div class="kropik-akcje">
+            <a class="button button--primary button--large" href="../narzedzia/#panel-kropik">
+              <span>Sprawdź, co dotyczy twojego psa</span>
+              <span class="button__arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="text-link" href="https://eli.gov.pl/eli/DU/2026/755/ogl/pol" target="_blank" rel="noopener noreferrer">
+              Oficjalny tekst ustawy <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section kropik" aria-labelledby="daty-title">
+        <div class="shell">
+          <div class="section-heading section-heading--split reveal">
+            <div>
+              <p class="kicker">Dwie daty, które trzeba rozdzielić</p>
+              <h2 id="daty-title">Ogłoszono w 2026. <em>Działa od 2028.</em></h2>
+            </div>
+            <div class="kropik__intro">
+              <p>
+                Ustawę ogłoszono 10 czerwca 2026 roku. Nie oznacza to, że wszystkie obowiązki
+                zaczęły działać tego dnia. Zasadnicza część ma wejść w życie 11 czerwca 2028 roku,
+                a wybrane przepisy mają własne terminy.
+              </p>
+              <p><strong>Poniżej rozdzielamy: co ustawa wprowadza, czego jeszcze nie egzekwuje i jak się przygotować.</strong></p>
+            </div>
+          </div>
+
+          <div class="law-timeline reveal" aria-label="Najważniejsze daty ustawy o KROPiK">
+            <div><time datetime="2026-06-10">10 VI 2026</time><span>ogłoszenie ustawy</span></div>
+            <div class="law-timeline__line" aria-hidden="true"><span></span></div>
+            <div><time datetime="2028-06-11">11 VI 2028</time><span>zasadnicze wejście w życie</span></div>
+          </div>
+
+          <ol class="law-grid">
+            <li class="law-card reveal">
+              <span>01</span>
+              <div><h3>Jeden państwowy rejestr</h3><p>KROPiK ma być centralnym rejestrem prowadzonym przez ARiMR.</p></div>
+            </li>
+            <li class="law-card reveal" data-delay="1">
+              <span>02</span>
+              <div><h3>Czip i rejestracja to dwa kroki</h3><p>Oznakowanie zwierzęcia nie jest tym samym co wpis danych do systemu.</p></div>
+            </li>
+            <li class="law-card reveal">
+              <span>03</span>
+              <div><h3>Obowiązek obejmie wszystkie psy</h3><p>Po wejściu właściwych przepisów powszechna zasada obejmie psy niezależnie od rasy.</p></div>
+            </li>
+            <li class="law-card reveal" data-delay="1">
+              <span>04</span>
+              <div><h3>Terminy zależą od sytuacji</h3><p>Inne reguły dotyczą szczenięcia, dorosłego psa, zmiany właściciela i okresu przejściowego.</p></div>
+            </li>
+            <li class="law-card reveal">
+              <span>05</span>
+              <div><h3>Ważne będzie pierwsze szczepienie</h3><p>Dla szczeniąt termin ma być powiązany między innymi ze szczepieniem przeciw wściekliźnie.</p></div>
+            </li>
+            <li class="law-card reveal" data-delay="1">
+              <span>06</span>
+              <div><h3>Dorosłe psy mają przepisy przejściowe</h3><p>Ustawa przewiduje czas na dostosowanie, ale wcześniejsze zdarzenia mogą skrócić termin.</p></div>
+            </li>
+            <li class="law-card reveal">
+              <span>07</span>
+              <div><h3>Istniejący czip może wystarczyć</h3><p>Czytelnego, zgodnego transpondera nie trzeba wszczepiać ponownie; potrzebna będzie rejestracja.</p></div>
+            </li>
+            <li class="law-card reveal" data-delay="1">
+              <span>08</span>
+              <div><h3>Rejestr zapisze więcej danych</h3><p>System ma obejmować nie tylko numer czipa, lecz także wybrane informacje o zwierzęciu i zdarzeniach.</p></div>
+            </li>
+            <li class="law-card reveal">
+              <span>09</span>
+              <div><h3>Dane trzeba będzie aktualizować</h3><p>Zmiana właściciela i inne wskazane zdarzenia będą wiązać się z określoną procedurą.</p></div>
+            </li>
+            <li class="law-card reveal" data-delay="1">
+              <span>10</span>
+              <div><h3>System przewiduje kontrolę</h3><p>Ustawa określa uprawnione organy oraz konsekwencje niewykonania obowiązków.</p></div>
+            </li>
+          </ol>
+
+          <div class="source-note reveal">
+            <div>
+              <strong>KROPiK nie jest jedną datą ani jednym obowiązkiem.</strong>
+              <span>To system terminów, danych i odpowiedzialności.</span>
+            </div>
+            <a href="https://eli.gov.pl/eli/DU/2026/755/ogl/pol" target="_blank" rel="noopener noreferrer">
+              Oficjalny tekst: Dz.U. 2026 poz. 755 <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="kropik-mit">
+        <div class="shell">
+          <div class="section-heading reveal" style="margin-bottom:34px">
+            <p class="kicker">Co krąży po internecie</p>
+            <h2 style="font-size:clamp(1.9rem,3.6vw,3rem);margin:0">Trzy zdania, które słyszy się najczęściej</h2>
+          </div>
+
+          <div class="kropik-mit__grid">
+            <div class="kropik-mit__karta kropik-mit__karta--mit">
+              <span>Uproszczenie</span>
+              <strong>„Od 2026 każdy musi mieć psa zaczipowanego”</strong>
+              <p>
+                Ustawa rzeczywiście została ogłoszona w czerwcu 2026 roku, ale zasadnicza część
+                przepisów ma wejść w życie dopiero 11 czerwca 2028. Do tego czasu obowiązują
+                dotychczasowe zasady oraz przepisy przejściowe.
+              </p>
+            </div>
+
+            <div class="kropik-mit__karta kropik-mit__karta--mit">
+              <span>Nieporozumienie</span>
+              <strong>„Mój pies ma czip, więc mam to z głowy”</strong>
+              <p>
+                Oznakowanie i rejestracja to dwa różne kroki. Czip bez wpisu do systemu jest
+                numerem, którego nikt nie potrafi z nikim powiązać — a to właśnie ten wpis
+                pozwala odnaleźć właściciela zaginionego psa.
+              </p>
+            </div>
+
+            <div class="kropik-mit__karta kropik-mit__karta--fakt">
+              <span>To akurat prawda</span>
+              <strong>„Nie trzeba czipować psa po raz drugi”</strong>
+              <p>
+                Zgodnie z ustawą ponowne oznakowanie nie będzie potrzebne, jeżeli istniejący
+                transponder da się odczytać zgodnym czytnikiem. Rejestracja i tak będzie
+                wymagana — w odpowiedniej procedurze i terminie.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="kropik-kroki">
+        <div class="shell">
+          <h2>Co możesz zrobić już teraz</h2>
+          <ol class="kropik-kroki__lista">
+            <li>
+              <b>1</b>
+              <strong>Sprawdź, czy pies w ogóle ma czip</strong>
+              <p>
+                Poproś lecznicę o odczyt czytnikiem — zajmuje to chwilę i zwykle robi się
+                przy okazji innej wizyty. Psy ze schronisk bywają już oznakowane, tylko
+                nikt o tym nie wie.
+              </p>
+            </li>
+            <li>
+              <b>2</b>
+              <strong>Zapisz numer transpondera u siebie</strong>
+              <p>
+                W książeczce zdrowia, w notatkach w telefonie, na zdjęciu. Numer przydaje
+                się w najgorszym momencie — kiedy psa nie ma i trzeba szybko podać dane.
+              </p>
+            </li>
+            <li>
+              <b>3</b>
+              <strong>Sprawdź, czy dane kontaktowe są aktualne</strong>
+              <p>
+                Nieaktualny numer telefonu sprawia, że cały system przestaje działać
+                dokładnie wtedy, gdy jest potrzebny. To najczęstsza przyczyna tego,
+                że zaczipowany pies i tak nie wraca do domu.
+              </p>
+            </li>
+            <li>
+              <b>4</b>
+              <strong>Nie czekaj z tym do 2028 roku</strong>
+              <p>
+                Wcześniejsze załatwienie sprawy niczego nie psuje, a oszczędza kolejki
+                w okresie, gdy wszyscy zorientują się naraz.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="kropik-faq" id="faq">
+        <div class="shell">
+          <h2>Pytania, które wpisujemy w Google</h2>
+          <div class="faq-list reveal" style="max-width:74ch">
+            <details>
+              <summary>Co to jest KROPiK?<span aria-hidden="true"></span></summary>
+              <p>KROPiK to Krajowy Rejestr Oznakowanych Psów i Kotów, który ma być prowadzony przez ARiMR. System ma łączyć numer transpondera z danymi zwierzęcia i informacjami potrzebnymi do ustalenia jego właściciela.</p>
+            </details>
+            <details>
+              <summary>Czy czipowanie psa jest obowiązkowe w Polsce w 2026 roku?<span aria-hidden="true"></span></summary>
+              <p>Ustawa wprowadzająca powszechny obowiązek została ogłoszona w czerwcu 2026 roku, ale zasadnicza część przepisów ma wejść w życie 11 czerwca 2028 roku. Dlatego zdanie „od 2026 każdy właściciel musi już zaczipować psa” jest zbyt dużym uproszczeniem. Znaczenie mają terminy wejścia w życie oraz przepisy przejściowe.</p>
+            </details>
+            <details>
+              <summary>Czy już zaczipowanego psa trzeba czipować ponownie?<span aria-hidden="true"></span></summary>
+              <p>Zgodnie z ustawą ponowne oznakowanie nie będzie potrzebne, jeżeli istniejący transponder można odczytać zgodnym czytnikiem. Zwierzę trzeba będzie jednak zarejestrować zgodnie z właściwą procedurą i terminem.</p>
+            </details>
+            <details>
+              <summary>Czym różni się oznakowanie psa od rejestracji?<span aria-hidden="true"></span></summary>
+              <p>To dwa osobne kroki. Oznakowanie polega na wszczepieniu psu transpondera przez lekarza weterynarii — zabieg trwa kilka sekund. Rejestracja to wpisanie numeru tego transpondera wraz z danymi zwierzęcia i opiekuna do systemu. Sam czip bez wpisu do rejestru nie pozwala ustalić właściciela.</p>
+            </details>
+            <details>
+              <summary>Gdzie sprawdzić aktualny stan prawny?<span aria-hidden="true"></span></summary>
+              <p>Stan prawny opisany w książce i na tej stronie to czerwiec 2026 roku. Przepisy i terminy mogą się zmienić — przed decyzją warto sprawdzić aktualne brzmienie w <a href="https://isap.sejm.gov.pl/" target="_blank" rel="noopener">Internetowym Systemie Aktów Prawnych</a> albo w <a href="https://eli.gov.pl/eli/DU/2026/755/ogl/pol" target="_blank" rel="noopener noreferrer">oficjalnym tekście Dz.U. 2026 poz. 755</a>.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="kropik-dalej">
+        <div class="shell">
+          <div class="section-heading reveal" style="margin-bottom:30px">
+            <p class="kicker">Idź dalej</p>
+            <h2 style="font-size:clamp(1.8rem,3.2vw,2.6rem);margin:0">Cały temat, bez skrótów</h2>
+          </div>
+          <div class="kropik-dalej__grid">
+            <a href="../narzedzia/#panel-kropik">
+              <strong>Sprawdź swój przypadek</strong>
+              <small>Trzy pytania i konkretna odpowiedź, co dotyczy twojego psa.</small>
+            </a>
+            <a href="../#rozdzialy">
+              <strong>Rozdział 6 i odcinek podcastu</strong>
+              <small>Pełne omówienie ustawy w książce oraz w wersji do słuchania.</small>
+            </a>
+            <a href="../mapa/">
+              <strong>Gdzie zaczipować psa</strong>
+              <small>Mapa lecznic weterynaryjnych w całej Polsce.</small>
+            </a>
+            <a href="../pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf" download>
+              <strong>Cała książka za darmo</strong>
+              <small>618 stron, 61 rozdziałów, PDF bez rejestracji.</small>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell site-footer__top">
+        <a class="wordmark wordmark--footer" href="../">
+          <span class="wordmark__seal" aria-hidden="true">P</span>
+          <span class="wordmark__text"><strong>Pies w Polsce</strong><small>Mykola Hrytskov · 2026</small></span>
+        </a>
+        <div class="site-footer__links">
+          <a href="../pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf" download>Pobierz książkę</a>
+          <a href="../#rozdzialy">Rozdziały</a>
+          <a href="../narzedzia/">Narzędzia</a>
+          <a href="../mapa/">Mapa</a>
+          <a href="../zatrucia/">Zatrucia</a>
+          <a href="https://www.youtube.com/@PieswPolsce" target="_blank" rel="noopener">Kanał YouTube</a>
+        </div>
+      </div>
+      <div class="shell site-footer__legal">
+        <p>
+          Treści na stronie i w książce mają charakter informacyjny oraz edukacyjny. Nie stanowią
+          indywidualnej porady prawnej. Przepisy mogą się zmieniać; przed podjęciem decyzji sprawdź
+          aktualne źródła lub skonsultuj się ze specjalistą.
+        </p>
+        <p>© 2026 Mykola Hrytskov</p>
+      </div>
+    </footer>
+
+    <script src="../script.js" defer></script>
+  </body>
+</html>
