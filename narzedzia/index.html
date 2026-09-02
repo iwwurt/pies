@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="pl" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Narzędzia dla właściciela psa — wiek, szczepienia, KROPiK | Pies w Polsce</title>
+    <meta
+      name="description"
+      content="Kalkulator wieku psa, terminarz szczepień i odrobaczania, ściąga gdzie wolno wejść z psem oraz sprawdzenie obowiązku rejestracji w KROPiK. Bezpłatnie, bez zapisu."
+    />
+    <meta name="author" content="Mykola Hrytskov" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#3a3733" />
+    <link rel="canonical" href="https://pieswpolsce.pl/narzedzia/" />
+
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Pies w Polsce" />
+    <meta property="og:title" content="Narzędzia dla właściciela psa" />
+    <meta
+      property="og:description"
+      content="Wiek psa, terminarz szczepień, gdzie wolno wejść z psem, obowiązek rejestracji w KROPiK — cztery praktyczne narzędzia."
+    />
+    <meta property="og:url" content="https://pieswpolsce.pl/narzedzia/" />
+    <meta property="og:image" content="https://pieswpolsce.pl/assets/og.png" />
+
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../styles.css" />
+
+    <style>
+      .narz-hero {
+        padding-block: clamp(48px, 6vw, 92px) clamp(30px, 4vw, 50px);
+        border-bottom: 1px solid var(--line);
+        background: var(--cream);
+      }
+
+      .narz-hero h1 {
+        margin: 0 0 18px;
+        font-size: clamp(2.4rem, 5vw, 4.4rem);
+      }
+
+      .narz-hero p {
+        max-width: 64ch;
+        margin: 0;
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+
+      .narz-zakladki {
+        display: flex;
+        overflow-x: auto;
+        margin-top: clamp(30px, 4vw, 46px);
+        gap: 8px;
+        scrollbar-width: none;
+      }
+
+      .narz-zakladki::-webkit-scrollbar {
+        display: none;
+      }
+
+      .narz-zakladki button {
+        min-height: 48px;
+        padding: 0 24px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--white);
+        color: var(--muted);
+        cursor: pointer;
+        font-size: 0.74rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
+      }
+
+      .narz-zakladki button[aria-selected="true"] {
+        border-color: var(--ink);
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      .narz-panel {
+        padding-block: clamp(50px, 6vw, 88px);
+      }
+
+      .narz-panel[hidden] {
+        display: none;
+      }
+
+      .narz-uklad {
+        display: grid;
+        gap: clamp(36px, 5vw, 76px);
+        grid-template-columns: minmax(320px, 0.85fr) minmax(0, 1fr);
+        align-items: start;
+      }
+
+      .narz-panel h2 {
+        margin: 0 0 18px;
+        font-size: clamp(1.9rem, 3.4vw, 3rem);
+      }
+
+      .narz-panel .lead-copy {
+        margin: 0 0 22px;
+      }
+
+      .narz-panel p {
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .narz-pole {
+        display: block;
+        margin-bottom: 20px;
+      }
+
+      .narz-pole > span {
+        display: block;
+        margin-bottom: 9px;
+        color: var(--gold-dark);
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .narz-pole input,
+      .narz-pole select {
+        width: 100%;
+        min-height: 52px;
+        padding: 0 18px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        background: var(--white);
+        color: var(--ink);
+        font-size: 0.95rem;
+      }
+
+      .narz-karta {
+        padding: clamp(28px, 3vw, 40px);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        background: var(--white);
+        box-shadow: var(--shadow-soft);
+      }
+
+      .narz-wynik {
+        padding: clamp(28px, 3vw, 42px);
+        border: 1px solid var(--gold-pale);
+        border-radius: var(--radius-md);
+        background: var(--paper-deep);
+      }
+
+      .narz-wynik__liczba {
+        margin: 0;
+        color: var(--gold-dark);
+        font-family: var(--display);
+        font-size: clamp(3.2rem, 7vw, 5.4rem);
+        line-height: 1;
+      }
+
+      .narz-wynik__opis {
+        margin: 14px 0 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.65;
+      }
+
+      .narz-tabela {
+        width: 100%;
+        margin-top: 26px;
+        border-collapse: collapse;
+        font-size: 0.86rem;
+      }
+
+      .narz-tabela th,
+      .narz-tabela td {
+        padding: 13px 10px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .narz-tabela th {
+        color: var(--muted-light);
+        font-size: 0.65rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .narz-tabela td:first-child {
+        width: 34%;
+        color: var(--ink);
+        font-weight: 700;
+      }
+
+      .narz-tabela td {
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .narz-lista-krokow {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .narz-krok {
+        display: grid;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--line);
+        gap: 4px 22px;
+        grid-template-columns: 92px minmax(0, 1fr);
+      }
+
+      .narz-krok__kiedy {
+        color: var(--gold-dark);
+        font-family: var(--display);
+        font-size: 1.05rem;
+        line-height: 1.3;
+      }
+
+      .narz-krok__co {
+        margin: 0;
+        font-size: 0.92rem;
+        font-weight: 700;
+        line-height: 1.4;
+      }
+
+      .narz-krok__opis {
+        margin: 5px 0 0;
+        grid-column: 2;
+        color: var(--muted);
+        font-size: 0.82rem;
+        line-height: 1.6;
+      }
+
+      .narz-krok--przeszly .narz-krok__kiedy,
+      .narz-krok--przeszly .narz-krok__co {
+        color: var(--muted-light);
+        text-decoration: line-through;
+      }
+
+      .narz-akordeon {
+        border-top: 1px solid var(--line);
+      }
+
+      .narz-akordeon details {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .narz-akordeon summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 22px 4px;
+        cursor: pointer;
+        font-family: var(--display);
+        font-size: 1.15rem;
+        gap: 20px;
+        list-style: none;
+      }
+
+      .narz-akordeon summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .narz-akordeon summary::after {
+        color: var(--gold);
+        content: "+";
+        font-size: 1.4rem;
+      }
+
+      .narz-akordeon details[open] summary::after {
+        content: "−";
+      }
+
+      .narz-akordeon details > div {
+        padding: 0 4px 26px;
+      }
+
+      .narz-akordeon p {
+        margin: 0 0 12px;
+        font-size: 0.88rem;
+      }
+
+      .narz-etykieta {
+        display: inline-block;
+        margin-bottom: 10px;
+        padding: 4px 12px;
+        border-radius: 999px;
+        font-size: 0.62rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .narz-etykieta--tak {
+        background: rgba(93, 128, 101, 0.18);
+        color: #3f5d46;
+      }
+
+      .narz-etykieta--zalezy {
+        background: rgba(212, 103, 67, 0.16);
+        color: #a24a2c;
+      }
+
+      .narz-etykieta--prawo {
+        background: rgba(52, 113, 140, 0.16);
+        color: #2b5c73;
+      }
+
+      .narz-zastrzezenie {
+        margin-top: 30px;
+        padding: 22px 26px;
+        border-left: 3px solid var(--gold);
+        background: var(--cream);
+        color: var(--muted);
+        font-size: 0.82rem;
+        line-height: 1.65;
+      }
+
+      .narz-inne {
+        padding-block: clamp(52px, 6vw, 90px);
+        border-top: 1px solid var(--line);
+        background: var(--ink-deep);
+        color: var(--paper);
+      }
+
+      .narz-inne h2 {
+        margin: 0 0 34px;
+        font-size: clamp(1.9rem, 3.4vw, 2.9rem);
+      }
+
+      .narz-inne__grid {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      }
+
+      .narz-inne a {
+        display: block;
+        padding: 30px 32px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: var(--radius-md);
+        transition: background 180ms ease, border-color 180ms ease;
+      }
+
+      .narz-inne a:hover {
+        border-color: var(--gold);
+        background: rgba(176, 131, 63, 0.12);
+      }
+
+      .narz-inne strong {
+        display: block;
+        margin-bottom: 8px;
+        font-family: var(--display);
+        font-size: 1.3rem;
+        font-weight: 500;
+      }
+
+      .narz-inne small {
+        color: rgba(248, 245, 239, 0.6);
+        font-size: 0.82rem;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 900px) {
+        .narz-uklad {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .narz-krok {
+          grid-template-columns: 76px minmax(0, 1fr);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Przejdź do treści</a>
+
+    <header class="site-header" data-header>
+      <div class="shell site-header__inner">
+        <a class="wordmark" href="../" aria-label="Pies w Polsce — strona główna">
+          <span class="wordmark__seal" aria-hidden="true">P</span>
+          <span class="wordmark__text">
+            <strong>Pies w Polsce</strong>
+            <small>Kochaj · Rozum · Szanuj</small>
+          </span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Otwórz menu"
+          data-menu-toggle
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Główna nawigacja" data-nav>
+          <a href="../">Książka</a>
+          <a href="../#rozdzialy">Rozdziały</a>
+          <a href="../#podcast">Podcast</a>
+          <a href="./" aria-current="page">Narzędzia</a>
+          <a href="../mapa/">Mapa</a>
+          <a class="button button--primary button--compact" href="../pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf" download>
+            Pobierz za darmo
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="narz-hero">
+        <div class="shell">
+          <p class="kicker">Cztery narzędzia · nic nie trzeba instalować</p>
+          <h1>Narzędzia dla właściciela psa</h1>
+          <p>
+            Rzeczy, które w książce zajmują rozdział, a w praktyce potrzebne są na minutę.
+            Wszystko liczy się w twojej przeglądarce — nic nie wysyłamy, nic nie zapisujemy,
+            nie ma formularzy ani zapisu na newsletter.
+          </p>
+
+          <div class="narz-zakladki" role="tablist" aria-label="Narzędzia">
+            <button role="tab" id="tab-wiek" aria-controls="panel-wiek" aria-selected="true">Wiek psa</button>
+            <button role="tab" id="tab-szczepienia" aria-controls="panel-szczepienia" aria-selected="false" tabindex="-1">Szczepienia</button>
+            <button role="tab" id="tab-wstep" aria-controls="panel-wstep" aria-selected="false" tabindex="-1">Gdzie z psem</button>
+            <button role="tab" id="tab-kropik" aria-controls="panel-kropik" aria-selected="false" tabindex="-1">KROPiK</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ WIEK PSA ============ -->
+      <section class="narz-panel" id="panel-wiek" role="tabpanel" aria-labelledby="tab-wiek" tabindex="0">
+        <div class="shell narz-uklad">
+          <div>
+            <h2>Ile lat ma twój pies po ludzku?</h2>
+            <p class="lead-copy">
+              Zasada „rok psa to siedem lat człowieka” jest nieprawdziwa i myląca.
+              Pies starzeje się bardzo szybko na początku i wolniej później, a tempo
+              zależy przede wszystkim od masy ciała: pies olbrzymi jest seniorem
+              w wieku, w którym mały pies jest w pełni sił.
+            </p>
+
+            <div class="narz-karta">
+              <label class="narz-pole">
+                <span>Wiek psa</span>
+                <input type="number" id="wiek-lata" min="0" max="30" step="0.5" value="3" inputmode="decimal" />
+              </label>
+
+              <label class="narz-pole" style="margin-bottom: 0">
+                <span>Masa dorosłego psa</span>
+                <select id="wiek-rozmiar">
+                  <option value="maly">Mały — do 9 kg (np. yorkshire, jamnik)</option>
+                  <option value="sredni" selected>Średni — 9–22 kg (np. beagle, border collie)</option>
+                  <option value="duzy">Duży — 23–45 kg (np. owczarek, labrador)</option>
+                  <option value="olbrzymi">Olbrzymi — powyżej 45 kg (np. bernardyn, dog)</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <div class="narz-wynik">
+              <p class="narz-wynik__liczba" id="wiek-wynik">—</p>
+              <p class="narz-wynik__opis" id="wiek-opis">Wprowadź wiek i wielkość psa.</p>
+            </div>
+
+            <table class="narz-tabela">
+              <thead>
+                <tr><th>Wiek psa</th><th>Mały</th><th>Średni</th><th>Duży</th><th>Olbrzymi</th></tr>
+              </thead>
+              <tbody id="wiek-tabela"></tbody>
+            </table>
+
+            <p class="narz-zastrzezenie">
+              Przeliczenie jest orientacyjne i opiera się na powszechnie stosowanej tabeli
+              wiekowej: pierwszy rok życia to około 15 lat człowieka, drugi dokłada
+              kolejne 9, a każdy następny od 4 (psy małe) do 7 lat (psy olbrzymie).
+              Rasa, stan zdrowia i tryb życia potrafią ten obraz mocno przesunąć.
+              O etapach życia psa i zmianach poznawczych u seniorów — rozdział 20 książki.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SZCZEPIENIA ============ -->
+      <section class="narz-panel" id="panel-szczepienia" role="tabpanel" aria-labelledby="tab-szczepienia" tabindex="0" hidden>
+        <div class="shell narz-uklad">
+          <div>
+            <h2>Terminarz szczepień i odrobaczania</h2>
+            <p class="lead-copy">
+              Podaj datę urodzenia psa, a zobaczysz orientacyjny kalendarz pierwszego roku
+              i tego, co powtarza się później. To punkt wyjścia do rozmowy z lekarzem,
+              a nie zamiennik jego decyzji.
+            </p>
+
+            <div class="narz-karta">
+              <label class="narz-pole" style="margin-bottom: 0">
+                <span>Data urodzenia psa</span>
+                <input type="date" id="szcz-data" />
+              </label>
+            </div>
+
+            <p class="narz-zastrzezenie">
+              <strong>Jedno jest obowiązkiem, nie zaleceniem.</strong> W Polsce szczepienie psa
+              przeciwko wściekliźnie jest wymagane przez ustawę o ochronie zdrowia zwierząt
+              oraz zwalczaniu chorób zakaźnych zwierząt: pierwszy raz w ciągu 30 dni od
+              ukończenia przez psa trzeciego miesiąca życia, a potem regularnie powtarzane.
+              Za brak szczepienia grozi kara. Pozostałe pozycje w kalendarzu to zalecenia,
+              a ich terminy zależą od użytego preparatu i decyzji lekarza.
+            </p>
+          </div>
+
+          <div>
+            <ol class="narz-lista-krokow" id="szcz-lista"></ol>
+            <p class="narz-zastrzezenie" id="szcz-uwaga">
+              Wpisz datę urodzenia, żeby zobaczyć konkretne daty. Szerzej o profilaktyce —
+              rozdział 24 książki, o dokumentach i rejestracji — rozdział 50.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ GDZIE Z PSEM ============ -->
+      <section class="narz-panel" id="panel-wstep" role="tabpanel" aria-labelledby="tab-wstep" tabindex="0" hidden>
+        <div class="shell">
+          <div style="max-width: 68ch; margin-bottom: clamp(30px, 4vw, 48px)">
+            <h2>Czy mogę tu wejść z psem?</h2>
+            <p class="lead-copy">
+              Najczęstsze nieporozumienie brzmi tak: ludzie szukają jednego przepisu, który
+              mówi „psu wolno” albo „psu nie wolno”. Takiego przepisu nie ma. W większości
+              sytuacji decyduje regulamin konkretnego miejsca albo przewoźnika — dlatego
+              poniżej jest nie tyle odpowiedź, ile wskazówka, czego szukać.
+            </p>
+          </div>
+
+          <div class="narz-akordeon">
+            <details open>
+              <summary>Pociąg (PKP i inni przewoźnicy)</summary>
+              <div>
+                <span class="narz-etykieta narz-etykieta--zalezy">Zależy od przewoźnika</span>
+                <p>
+                  Przewóz psa jest możliwy, ale warunki ustala każdy przewoźnik osobno w swoim
+                  regulaminie: inaczej wygląda to w PKP Intercity, inaczej u przewoźników
+                  regionalnych. Różnice dotyczą opłaty za psa, wymogu kagańca i smyczy,
+                  przewozu w transporterze oraz tego, czy pies może zajmować miejsce.
+                </p>
+                <p>
+                  Zanim kupisz bilet, sprawdź aktualny regulamin przewozu osób i rzeczy tego
+                  konkretnego przewoźnika — informacje krążące po forach bywają sprzed kilku
+                  zmian cennika. Szczegółowo o transporcie: rozdział 10 książki.
+                </p>
+              </div>
+            </details>
+
+            <details>
+              <summary>Autobus, tramwaj, metro</summary>
+              <div>
+                <span class="narz-etykieta narz-etykieta--zalezy">Zależy od miasta</span>
+                <p>
+                  Komunikacja miejska podlega regulaminom uchwalanym lokalnie, więc zasady
+                  w Warszawie, Krakowie i Gdańsku nie muszą być takie same. Typowo pojawiają
+                  się wymogi smyczy i kagańca dla psów przewożonych poza transporterem,
+                  czasem dodatkowa opłata.
+                </p>
+                <p>Szukaj regulaminu przewozu na stronie miejskiego przewoźnika.</p>
+              </div>
+            </details>
+
+            <details>
+              <summary>Sklep spożywczy i galeria handlowa</summary>
+              <div>
+                <span class="narz-etykieta narz-etykieta--zalezy">Decyduje właściciel</span>
+                <p>
+                  W sklepie decyduje właściciel lub sieć — to jego lokal i jego regulamin.
+                  Naklejka z przekreślonym psem jest właśnie taką decyzją, a nie przepisem
+                  państwowym. W obiektach, gdzie sprzedaje się żywność, wymogi sanitarne
+                  skłaniają większość sieci do zakazu.
+                </p>
+                <p>Wyjątek dotyczy psów asystujących — o tym niżej.</p>
+              </div>
+            </details>
+
+            <details>
+              <summary>Restauracja i kawiarnia</summary>
+              <div>
+                <span class="narz-etykieta narz-etykieta--zalezy">Decyduje lokal</span>
+                <p>
+                  Tak samo jak w sklepie: to decyzja prowadzącego lokal. Coraz więcej miejsc
+                  deklaruje się jako „dog friendly”, ale jest to dobra wola, a nie obowiązek.
+                  Warto zapytać przy rezerwacji, zamiast sprawdzać na miejscu z psem u nogi.
+                </p>
+              </div>
+            </details>
+
+            <details>
+              <summary>Pies asystujący</summary>
+              <div>
+                <span class="narz-etykieta narz-etykieta--prawo">Prawo ustawowe</span>
+                <p>
+                  To jedyna sytuacja z tej listy, w której o wstępie nie decyduje regulamin
+                  lokalu. Ustawa o rehabilitacji zawodowej i społecznej oraz zatrudnianiu
+                  osób niepełnosprawnych daje osobie z psem asystującym prawo wstępu między
+                  innymi do obiektów użyteczności publicznej, placówek handlowych
+                  i gastronomicznych oraz środków transportu.
+                </p>
+                <p>
+                  Prawo to jest obwarowane warunkami: pies musi mieć wymagane oznaczenie
+                  i dokumenty, a opiekun odpowiada za jego zachowanie. Nie każdy pies
+                  w kamizelce z napisem jest psem asystującym w rozumieniu ustawy.
+                  Szerzej: rozdział 9, a o micie żółtej wstążki — odcinek 9 podcastu.
+                </p>
+              </div>
+            </details>
+
+            <details>
+              <summary>Blok, wspólnota, mieszkanie na wynajem</summary>
+              <div>
+                <span class="narz-etykieta narz-etykieta--zalezy">Zależy od podstawy prawnej</span>
+                <p>
+                  Wspólnota może regulować korzystanie z części wspólnych i reagować na
+                  realne uciążliwości, ale ogłoszenie na klatce schodowej nie jest tym samym,
+                  co skuteczny zakaz trzymania psa w prywatnym lokalu. Przy najmie punktem
+                  wyjścia jest treść umowy i ustalenia z wynajmującym.
+                </p>
+                <p>To temat na cały rozdział — i rzeczywiście jest nim rozdział 8 książki.</p>
+              </div>
+            </details>
+
+            <details>
+              <summary>Urząd, przychodnia, biblioteka</summary>
+              <div>
+                <span class="narz-etykieta narz-etykieta--zalezy">Regulamin obiektu</span>
+                <p>
+                  Obiekty użyteczności publicznej mają własne regulaminy porządkowe.
+                  Ograniczenia bywają różne, a pies asystujący znowu stanowi wyjątek
+                  wynikający wprost z ustawy.
+                </p>
+              </div>
+            </details>
+
+            <details>
+              <summary>Praca i biuro</summary>
+              <div>
+                <span class="narz-etykieta narz-etykieta--zalezy">Próżnia prawna</span>
+                <p>
+                  Nie ma przepisu, który by tego zabraniał ani nakazywał — decyduje pracodawca
+                  i regulamin pracy. W praktyce liczy się też zgoda współpracowników,
+                  alergie i bezpieczeństwo. Rozdział 17 książki opisuje, jak wygląda to
+                  w biurach, które faktycznie wpuszczają psy.
+                </p>
+              </div>
+            </details>
+          </div>
+
+          <p class="narz-zastrzezenie">
+            Ta ściąga wskazuje kierunek, a nie rozstrzyga konkretnej sprawy. Regulaminy
+            przewoźników i lokali zmieniają się częściej niż ustawy — przed podróżą albo
+            wizytą sprawdź aktualny dokument u źródła.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ KROPIK ============ -->
+      <section class="narz-panel" id="panel-kropik" role="tabpanel" aria-labelledby="tab-kropik" tabindex="0" hidden>
+        <div class="shell narz-uklad">
+          <div>
+            <h2>Czy muszę rejestrować psa w KROPiK?</h2>
+            <p class="lead-copy">
+              Wokół czipowania narosło sporo zamieszania — najczęściej dlatego, że
+              ogłoszenie ustawy myli się z jej wejściem w życie. Trzy pytania niżej
+              porządkują, co ciebie dotyczy i kiedy.
+            </p>
+
+            <div class="narz-karta">
+              <label class="narz-pole">
+                <span>Czy pies ma wszczepiony mikroczip?</span>
+                <select id="kr-czip">
+                  <option value="">— wybierz —</option>
+                  <option value="tak">Tak, na pewno ma</option>
+                  <option value="nie">Nie ma</option>
+                  <option value="niewiem">Nie wiem</option>
+                </select>
+              </label>
+
+              <label class="narz-pole">
+                <span>Ile pies ma lat?</span>
+                <select id="kr-wiek">
+                  <option value="">— wybierz —</option>
+                  <option value="szczenie">To szczenię poniżej 3 miesięcy</option>
+                  <option value="dorosly">Starszy niż 3 miesiące</option>
+                </select>
+              </label>
+
+              <label class="narz-pole" style="margin-bottom: 0">
+                <span>Czy niedawno zmienił się właściciel lub twoje dane?</span>
+                <select id="kr-zmiana">
+                  <option value="">— wybierz —</option>
+                  <option value="nie">Nie, nic się nie zmieniało</option>
+                  <option value="tak">Tak — nowy właściciel, adres albo telefon</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <div class="narz-wynik" id="kr-wynik" aria-live="polite">
+              <p class="narz-wynik__opis">Odpowiedz na trzy pytania obok.</p>
+            </div>
+
+            <p class="narz-zastrzezenie">
+              <strong>Dwie daty, które warto rozdzielić.</strong> Ustawa powołująca rejestr
+              została ogłoszona w czerwcu 2026 roku, ale zasadnicza część przepisów ma
+              wejść w życie dopiero 11 czerwca 2028 roku. Dlatego zdanie „od 2026 każdy
+              musi mieć psa zaczipowanego” jest zbyt dużym skrótem.
+            </p>
+
+            <p class="narz-zastrzezenie">
+              Stan prawny opisany w książce to czerwiec 2026. Przepisy i terminy mogą się
+              zmienić po jej wydaniu — przed decyzją sprawdź aktualne brzmienie ustawy
+              w <a href="https://isap.sejm.gov.pl/" target="_blank" rel="noopener" style="border-bottom:1px solid var(--gold);color:var(--ink);font-weight:700">Internetowym Systemie Aktów Prawnych</a>.
+              Pełny obraz: rozdział 6 książki i odcinek 6 podcastu.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="narz-inne">
+        <div class="shell">
+          <h2>Reszta jest na stronie głównej</h2>
+          <div class="narz-inne__grid">
+            <a href="../zatrucia/">
+              <strong>Zjadł coś trującego</strong>
+              <small>Czekolada, ksylitol, winogrona, leki — co robić w pierwszych minutach.</small>
+            </a>
+            <a href="../mapa/">
+              <strong>Mapa weterynarzy</strong>
+              <small>Prawie 2000 lecznic i schronisk w Polsce. Znajdź najbliższe.</small>
+            </a>
+            <a href="../#koszty">
+              <strong>Ile kosztuje pies</strong>
+              <small>Kalkulator realnych kosztów przez całe życie psa.</small>
+            </a>
+            <a href="../#rozdzialy">
+              <strong>61 rozdziałów i podcastów</strong>
+              <small>Cała książka i cały podcast — za darmo, bez zapisu.</small>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell site-footer__top">
+        <a class="wordmark wordmark--footer" href="../">
+          <span class="wordmark__seal" aria-hidden="true">P</span>
+          <span class="wordmark__text"><strong>Pies w Polsce</strong><small>Mykola Hrytskov · 2026</small></span>
+        </a>
+        <div class="site-footer__links">
+          <a href="../pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf" download>Pobierz książkę</a>
+          <a href="../#rozdzialy">Rozdziały</a>
+          <a href="../#podcast">Podcast</a>
+          <a href="../mapa/">Mapa</a>
+          <a href="https://www.youtube.com/@PieswPolsce" target="_blank" rel="noopener">Kanał YouTube</a>
+        </div>
+      </div>
+      <div class="shell site-footer__legal">
+        <p>
+          Treści na stronie i w książce mają charakter informacyjny oraz edukacyjny. Nie stanowią
+          indywidualnej porady prawnej ani weterynaryjnej. Przepisy, regulaminy przewoźników
+          i zalecenia mogą się zmieniać; przed podjęciem decyzji sprawdź aktualne źródła lub
+          skonsultuj się ze specjalistą.
+        </p>
+        <p>© 2026 Mykola Hrytskov</p>
+      </div>
+    </footer>
+
+    <script src="../script.js" defer></script>
+    <script src="narzedzia.js" defer></script>
+  </body>
+</html>

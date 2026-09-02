@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="pl" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pies zjadł coś trującego — co robić teraz | Pies w Polsce</title>
+    <meta
+      name="description"
+      content="Pies zjadł czekoladę, ksylitol, winogrona albo lek? Co zrobić w pierwszych minutach, czego nie robić nigdy i co zabrać do lecznicy. Lista substancji groźnych dla psa."
+    />
+    <meta name="author" content="Mykola Hrytskov" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#3a3733" />
+    <link rel="canonical" href="https://pieswpolsce.pl/zatrucia/" />
+
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Pies w Polsce" />
+    <meta property="og:title" content="Pies zjadł coś trującego — co robić teraz" />
+    <meta
+      property="og:description"
+      content="Pierwsze minuty, czego nie robić nigdy i lista substancji groźnych dla psa."
+    />
+    <meta property="og:url" content="https://pieswpolsce.pl/zatrucia/" />
+    <meta property="og:image" content="https://pieswpolsce.pl/assets/og.png" />
+
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../styles.css" />
+
+    <style>
+      .alarm {
+        padding-block: clamp(40px, 5vw, 72px);
+        background: #7d2d1f;
+        color: #fff6f0;
+      }
+
+      .alarm__kicker {
+        margin: 0 0 16px;
+        color: rgba(255, 246, 240, 0.72);
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .alarm h1 {
+        margin: 0 0 22px;
+        color: #fff6f0;
+        font-size: clamp(2.2rem, 5vw, 4.2rem);
+        line-height: 1.02;
+      }
+
+      .alarm__lead {
+        max-width: 60ch;
+        margin: 0 0 34px;
+        color: rgba(255, 246, 240, 0.88);
+        font-size: 1.06rem;
+        line-height: 1.7;
+      }
+
+      .alarm__kroki {
+        display: grid;
+        margin: 0;
+        padding: 0;
+        gap: 1px;
+        background: rgba(255, 246, 240, 0.18);
+        border: 1px solid rgba(255, 246, 240, 0.18);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        list-style: none;
+      }
+
+      .alarm__kroki li {
+        padding: 28px 30px;
+        background: #7d2d1f;
+      }
+
+      .alarm__kroki b {
+        display: block;
+        margin-bottom: 10px;
+        color: rgba(255, 246, 240, 0.55);
+        font-family: var(--display);
+        font-size: 1.8rem;
+        font-weight: 400;
+      }
+
+      .alarm__kroki strong {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 1rem;
+      }
+
+      .alarm__kroki span {
+        color: rgba(255, 246, 240, 0.78);
+        font-size: 0.85rem;
+        line-height: 1.6;
+      }
+
+      .alarm__cta {
+        display: inline-flex;
+        align-items: center;
+        min-height: 56px;
+        margin-top: 32px;
+        padding: 0 32px;
+        border-radius: 999px;
+        background: #fff6f0;
+        color: #7d2d1f;
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        gap: 14px;
+      }
+
+      .nigdy {
+        padding-block: clamp(46px, 5vw, 80px);
+        border-bottom: 1px solid var(--line);
+        background: var(--cream);
+      }
+
+      .nigdy h2,
+      .lista-trucizn h2,
+      .do-lecznicy h2 {
+        margin: 0 0 26px;
+        font-size: clamp(1.9rem, 3.6vw, 3rem);
+      }
+
+      .nigdy__grid {
+        display: grid;
+        gap: 22px;
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      }
+
+      .nigdy__karta {
+        padding: 26px 28px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        background: var(--white);
+      }
+
+      .nigdy__karta strong {
+        display: block;
+        margin-bottom: 10px;
+        font-family: var(--display);
+        font-size: 1.16rem;
+        font-weight: 500;
+      }
+
+      .nigdy__karta p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.86rem;
+        line-height: 1.65;
+      }
+
+      .lista-trucizn {
+        padding-block: clamp(52px, 6vw, 90px);
+      }
+
+      .trucizna {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .lista-trucizn > .shell > div:first-of-type {
+        border-top: 1px solid var(--line);
+      }
+
+      .trucizna summary {
+        display: grid;
+        align-items: center;
+        padding: 24px 4px;
+        cursor: pointer;
+        gap: 6px 22px;
+        grid-template-columns: minmax(0, 1fr) auto auto;
+        list-style: none;
+      }
+
+      .trucizna summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .trucizna__nazwa {
+        font-family: var(--display);
+        font-size: 1.28rem;
+        line-height: 1.25;
+      }
+
+      .trucizna__poziom {
+        padding: 5px 14px;
+        border-radius: 999px;
+        font-size: 0.6rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .trucizna__poziom--skrajne {
+        background: rgba(125, 45, 31, 0.14);
+        color: #7d2d1f;
+      }
+
+      .trucizna__poziom--wysokie {
+        background: rgba(212, 103, 67, 0.16);
+        color: #a24a2c;
+      }
+
+      .trucizna__poziom--zmienne {
+        background: rgba(176, 131, 63, 0.16);
+        color: var(--gold-dark);
+      }
+
+      .trucizna summary::after {
+        color: var(--gold);
+        content: "+";
+        font-size: 1.35rem;
+      }
+
+      .trucizna[open] summary::after {
+        content: "−";
+      }
+
+      .trucizna__tresc {
+        padding: 0 4px 30px;
+        max-width: 74ch;
+      }
+
+      .trucizna__tresc p {
+        margin: 0 0 14px;
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.72;
+      }
+
+      .trucizna__tresc p:last-child {
+        margin-bottom: 0;
+      }
+
+      .trucizna__tresc strong {
+        color: var(--ink);
+      }
+
+      .do-lecznicy {
+        padding-block: clamp(52px, 6vw, 90px);
+        background: var(--ink-deep);
+        color: var(--paper);
+      }
+
+      .do-lecznicy__grid {
+        display: grid;
+        gap: clamp(30px, 4vw, 64px);
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+
+      .do-lecznicy h3 {
+        margin: 0 0 16px;
+        font-family: var(--display);
+        font-size: 1.35rem;
+        font-weight: 500;
+      }
+
+      .do-lecznicy ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .do-lecznicy li {
+        position: relative;
+        padding: 0 0 12px 22px;
+        color: rgba(248, 245, 239, 0.72);
+        font-size: 0.88rem;
+        line-height: 1.6;
+      }
+
+      .do-lecznicy li::before {
+        position: absolute;
+        top: 0.72em;
+        left: 0;
+        width: 10px;
+        height: 1px;
+        background: var(--gold);
+        content: "";
+      }
+
+      .do-lecznicy a {
+        border-bottom: 1px solid var(--gold);
+        color: var(--gold-pale);
+        font-weight: 700;
+      }
+
+      .zastrzezenie-med {
+        padding: 26px 30px;
+        margin-top: clamp(36px, 4vw, 56px);
+        border-left: 3px solid var(--gold);
+        background: var(--cream);
+        color: var(--muted);
+        font-size: 0.85rem;
+        line-height: 1.7;
+      }
+
+      @media (max-width: 700px) {
+        .trucizna summary {
+          grid-template-columns: minmax(0, 1fr) auto;
+        }
+
+        .trucizna__poziom {
+          grid-column: 1;
+          grid-row: 2;
+          justify-self: start;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Przejdź do treści</a>
+
+    <header class="site-header" data-header>
+      <div class="shell site-header__inner">
+        <a class="wordmark" href="../" aria-label="Pies w Polsce — strona główna">
+          <span class="wordmark__seal" aria-hidden="true">P</span>
+          <span class="wordmark__text">
+            <strong>Pies w Polsce</strong>
+            <small>Kochaj · Rozum · Szanuj</small>
+          </span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Otwórz menu"
+          data-menu-toggle
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Główna nawigacja" data-nav>
+          <a href="../">Książka</a>
+          <a href="../#rozdzialy">Rozdziały</a>
+          <a href="../narzedzia/">Narzędzia</a>
+          <a href="../mapa/">Mapa</a>
+          <a class="button button--primary button--compact" href="../mapa/">Znajdź lecznicę</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="alarm">
+        <div class="shell">
+          <p class="alarm__kicker">Nagły wypadek</p>
+          <h1>Pies zjadł coś trującego</h1>
+          <p class="alarm__lead">
+            Nie czytaj całej strony. Zadzwoń do lecznicy weterynaryjnej <strong>teraz</strong>,
+            nawet jeśli pies wygląda całkiem normalnie. Przy części substancji objawy pojawiają
+            się po godzinach albo dniach, a leczenie podjęte wcześnie jest nieporównanie
+            skuteczniejsze niż to podjęte po objawach.
+          </p>
+
+          <ol class="alarm__kroki">
+            <li>
+              <b>1</b>
+              <strong>Zadzwoń do weterynarza</strong>
+              <span>Opisz, co i mniej więcej ile pies zjadł oraz kiedy. To lekarz decyduje, czy jechać i co robić po drodze.</span>
+            </li>
+            <li>
+              <b>2</b>
+              <strong>Zabezpiecz opakowanie</strong>
+              <span>Zachowaj paczkę, ulotkę albo resztki. Skład i dawka na etykiecie zmieniają decyzję o leczeniu.</span>
+            </li>
+            <li>
+              <b>3</b>
+              <strong>Odsuń psa od reszty</strong>
+              <span>Żeby nie zjadł więcej i żeby nie dobrały się inne zwierzęta w domu.</span>
+            </li>
+            <li>
+              <b>4</b>
+              <strong>Jedź, jeśli tak każe lekarz</strong>
+              <span>Nie czekaj na objawy. W wielu zatruciach liczy się okno pierwszych godzin.</span>
+            </li>
+          </ol>
+
+          <a class="alarm__cta" href="../mapa/">Znajdź najbliższą lecznicę <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+
+      <section class="nigdy">
+        <div class="shell">
+          <h2>Czego nie robić</h2>
+          <div class="nigdy__grid">
+            <div class="nigdy__karta">
+              <strong>Nie wywołuj wymiotów na własną rękę</strong>
+              <p>
+                To brzmi jak oczywisty pierwszy ruch, a bywa najgorszym. Przy substancjach
+                żrących i przy produktach ropopochodnych wymioty robią drugą rundę zniszczeń
+                w przełyku, a u psa półprzytomnego grożą zachłyśnięciem. Decyzję podejmuje
+                lekarz, nie internet.
+              </p>
+            </div>
+            <div class="nigdy__karta">
+              <strong>Nie podawaj domowych mikstur</strong>
+              <p>
+                Sól, olej, mleko, woda utleniona — porady krążące po forach potrafią
+                zaszkodzić bardziej niż sama trucizna. Sól podana do wymiotów bywa śmiertelna.
+              </p>
+            </div>
+            <div class="nigdy__karta">
+              <strong>Nie podawaj leków dla ludzi</strong>
+              <p>
+                Ibuprofen, paracetamol i aspiryna są dla psa toksyczne. „Trochę mniejsza dawka,
+                bo mniejszy” nie działa — metabolizm psa jest inny, nie skalowany.
+              </p>
+            </div>
+            <div class="nigdy__karta">
+              <strong>Nie czekaj na objawy</strong>
+              <p>
+                Przy trutkach na gryzonie, glikolu i ksylitolu pies może przez wiele godzin
+                zachowywać się normalnie, podczas gdy uszkodzenia już postępują.
+                Brak objawów nie jest dobrą wiadomością.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lista-trucizn">
+        <div class="shell">
+          <h2>Co najczęściej truje psa</h2>
+          <p style="max-width:66ch;margin:0 0 34px;color:var(--muted);line-height:1.7">
+            Celowo nie podajemy tu „bezpiecznych dawek”. Wrażliwość zależy od masy psa,
+            wieku i stanu zdrowia, a przy części substancji bezpiecznej dawki po prostu
+            nie ustalono. Jeżeli pies zjadł cokolwiek z tej listy — dzwoń.
+          </p>
+
+          <div>
+            <details class="trucizna">
+              <summary>
+                <span class="trucizna__nazwa">Ksylitol (cukier brzozowy)</span>
+                <span class="trucizna__poziom trucizna__poziom--skrajne">Zagrożenie skrajne</span>
+              </summary>
+              <div class="trucizna__tresc">
+                <p>
+                  <strong>Najbardziej podstępna pozycja na liście</strong>, bo mało kto szuka jej
+                  w domu. Ksylitol bywa w gumie bez cukru, cukierkach, „fit” słodyczach,
+                  niektórych masłach orzechowych, pastach do zębów i suplementach.
+                </p>
+                <p>
+                  U psa wywołuje gwałtowny wyrzut insuliny i spadek poziomu cukru, a przy
+                  większych ilościach uszkodzenie wątroby. Objawy — osłabienie, drżenia,
+                  drgawki — mogą wystąpić szybko, ale uszkodzenie wątroby ujawnia się później.
+                </p>
+                <p>Zjedzenie gumy bez cukru to powód do natychmiastowego telefonu, nie do obserwacji.</p>
+              </div>
+            </details>
+
+            <details class="trucizna">
+              <summary>
+                <span class="trucizna__nazwa">Czekolada i kakao</span>
+                <span class="trucizna__poziom trucizna__poziom--wysokie">Zagrożenie wysokie</span>
+              </summary>
+              <div class="trucizna__tresc">
+                <p>
+                  Trucizną jest teobromina, której pies nie potrafi sprawnie rozłożyć.
+                  Im ciemniejsza czekolada, tym gorzej: gorzka i kakao w proszku są
+                  wielokrotnie groźniejsze niż mleczna, a czekolada biała praktycznie
+                  teobrominy nie zawiera.
+                </p>
+                <p>
+                  Objawy to niepokój, wymioty, przyspieszone tętno, drżenia mięśni,
+                  w cięższych przypadkach drgawki i zaburzenia rytmu serca.
+                </p>
+                <p>
+                  Przy telefonie do lecznicy podaj trzy rzeczy: rodzaj czekolady,
+                  przybliżoną ilość i masę psa. Na tej podstawie lekarz oceni ryzyko.
+                </p>
+              </div>
+            </details>
+
+            <details class="trucizna">
+              <summary>
+                <span class="trucizna__nazwa">Winogrona i rodzynki</span>
+                <span class="trucizna__poziom trucizna__poziom--skrajne">Zagrożenie skrajne</span>
+              </summary>
+              <div class="trucizna__tresc">
+                <p>
+                  Mogą doprowadzić do ostrego uszkodzenia nerek, a mechanizm tego zjawiska
+                  wciąż nie jest do końca poznany. <strong>Nie ustalono dawki uznanej za
+                  bezpieczną</strong> — reakcja bywa bardzo różna u różnych psów.
+                </p>
+                <p>
+                  Pamiętaj też o formach ukrytych: ciasto drożdżowe z rodzynkami, muesli,
+                  batony, keksy świąteczne.
+                </p>
+              </div>
+            </details>
+
+            <details class="trucizna">
+              <summary>
+                <span class="trucizna__nazwa">Leki dla ludzi</span>
+                <span class="trucizna__poziom trucizna__poziom--skrajne">Zagrożenie skrajne</span>
+              </summary>
+              <div class="trucizna__tresc">
+                <p>
+                  Najczęstsze zatrucia domowe: leki przeciwbólowe i przeciwzapalne
+                  (ibuprofen, paracetamol, aspiryna), leki nasenne i psychiatryczne,
+                  preparaty na nadciśnienie.
+                </p>
+                <p>
+                  U psa środki z grupy niesteroidowych leków przeciwzapalnych uszkadzają
+                  przewód pokarmowy i nerki, a paracetamol — wątrobę i czerwone krwinki.
+                  Osobna, częsta sytuacja: pies zjada leki, które komuś upadły na podłogę.
+                </p>
+                <p><strong>Zabierz opakowanie do lecznicy.</strong> Nazwa i dawka zmieniają całe postępowanie.</p>
+              </div>
+            </details>
+
+            <details class="trucizna">
+              <summary>
+                <span class="trucizna__nazwa">Trutki na gryzonie</span>
+                <span class="trucizna__poziom trucizna__poziom--skrajne">Zagrożenie skrajne</span>
+              </summary>
+              <div class="trucizna__tresc">
+                <p>
+                  Groźne podwójnie: bo działają z opóźnieniem i bo pies może się zatruć
+                  także pośrednio, zjadając otrutego gryzonia. Część preparatów zaburza
+                  krzepnięcie krwi, a pierwsze objawy potrafią pojawić się po kilku dniach,
+                  gdy jest już poważnie.
+                </p>
+                <p>
+                  Jeżeli podejrzewasz kontakt z trutką — nawet bez pewności — zadzwoń
+                  od razu i weź opakowanie preparatu, jeśli je masz. Rodzaj substancji
+                  czynnej decyduje o tym, czy istnieje odtrutka.
+                </p>
+              </div>
+            </details>
+
+            <details class="trucizna">
+              <summary>
+                <span class="trucizna__nazwa">Płyn do chłodnic (glikol etylenowy)</span>
+                <span class="trucizna__poziom trucizna__poziom--skrajne">Zagrożenie skrajne</span>
+              </summary>
+              <div class="trucizna__tresc">
+                <p>
+                  Ma słodkawy smak, przez co psy piją go chętnie z kałuż pod samochodami,
+                  zwłaszcza zimą. Prowadzi do ciężkiego uszkodzenia nerek, a okno na skuteczne
+                  leczenie jest bardzo krótkie — liczone w godzinach od wypicia.
+                </p>
+                <p>To jedna z tych sytuacji, w których jedzie się natychmiast, bez zwłoki na obserwację.</p>
+              </div>
+            </details>
+
+            <details class="trucizna">
+              <summary>
+                <span class="trucizna__nazwa">Cebula, czosnek, por, szczypiorek</span>
+                <span class="trucizna__poziom trucizna__poziom--wysokie">Zagrożenie wysokie</span>
+              </summary>
+              <div class="trucizna__tresc">
+                <p>
+                  Rośliny cebulowe uszkadzają czerwone krwinki psa i mogą wywołać niedokrwistość.
+                  Groźne są zarówno świeże, jak i suszone czy smażone — a te ostatnie łatwo
+                  przeoczyć w resztkach ze stołu.
+                </p>
+                <p>
+                  Objawy zwykle nie są natychmiastowe: osłabienie, brak apetytu, blade dziąsła,
+                  ciemniejszy mocz mogą pojawić się po kilku dniach.
+                </p>
+              </div>
+            </details>
+
+            <details class="trucizna">
+              <summary>
+                <span class="trucizna__nazwa">Alkohol i surowe ciasto drożdżowe</span>
+                <span class="trucizna__poziom trucizna__poziom--wysokie">Zagrożenie wysokie</span>
+              </summary>
+              <div class="trucizna__tresc">
+                <p>
+                  Alkohol działa na psa znacznie silniej niż na człowieka. Surowe ciasto
+                  drożdżowe jest groźne podwójnie: rośnie w żołądku, rozpychając go,
+                  a fermentacja wytwarza alkohol wchłaniany do krwi.
+                </p>
+              </div>
+            </details>
+
+            <details class="trucizna">
+              <summary>
+                <span class="trucizna__nazwa">Rośliny domowe i ogrodowe</span>
+                <span class="trucizna__poziom trucizna__poziom--zmienne">Zagrożenie zmienne</span>
+              </summary>
+              <div class="trucizna__tresc">
+                <p>
+                  Lista jest długa i zależy od regionu: cis, oleander, difenbachia, cyklamen,
+                  konwalia, bluszcz, azalia, cebulki kwiatowe. Wiosną szczególnie kuszące
+                  bywają świeżo posadzone cebulki.
+                </p>
+                <p>
+                  Jeżeli nie wiesz, co to za roślina — zrób zdjęcie i zabierz fragment
+                  do lecznicy. Rozpoznanie gatunku bywa kluczowe.
+                </p>
+              </div>
+            </details>
+
+            <details class="trucizna">
+              <summary>
+                <span class="trucizna__nazwa">Orzechy makadamia</span>
+                <span class="trucizna__poziom trucizna__poziom--zmienne">Zagrożenie zmienne</span>
+              </summary>
+              <div class="trucizna__tresc">
+                <p>
+                  Wywołują charakterystyczne osłabienie tylnych kończyn, drżenia i wymioty.
+                  Rokowanie jest zwykle dobre, ale obraz potrafi wystraszyć — pies nagle
+                  nie może wstać.
+                </p>
+                <p>Uwaga na mieszanki bakaliowe, w których makadamia sąsiaduje z rodzynkami.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="do-lecznicy">
+        <div class="shell">
+          <div class="do-lecznicy__grid">
+            <div>
+              <h3>Co zabrać ze sobą</h3>
+              <ul>
+                <li>Opakowanie, ulotkę albo resztki tego, co pies zjadł</li>
+                <li>Zdjęcie rośliny lub produktu, jeśli opakowania nie ma</li>
+                <li>Książeczkę zdrowia i informację o przyjmowanych lekach</li>
+                <li>Przybliżoną masę psa — od niej zależy dawkowanie leczenia</li>
+                <li>Godzinę zjedzenia, choćby szacunkową</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>Zawczasu, na spokojnie</h3>
+              <ul>
+                <li>Zapisz w telefonie numer swojej lecznicy i jednej całodobowej</li>
+                <li>Sprawdź, która lecznica w okolicy pracuje w nocy i w święta</li>
+                <li>Skompletuj apteczkę — o jej zawartości mówi rozdział 25 książki</li>
+                <li>Trzymaj leki, słodycze i chemię poza zasięgiem psa, także w torbach gości</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>Idź dalej</h3>
+              <ul>
+                <li><a href="../mapa/">Mapa lecznic w całej Polsce</a></li>
+                <li><a href="../pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf" download>Cała książka w PDF — za darmo</a></li>
+                <li><a href="../#rozdzialy">Rozdział 25: pomoc w nagłych wypadkach</a></li>
+                <li><a href="../#rozdzialy">Rozdział 18: kleszcze, trucizny, babeszjoza</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="zastrzezenie-med" style="background:rgba(255,255,255,.06);color:rgba(248,245,239,.72);border-left-color:var(--gold)">
+            Ta strona ma charakter informacyjny i nie zastępuje badania ani porady lekarza
+            weterynarii. Nie stawia diagnozy i nie zawiera zaleceń leczenia. W każdej
+            sytuacji, w której podejrzewasz zatrucie, decyzję o postępowaniu podejmuje
+            lekarz weterynarii — najlepiej po telefonicznym opisaniu sytuacji.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell site-footer__top">
+        <a class="wordmark wordmark--footer" href="../">
+          <span class="wordmark__seal" aria-hidden="true">P</span>
+          <span class="wordmark__text"><strong>Pies w Polsce</strong><small>Mykola Hrytskov · 2026</small></span>
+        </a>
+        <div class="site-footer__links">
+          <a href="../pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf" download>Pobierz książkę</a>
+          <a href="../narzedzia/">Narzędzia</a>
+          <a href="../mapa/">Mapa</a>
+          <a href="../#rozdzialy">Rozdziały</a>
+          <a href="https://www.youtube.com/@PieswPolsce" target="_blank" rel="noopener">Kanał YouTube</a>
+        </div>
+      </div>
+      <div class="shell site-footer__legal">
+        <p>
+          Treści na stronie i w książce mają charakter informacyjny oraz edukacyjny. Nie stanowią
+          indywidualnej porady prawnej ani weterynaryjnej.
+        </p>
+        <p>© 2026 Mykola Hrytskov</p>
+      </div>
+    </footer>
+
+    <script src="../script.js" defer></script>
+  </body>
+</html>

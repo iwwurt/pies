@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="pl" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weterynarz i schronisko w pobliżu — mapa Polski | Pies w Polsce</title>
+    <meta
+      name="description"
+      content="Mapa lecznic weterynaryjnych i schronisk dla zwierząt w Polsce. Znajdź najbliższego weterynarza — czipowanie, szczepienia, nagłe wypadki. Bezpłatnie, bez rejestracji."
+    />
+    <meta name="author" content="Mykola Hrytskov" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#3a3733" />
+    <link rel="canonical" href="https://pieswpolsce.pl/mapa/" />
+
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Pies w Polsce" />
+    <meta property="og:title" content="Weterynarz i schronisko w pobliżu — mapa Polski" />
+    <meta
+      property="og:description"
+      content="Prawie 2000 lecznic weterynaryjnych i schronisk na jednej mapie. Znajdź najbliższe miejsce dla swojego psa."
+    />
+    <meta property="og:url" content="https://pieswpolsce.pl/mapa/" />
+    <meta property="og:image" content="https://pieswpolsce.pl/assets/og.png" />
+
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
+      integrity="sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.min.css"
+      integrity="sha512-ENrTWqddXrLJsQS2A86QmvA17PkJ0GVm1bqj5aTgpeMAfDKN2+SIOLpKG8R/6KkimnhTb+VW5qqUHB/r1zaRgg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.Default.min.css"
+      integrity="sha512-fYyZwU1wU0QWB4Yutd/Pvhy5J1oWAwFXun1pt+Bps04WSe4Aq6tyHlT4+MHSJhD8JlLfgLuC4CbCnX5KHSjyCg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      .mapa-hero {
+        padding-block: clamp(48px, 6vw, 88px) clamp(28px, 3vw, 44px);
+        border-bottom: 1px solid var(--line);
+        background: var(--cream);
+      }
+
+      .mapa-hero h1 {
+        margin: 0 0 18px;
+        font-size: clamp(2.4rem, 5vw, 4.4rem);
+      }
+
+      .mapa-hero__lead {
+        max-width: 62ch;
+        margin: 0;
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+
+      .mapa-panel {
+        display: grid;
+        margin-top: clamp(26px, 3vw, 40px);
+        gap: 14px 18px;
+        grid-template-columns: minmax(0, 1fr) auto auto;
+        align-items: center;
+      }
+
+      .mapa-szukaj {
+        display: flex;
+        align-items: center;
+        min-height: 54px;
+        padding: 0 22px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--white);
+        gap: 12px;
+      }
+
+      .mapa-szukaj input {
+        width: 100%;
+        border: 0;
+        background: transparent;
+        color: var(--ink);
+        font-size: 0.95rem;
+        outline: none;
+      }
+
+      .mapa-przelacznik {
+        display: inline-flex;
+        padding: 5px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--white);
+        gap: 4px;
+      }
+
+      .mapa-przelacznik button {
+        min-height: 42px;
+        padding: 0 20px;
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
+        color: var(--muted);
+        cursor: pointer;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition: background 160ms ease, color 160ms ease;
+      }
+
+      .mapa-przelacznik button[aria-pressed="true"] {
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      .mapa-uklad {
+        display: grid;
+        min-height: 620px;
+        border-top: 1px solid var(--line);
+        grid-template-columns: minmax(320px, 380px) minmax(0, 1fr);
+      }
+
+      .mapa-lista {
+        overflow-y: auto;
+        max-height: 78vh;
+        border-right: 1px solid var(--line);
+        background: var(--paper);
+      }
+
+      .mapa-lista__stan {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        padding: 16px 26px;
+        border-bottom: 1px solid var(--line);
+        background: var(--paper-deep);
+        color: var(--muted);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .mapa-karta {
+        display: block;
+        width: 100%;
+        padding: 20px 26px;
+        border: 0;
+        border-bottom: 1px solid var(--line);
+        background: transparent;
+        cursor: pointer;
+        text-align: left;
+        transition: background 150ms ease;
+      }
+
+      .mapa-karta:hover,
+      .mapa-karta:focus-visible {
+        background: rgba(176, 131, 63, 0.07);
+      }
+
+      .mapa-karta__nazwa {
+        margin: 0 0 6px;
+        font-family: var(--display);
+        font-size: 1.06rem;
+        font-weight: 500;
+        line-height: 1.3;
+      }
+
+      .mapa-karta__meta {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.79rem;
+        line-height: 1.55;
+      }
+
+      .mapa-karta__odleglosc {
+        display: inline-block;
+        margin-top: 8px;
+        color: var(--gold-dark);
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .mapa-karta__typ {
+        display: inline-block;
+        margin-bottom: 8px;
+        padding: 3px 10px;
+        border-radius: 999px;
+        font-size: 0.6rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .mapa-karta__typ--v {
+        background: rgba(52, 113, 140, 0.14);
+        color: #2b5c73;
+      }
+
+      .mapa-karta__typ--s {
+        background: rgba(93, 128, 101, 0.16);
+        color: #47654d;
+      }
+
+      #mapa {
+        min-height: 620px;
+        height: 78vh;
+        background: var(--paper-deep);
+      }
+
+      .leaflet-popup-content {
+        margin: 16px 18px;
+        font-family: var(--sans);
+        font-size: 0.84rem;
+        line-height: 1.6;
+      }
+
+      .leaflet-popup-content strong {
+        display: block;
+        margin-bottom: 6px;
+        font-family: var(--display);
+        font-size: 1.02rem;
+        font-weight: 500;
+      }
+
+      .leaflet-popup-content a {
+        border-bottom: 1px solid var(--gold);
+        color: var(--ink);
+        font-weight: 700;
+      }
+
+      .mapa-info {
+        padding-block: clamp(52px, 6vw, 84px);
+      }
+
+      .mapa-info__grid {
+        display: grid;
+        gap: clamp(30px, 4vw, 60px);
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+
+      .mapa-info__grid h2 {
+        margin: 0 0 16px;
+        font-family: var(--display);
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+
+      .mapa-info__grid p {
+        margin: 0 0 14px;
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.7;
+      }
+
+      .mapa-info__grid a {
+        border-bottom: 1px solid var(--gold);
+        color: var(--ink);
+        font-weight: 700;
+      }
+
+      .mapa-zrodlo {
+        padding: 22px 0 0;
+        border-top: 1px solid var(--line);
+        color: var(--muted-light);
+        font-size: 0.75rem;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 900px) {
+        .mapa-panel {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .mapa-uklad {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .mapa-lista {
+          order: 2;
+          max-height: 50vh;
+          border-right: 0;
+          border-top: 1px solid var(--line);
+        }
+
+        #mapa {
+          order: 1;
+          min-height: 420px;
+          height: 52vh;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Przejdź do treści</a>
+
+    <header class="site-header" data-header>
+      <div class="shell site-header__inner">
+        <a class="wordmark" href="../" aria-label="Pies w Polsce — strona główna">
+          <span class="wordmark__seal" aria-hidden="true">P</span>
+          <span class="wordmark__text">
+            <strong>Pies w Polsce</strong>
+            <small>Kochaj · Rozum · Szanuj</small>
+          </span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Otwórz menu"
+          data-menu-toggle
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Główna nawigacja" data-nav>
+          <a href="../">Książka</a>
+          <a href="../#rozdzialy">Rozdziały</a>
+          <a href="../#podcast">Podcast</a>
+          <a href="../narzedzia/">Narzędzia</a>
+          <a href="./" aria-current="page">Mapa</a>
+          <a class="button button--primary button--compact" href="../pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf" download>
+            Pobierz za darmo
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="mapa-hero">
+        <div class="shell">
+          <p class="kicker">Mapa · dane OpenStreetMap</p>
+          <h1>Weterynarz i schronisko w pobliżu</h1>
+          <p class="mapa-hero__lead">
+            Prawie dwa tysiące lecznic weterynaryjnych i schronisk w całej Polsce na jednej mapie.
+            Wpisz miasto albo pozwól przeglądarce ustalić lokalizację — pokażemy najbliższe miejsca
+            wraz z adresem, telefonem i godzinami, jeśli są znane.
+          </p>
+
+          <div class="mapa-panel">
+            <label class="mapa-szukaj">
+              <span aria-hidden="true">⌕</span>
+              <input
+                type="search"
+                id="szukaj"
+                list="lista-miast"
+                placeholder="Wpisz miasto lub nazwę lecznicy…"
+                aria-label="Szukaj miasta lub nazwy"
+                autocomplete="off"
+              />
+            </label>
+            <datalist id="lista-miast"></datalist>
+
+            <div class="mapa-przelacznik" role="group" aria-label="Rodzaj miejsc">
+              <button type="button" data-typ="v" aria-pressed="true">Weterynarze</button>
+              <button type="button" data-typ="s" aria-pressed="true">Schroniska</button>
+            </div>
+
+            <button class="button button--primary" type="button" id="moja-lokalizacja">
+              Blisko mnie
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="mapa-uklad" aria-label="Mapa i lista miejsc">
+        <div class="mapa-lista">
+          <p class="mapa-lista__stan" id="stan" aria-live="polite">Wczytywanie danych…</p>
+          <div id="lista"></div>
+        </div>
+        <div id="mapa" role="application" aria-label="Mapa lecznic i schronisk"></div>
+      </section>
+
+      <section class="mapa-info">
+        <div class="shell">
+          <div class="mapa-info__grid">
+            <div>
+              <h2>Czipowanie i KROPiK</h2>
+              <p>
+                Czip wszczepia lekarz weterynarii — to zabieg na kilka sekund, porównywalny
+                ze zwykłym zastrzykiem. Samo oznakowanie to jednak dopiero połowa sprawy:
+                numer transpondera trzeba jeszcze zarejestrować we właściwej bazie.
+              </p>
+              <p>
+                Co dokładnie zmienia ustawa o KROPiK i od kiedy —
+                <a href="../#kropik">opisaliśmy na stronie głównej</a>, a szerzej
+                w rozdziale 6 książki.
+              </p>
+            </div>
+
+            <div>
+              <h2>Zanim wesprzesz schronisko</h2>
+              <p>
+                Nie oznaczamy żadnego schroniska jako „zweryfikowane” — nie prowadzimy audytu
+                i nie chcemy ręczyć za cudze finanse. Zamiast tego: sprawdź sam, zajmuje to
+                dwie minuty.
+              </p>
+              <p>
+                Szukaj numeru KRS na stronie placówki i sprawdź go w
+                <a href="https://wyszukiwarka-krs.ms.gov.pl/" target="_blank" rel="noopener">wyszukiwarce KRS</a>
+                Ministerstwa Sprawiedliwości. Organizacje pożytku publicznego składają
+                roczne sprawozdania — jeśli fundacja nie publikuje żadnych rozliczeń
+                i nie podaje KRS, to sygnał ostrzegawczy.
+              </p>
+            </div>
+
+            <div>
+              <h2>Nagły wypadek</h2>
+              <p>
+                Jeśli pies właśnie coś połknął albo dzieje się coś niepokojącego, nie szukaj
+                odpowiedzi w internecie — dzwoń do lecznicy. Numery znajdziesz w kartach obok.
+              </p>
+              <p>
+                Krótka lista rzeczy, które trują psa, i co robić w pierwszych minutach:
+                <a href="../zatrucia/">zjadł coś trującego</a>.
+              </p>
+            </div>
+          </div>
+
+          <p class="mapa-zrodlo">
+            Dane o lecznicach i schroniskach pochodzą z projektu
+            <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>
+            i są udostępniane na licencji ODbL. Baza jest tworzona przez wolontariuszy, więc bywa
+            niekompletna: część placówek może być nieaktualna, a części może brakować. Przed wizytą
+            zadzwoń i potwierdź godziny. Znalazłeś błąd? Można go poprawić bezpośrednio
+            w OpenStreetMap — poprawka trafi też tutaj przy kolejnej aktualizacji.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell site-footer__top">
+        <a class="wordmark wordmark--footer" href="../">
+          <span class="wordmark__seal" aria-hidden="true">P</span>
+          <span class="wordmark__text"><strong>Pies w Polsce</strong><small>Mykola Hrytskov · 2026</small></span>
+        </a>
+        <div class="site-footer__links">
+          <a href="../pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf" download>Pobierz książkę</a>
+          <a href="../#rozdzialy">Rozdziały</a>
+          <a href="../#podcast">Podcast</a>
+          <a href="../narzedzia/">Narzędzia</a>
+          <a href="https://www.youtube.com/@PieswPolsce" target="_blank" rel="noopener">Kanał YouTube</a>
+        </div>
+      </div>
+      <div class="shell site-footer__legal">
+        <p>
+          Treści na stronie i w książce mają charakter informacyjny oraz edukacyjny. Nie stanowią
+          indywidualnej porady prawnej ani weterynaryjnej. Mapa nie jest rejestrem urzędowym.
+        </p>
+        <p>© 2026 Mykola Hrytskov</p>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"
+      integrity="sha512-puJW3E/qXDqYp9IfhAI54BJEaWIfloJ7JWs7OeD5i6ruC9JZL1gERT1wjtwXFlh7CjE7ZJ+/vcRZRkIYIb6p4g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.min.js"
+      integrity="sha512-TiMWaqipFi2Vqt4ugRzsF8oRoGFlFFuqIi30FFxEPNw58Ov9mOy6LgC05ysfkxwLE0xVeZtmr92wVg9siAFRWA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="../script.js" defer></script>
+    <script src="mapa.js" defer></script>
+  </body>
+</html>
