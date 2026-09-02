@@ -22,6 +22,8 @@ Następnie otworzyć `http://localhost:8080`.
 - `script.js` — menu, kalkulator kosztów, karuzela, zakładki i czytnik fragmentu.
 - `dane/rozdzialy.json` — źródło spisu 61 rozdziałów i linków do podcastów.
 - `tools/build_rozdzialy.py` — generator sekcji „Rozdziały” w `index.html`.
+- `tools/pobierz_punkty.py` — aktualizator danych mapy z OpenStreetMap.
+- `dane/punkty.json` — lecznice i schroniska pokazywane na `/mapa/`.
 - `pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf` — pełna książka, 618 stron.
 - `pliki/Pies-w-Polsce-fragment-rozdzialy-1-5.pdf` — fragment, 52 strony.
 - `pliki/Checklista-pies-w-Polsce-2026.pdf` — checklista, 2 strony.
@@ -45,12 +47,50 @@ Skrypt podmienia wyłącznie fragment `index.html` między znacznikami `<!-- ROZ
 i `<!-- ROZDZIALY:END -->` oraz adres playlisty w przycisku z atrybutem `data-yt-playlist`.
 Rozdziały bez identyfikatora filmu zostają oznaczone jako „Wkrótce”.
 
-## Wsparcie autora
+## Strony serwisu
 
-Przyciski „Wesprzyj autora” mają w `index.html` atrybut `data-donate` i tymczasowy adres
-`{{DONATE_URL}}`. Dopóki nie zostanie podmieniony na prawdziwy link (np. buycoffee.to,
-PayPal.me, Revolut), `script.js` usuwa te elementy ze strony — nic się nie psuje i nikt
-nie trafia w martwy odnośnik. Aby je włączyć, wystarczy zamienić `{{DONATE_URL}}` na adres zbiórki.
+Poza stroną główną serwis ma osobne strony tematyczne, każdą z własnymi
+danymi strukturalnymi i wpisem w `sitemap.xml`:
+
+- `/kropik/` — rejestr KROPiK i obowiązkowe czipowanie
+- `/koszty/` — pełne wyliczenie kosztów utrzymania psa
+- `/narzedzia/` — kalkulatory i ściągi (wiek, szczepienia, wstęp z psem, KROPiK, opłata gminna)
+- `/mapa/` — lecznice i schroniska z OpenStreetMap
+- `/zatrucia/` — postępowanie przy zatruciu
+- `/apteczka/` — lista kontrolna apteczki
+
+Dodając kolejną stronę, pamiętaj o czterech rzeczach: okruchy chleba
+z `BreadcrumbList`, wpis w `sitemap.xml`, odnośnik w stopkach pozostałych
+stron i `canonical` we własnym nagłówku.
+
+## Mapa: jak odświeżyć dane
+
+Punkty na stronie `/mapa/` pochodzą z OpenStreetMap i leżą w `dane/punkty.json`.
+Baza OSM rośnie, więc raz na kilka miesięcy warto ją odświeżyć:
+
+```powershell
+python tools/pobierz_punkty.py
+```
+
+Skrypt sam pobiera dane z Overpass API, odsiewa obiekty spoza Polski
+i te bez nazwy, po czym nadpisuje `dane/punkty.json`. Nie wymaga klucza
+ani konta.
+
+Przydatne przełączniki:
+
+- `--sucho` — pobierz i pokaż statystyki, ale nie zapisuj pliku.
+- `--mimo-spadku` — zapisz, nawet jeśli punktów jest wyraźnie mniej niż teraz.
+
+**Dlaczego istnieje próg spadku.** Overpass bywa przeciążony i potrafi oddać
+odpowiedź poprawną technicznie, ale pustą albo niekompletną. Gdyby skrypt
+zapisywał ją bez sprawdzenia, jedno nieudane uruchomienie skasowałoby dobre
+dane. Dlatego plik zostaje bez zmian, jeśli nowy wynik ma mniej niż 80%
+obecnej liczby punktów — a pusta odpowiedź jednej kategorii przerywa całość.
+
+Po aktualizacji wystarczy sprawdzić `/mapa/` w przeglądarce i zrobić commit.
+
+Dane są udostępniane na licencji ODbL i wymagają podania źródła — informacja
+o OpenStreetMap znajduje się w stopce sekcji na stronie mapy. Nie usuwać jej.
 
 ## GitHub Pages
 
