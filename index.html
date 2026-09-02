@@ -199,9 +199,9 @@
         </button>
 
         <nav class="site-nav" id="site-nav" aria-label="Główna nawigacja" data-nav>
-          <a href="#o-ksiazce">O książce</a>
           <a href="#rozdzialy">Rozdziały</a>
           <a href="#podcast">Podcast</a>
+          <a href="koszty/">Koszty</a>
           <a href="kropik/">KROPiK</a>
           <a href="narzedzia/">Narzędzia</a>
           <a href="mapa/">Mapa</a>
@@ -983,47 +983,34 @@
       <section class="section cost" id="koszty" aria-labelledby="cost-title">
         <div class="shell cost__grid">
           <div class="cost__copy reveal">
-            <p class="kicker">Interaktywny model</p>
+            <p class="kicker">Zanim pies pojawi się w domu</p>
             <h2 id="cost-title">Ile naprawdę kosztuje pies w Polsce?</h2>
             <p class="lead-copy">Nie licz tylko karmy. Policz wspólne życie.</p>
             <p>
-              Zmień miesięczny budżet i liczbę lat. Kalkulator pokazuje skalę — od regularnych wydatków
-              po opiekę, leczenie, transport i nieprzewidziane zdarzenia.
+              Realny rachunek za dwanaście lat mieści się między 80 a ponad 200 tysiącami złotych —
+              mniej więcej tyle, ile kosztuje samochód klasy średniej. Karma to zaledwie jedna
+              czwarta tej kwoty i jedyna część, którą widać z góry.
             </p>
             <ul class="cost__categories" aria-label="Kategorie kosztów">
               <li>Żywienie</li><li>Profilaktyka</li><li>Leczenie</li><li>Akcesoria</li>
               <li>Pielęgnacja</li><li>Szkolenie</li><li>Transport</li><li>Opieka podczas wyjazdów</li>
             </ul>
+            <a class="button button--primary button--large" href="koszty/" style="margin-top:30px">
+              <span>Pełne wyliczenie i kalkulator</span>
+              <span class="button__arrow" aria-hidden="true">→</span>
+            </a>
           </div>
 
-          <div class="calculator reveal" data-delay="1" data-calculator>
-            <div class="calculator__result" aria-live="polite">
-              <span>Łącznie przez <strong data-years-label>12 lat</strong></span>
-              <output data-total>129 600 zł</output>
-              <small><span data-monthly-label>900 zł</span> miesięcznie · <span data-daily>30 zł</span> dziennie</small>
+          <div class="calculator reveal" data-delay="1">
+            <div class="calculator__result">
+              <span>Przez 12 lat, scenariusz umiarkowany</span>
+              <output>80 000–200 000 zł</output>
+              <small>8 000–15 000 zł rocznie · bez onkologii i chorób przewlekłych</small>
             </div>
-
-            <div class="range-field">
-              <div class="range-field__label">
-                <label for="monthly-cost">Miesięczny budżet</label>
-                <output for="monthly-cost" data-monthly-output>900 zł</output>
-              </div>
-              <input id="monthly-cost" type="range" min="550" max="1400" step="50" value="900" data-monthly />
-              <div class="range-field__scale"><span>550 zł</span><span>1 400 zł</span></div>
-            </div>
-
-            <div class="range-field">
-              <div class="range-field__label">
-                <label for="years-cost">Liczba wspólnych lat</label>
-                <output for="years-cost" data-years-output>12 lat</output>
-              </div>
-              <input id="years-cost" type="range" min="8" max="16" step="1" value="12" data-years />
-              <div class="range-field__scale"><span>8 lat</span><span>16 lat</span></div>
-            </div>
-
             <p class="calculator__note">
-              Model edukacyjny, nie indywidualna wycena. Faktyczny koszt zależy od wielkości i zdrowia
-              psa, miejsca zamieszkania, sposobu żywienia, usług i zdarzeń losowych.
+              Model dla psa 15–25 kg w dużym polskim mieście, ceny 2025–2026.
+              Rozbicie na dziewięć kategorii, wydatki na start i trzy scenariusze —
+              <a href="koszty/" style="border-bottom:1px solid var(--gold);font-weight:700">na osobnej stronie</a>.
             </p>
           </div>
         </div>
@@ -1319,6 +1306,7 @@
           <a href="pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf" download>Pobierz książkę</a>
           <a href="#rozdzialy">Rozdziały</a>
           <a href="#podcast">Podcast</a>
+          <a href="koszty/">Koszty</a>
           <a href="kropik/">KROPiK</a>
           <a href="narzedzia/">Narzędzia</a>
           <a href="mapa/">Mapa</a>

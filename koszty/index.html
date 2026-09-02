@@ -1,0 +1,932 @@
+<!doctype html>
+<html lang="pl" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ile kosztuje pies w Polsce 2026 — pełne wyliczenie | Pies w Polsce</title>
+    <meta
+      name="description"
+      content="Ile naprawdę kosztuje pies: koszty roczne, wydatki na start, sterylizacja, opłata gminna i trzy realistyczne scenariusze na całe życie psa. Ceny 2025–2026, dane z rynku."
+    />
+    <meta name="author" content="Mykola Hrytskov" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#3a3733" />
+    <link rel="canonical" href="https://pieswpolsce.pl/koszty/" />
+
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Pies w Polsce" />
+    <meta property="og:title" content="Ile kosztuje pies w Polsce — pełne wyliczenie" />
+    <meta
+      property="og:description"
+      content="Od 80 do ponad 200 tysięcy złotych przez 12 lat. Rozbicie na kategorie, wydatki na start i trzy scenariusze."
+    />
+    <meta property="og:url" content="https://pieswpolsce.pl/koszty/" />
+    <meta property="og:image" content="https://pieswpolsce.pl/assets/og.png" />
+
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../styles.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://pieswpolsce.pl/koszty/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Ile kosztuje utrzymanie psa w Polsce?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "W modelu dla psa 15–25 kg w dużym polskim mieście roczny koszt utrzymania wynosi około 8 000–15 000 zł, co przez dwanaście lat daje mniej więcej 80 000–200 000 zł. Kwota zależy od wielkości i zdrowia psa, sposobu żywienia, miejsca zamieszkania oraz zdarzeń losowych."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ile kosztuje pies na start?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Przy zakupie szczenięcia z certyfikowanej hodowli pierwsze wydatki to około 7 500–17 000 zł, przy adopcji ze schroniska około 2 000–7 000 zł. Na tę kwotę składają się między innymi zestaw startowy, pakiet weterynaryjny, czipowanie, kennel i pierwszy kurs szkolenia."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ile kosztuje sterylizacja i kastracja psa?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "W Warszawie w latach 2025–2026 sterylizacja suki o wadze około 20 kg kosztuje 800–1 500 zł łącznie z badaniem krwi i kołnierzem pooperacyjnym, a kastracja samca 400–800 zł. W mniejszych miastach ceny są o 20–30% niższe. Wiele gmin prowadzi programy bezpłatnej sterylizacji i czipowania."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czy w Polsce trzeba płacić podatek od psa?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "To nie podatek, lecz opłata lokalna od posiadania psów, a o jej wprowadzeniu decyduje samodzielnie każda gmina. Warszawa, Poznań i Gdańsk całkowicie ją zniosły. Maksymalna stawka na 2026 rok to 186,29 zł rocznie. Zgłoszenie posiadania psa składa się w ciągu 14 dni od nabycia."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czy warto oszczędzać na karmie dla psa?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Przejście z karmy za 25–30 zł za kilogram na karmę za 8–10 zł pozwala zaoszczędzić około 3 000 zł rocznie, ale przy długotrwałym stosowaniu karm niskiej jakości realne jest ryzyko kosztów leczenia rzędu 5 000–15 000 zł. Oszczędność na karmie bywa więc pozorna."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <style>
+      .koszty-hero {
+        padding-block: clamp(48px, 6vw, 92px) clamp(30px, 4vw, 48px);
+        border-bottom: 1px solid var(--line);
+        background: var(--cream);
+      }
+
+      .koszty-hero h1 {
+        margin: 0 0 20px;
+        font-size: clamp(2.3rem, 5vw, 4.3rem);
+      }
+
+      .koszty-hero__lead {
+        max-width: 64ch;
+        margin: 0 0 16px;
+        color: var(--muted);
+        font-size: 1.02rem;
+        line-height: 1.72;
+      }
+
+      .koszty-hero__lead strong {
+        color: var(--ink);
+      }
+
+      .okruchy {
+        margin: 0 0 22px;
+        color: var(--muted-light);
+        font-size: 0.74rem;
+        letter-spacing: 0.04em;
+      }
+
+      .okruchy a {
+        border-bottom: 1px solid var(--line);
+        color: var(--muted);
+      }
+
+      .scenariusze-przyciski {
+        display: flex;
+        margin-top: 22px;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .scenariusze-przyciski button {
+        min-height: 44px;
+        padding: 0 20px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--white);
+        color: var(--muted);
+        cursor: pointer;
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
+      }
+
+      .scenariusze-przyciski button[aria-pressed="true"] {
+        border-color: var(--ink);
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      .koszty-sekcja {
+        padding-block: clamp(50px, 6vw, 88px);
+      }
+
+      .koszty-sekcja h2 {
+        margin: 0 0 14px;
+        font-size: clamp(1.9rem, 3.6vw, 3rem);
+      }
+
+      .koszty-sekcja__wstep {
+        max-width: 66ch;
+        margin: 0 0 34px;
+        color: var(--muted);
+        line-height: 1.72;
+      }
+
+      .tabela-kosztow {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.88rem;
+      }
+
+      .tabela-kosztow th,
+      .tabela-kosztow td {
+        padding: 15px 12px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .tabela-kosztow thead th {
+        border-bottom: 2px solid var(--ink);
+        color: var(--muted-light);
+        font-size: 0.64rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .tabela-kosztow td:first-child {
+        color: var(--ink);
+        font-weight: 700;
+      }
+
+      .tabela-kosztow td {
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .tabela-kosztow td:nth-child(2),
+      .tabela-kosztow td:nth-child(3) {
+        color: var(--ink);
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+      }
+
+      .tabela-kosztow tr:last-child td {
+        border-top: 2px solid var(--ink);
+        border-bottom: 0;
+        color: var(--gold-dark);
+        font-weight: 800;
+      }
+
+      .tabela-przewin {
+        overflow-x: auto;
+      }
+
+      .start-grid {
+        display: grid;
+        gap: 22px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+
+      .start-karta {
+        padding: 32px 34px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        background: var(--white);
+      }
+
+      .start-karta--adopcja {
+        border-color: var(--gold-pale);
+        background: var(--paper-deep);
+      }
+
+      .start-karta h3 {
+        margin: 0 0 6px;
+        font-family: var(--display);
+        font-size: 1.3rem;
+        font-weight: 500;
+      }
+
+      .start-karta__suma {
+        margin: 0 0 22px;
+        color: var(--gold-dark);
+        font-family: var(--display);
+        font-size: 2.1rem;
+        line-height: 1;
+      }
+
+      .start-karta ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .start-karta li {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-bottom: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.84rem;
+        gap: 18px;
+      }
+
+      .start-karta li span:last-child {
+        color: var(--ink);
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+      }
+
+      .scenariusze {
+        padding-block: clamp(50px, 6vw, 88px);
+        background: var(--ink-deep);
+        color: var(--paper);
+      }
+
+      .scenariusze h2 {
+        margin: 0 0 14px;
+        font-size: clamp(1.9rem, 3.6vw, 3rem);
+      }
+
+      .scenariusze > .shell > p {
+        max-width: 62ch;
+        margin: 0 0 38px;
+        color: rgba(248, 245, 239, 0.68);
+        line-height: 1.72;
+      }
+
+      .scenariusze__grid {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      }
+
+      .scenariusz {
+        padding: 32px 34px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: var(--radius-md);
+      }
+
+      .scenariusz b {
+        display: block;
+        margin-bottom: 12px;
+        color: var(--gold);
+        font-size: 0.64rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .scenariusz strong {
+        display: block;
+        margin-bottom: 16px;
+        font-family: var(--display);
+        font-size: 1.28rem;
+        font-weight: 500;
+        line-height: 1.3;
+      }
+
+      .scenariusz__kwota {
+        margin: 0 0 14px;
+        font-family: var(--display);
+        font-size: clamp(1.9rem, 3.4vw, 2.5rem);
+        line-height: 1;
+      }
+
+      .scenariusz p {
+        margin: 0;
+        color: rgba(248, 245, 239, 0.62);
+        font-size: 0.84rem;
+        line-height: 1.6;
+      }
+
+      .scenariusze__wniosek {
+        margin-top: 38px;
+        padding: 30px 34px;
+        border-left: 3px solid var(--gold);
+        background: rgba(176, 131, 63, 0.1);
+      }
+
+      .scenariusze__wniosek strong {
+        display: block;
+        margin-bottom: 10px;
+        font-family: var(--display);
+        font-size: 1.3rem;
+        font-weight: 500;
+      }
+
+      .scenariusze__wniosek p {
+        margin: 0;
+        color: rgba(248, 245, 239, 0.75);
+        font-size: 0.9rem;
+        line-height: 1.7;
+      }
+
+      .pulapka {
+        padding: 32px 36px;
+        border: 1px solid var(--line);
+        border-left: 3px solid #a24a2c;
+        border-radius: var(--radius-md);
+        background: var(--white);
+      }
+
+      .pulapka strong {
+        display: block;
+        margin-bottom: 12px;
+        font-family: var(--display);
+        font-size: 1.35rem;
+        font-weight: 500;
+      }
+
+      .pulapka p {
+        margin: 0 0 12px;
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.72;
+      }
+
+      .pulapka p:last-child {
+        margin-bottom: 0;
+      }
+
+      .dwie-karty {
+        display: grid;
+        margin-top: 26px;
+        gap: 22px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+
+      .info-karta {
+        padding: 30px 32px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        background: var(--cream);
+      }
+
+      .info-karta strong {
+        display: block;
+        margin-bottom: 12px;
+        font-family: var(--display);
+        font-size: 1.22rem;
+        font-weight: 500;
+      }
+
+      .info-karta p {
+        margin: 0 0 12px;
+        color: var(--muted);
+        font-size: 0.86rem;
+        line-height: 1.7;
+      }
+
+      .info-karta p:last-child {
+        margin-bottom: 0;
+      }
+
+      .info-karta a {
+        border-bottom: 1px solid var(--gold);
+        color: var(--ink);
+        font-weight: 700;
+      }
+
+      .koszty-dalej {
+        padding-block: clamp(46px, 5vw, 80px);
+        border-top: 1px solid var(--line);
+        background: var(--cream);
+      }
+
+      .koszty-dalej__grid {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+
+      .koszty-dalej a {
+        display: block;
+        padding: 28px 30px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        background: var(--white);
+        transition: border-color 180ms ease, transform 180ms ease;
+      }
+
+      .koszty-dalej a:hover {
+        border-color: var(--gold);
+        transform: translateY(-2px);
+      }
+
+      .koszty-dalej strong {
+        display: block;
+        margin-bottom: 8px;
+        font-family: var(--display);
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+
+      .koszty-dalej small {
+        color: var(--muted);
+        font-size: 0.82rem;
+        line-height: 1.6;
+      }
+
+      .zrodla {
+        margin-top: 34px;
+        padding-top: 24px;
+        border-top: 1px solid var(--line);
+        color: var(--muted-light);
+        font-size: 0.76rem;
+        line-height: 1.7;
+      }
+
+      .zrodla a {
+        color: var(--muted);
+        border-bottom: 1px solid var(--line);
+      }
+    </style>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Przejdź do treści</a>
+
+    <header class="site-header" data-header>
+      <div class="shell site-header__inner">
+        <a class="wordmark" href="../" aria-label="Pies w Polsce — strona główna">
+          <span class="wordmark__seal" aria-hidden="true">P</span>
+          <span class="wordmark__text">
+            <strong>Pies w Polsce</strong>
+            <small>Kochaj · Rozum · Szanuj</small>
+          </span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Otwórz menu"
+          data-menu-toggle
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Główna nawigacja" data-nav>
+          <a href="../">Książka</a>
+          <a href="../#rozdzialy">Rozdziały</a>
+          <a href="../kropik/">KROPiK</a>
+          <a href="../narzedzia/">Narzędzia</a>
+          <a href="../mapa/">Mapa</a>
+          <a class="button button--primary button--compact" href="../pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf" download>
+            Pobierz za darmo
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="koszty-hero">
+        <div class="shell">
+          <p class="okruchy">
+            <a href="../">Pies w Polsce</a> <span aria-hidden="true">/</span> Ile kosztuje pies
+          </p>
+          <p class="kicker">Ceny 2025–2026 · duże polskie miasta</p>
+          <h1>Ile naprawdę kosztuje pies w Polsce</h1>
+          <p class="koszty-hero__lead">
+            Większość odpowiedzi krążących po polskim internecie jest zaniżona, bo liczy karmę
+            i pomija resztę. <strong>Realny rachunek za dwanaście lat mieści się między 80 a ponad
+            200 tysiącami złotych</strong> — czyli mniej więcej tyle, ile kosztuje samochód klasy
+            średniej.
+          </p>
+          <p class="koszty-hero__lead">
+            Poniżej pełne rozbicie: co ile kosztuje rocznie, ile trzeba wyłożyć na starcie
+            i trzy realistyczne scenariusze na całe wspólne życie.
+          </p>
+        </div>
+      </section>
+
+      <section class="section cost" aria-labelledby="kalkulator-title">
+        <div class="shell cost__grid">
+          <div class="cost__copy reveal">
+            <p class="kicker">Interaktywny model</p>
+            <h2 id="kalkulator-title">Policz swój budżet</h2>
+            <p class="lead-copy">Nie licz tylko karmy. Policz wspólne życie.</p>
+            <p>
+              Zmień miesięczny budżet i liczbę lat albo wybierz jeden z trzech scenariuszy poniżej.
+              Kalkulator pokazuje skalę — od regularnych wydatków po opiekę, leczenie, transport
+              i zdarzenia nieprzewidziane.
+            </p>
+            <ul class="cost__categories" aria-label="Kategorie kosztów">
+              <li>Żywienie</li><li>Profilaktyka</li><li>Leczenie</li><li>Akcesoria</li>
+              <li>Pielęgnacja</li><li>Szkolenie</li><li>Transport</li><li>Opieka podczas wyjazdów</li>
+            </ul>
+
+            <div class="scenariusze-przyciski" role="group" aria-label="Gotowe scenariusze">
+              <button type="button" data-preset="600" aria-pressed="false">Mieszaniec, oszczędnie</button>
+              <button type="button" data-preset="900" aria-pressed="true">Średnia krajowa</button>
+              <button type="button" data-preset="1300" aria-pressed="false">Rasa, pełna opieka</button>
+            </div>
+          </div>
+
+          <div class="calculator reveal" data-delay="1" data-calculator>
+            <div class="calculator__result" aria-live="polite">
+              <span>Łącznie przez <strong data-years-label>12 lat</strong></span>
+              <output data-total>129 600 zł</output>
+              <small><span data-monthly-label>900 zł</span> miesięcznie · <span data-daily>30 zł</span> dziennie</small>
+            </div>
+
+            <div class="range-field">
+              <div class="range-field__label">
+                <label for="monthly-cost">Miesięczny budżet</label>
+                <output for="monthly-cost" data-monthly-output>900 zł</output>
+              </div>
+              <input id="monthly-cost" type="range" min="550" max="1400" step="50" value="900" data-monthly />
+              <div class="range-field__scale"><span>550 zł</span><span>1 400 zł</span></div>
+            </div>
+
+            <div class="range-field">
+              <div class="range-field__label">
+                <label for="years-cost">Liczba wspólnych lat</label>
+                <output for="years-cost" data-years-output>12 lat</output>
+              </div>
+              <input id="years-cost" type="range" min="8" max="16" step="1" value="12" data-years />
+              <div class="range-field__scale"><span>8 lat</span><span>16 lat</span></div>
+            </div>
+
+            <p class="calculator__note">
+              Model edukacyjny, nie indywidualna wycena. Faktyczny koszt zależy od wielkości i zdrowia
+              psa, miejsca zamieszkania, sposobu żywienia, usług i zdarzeń losowych.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="koszty-sekcja">
+        <div class="shell">
+          <h2>Koszty roczne, pozycja po pozycji</h2>
+          <p class="koszty-sekcja__wstep">
+            Model dla psa o wadze 15–25 kg w Warszawie lub innym dużym polskim mieście, na podstawie
+            cenników klinik, sklepów zoologicznych i ubezpieczycieli na lata 2025–2026. Dla ras
+            powyżej 30 kg pozycje „karma”, „weterynaria” i „ubezpieczenie” mnoży się przez 1,3–1,5.
+            U małych ras ozdobnych wyraźnie drożeją grooming i stomatologia.
+          </p>
+
+          <div class="tabela-przewin">
+            <table class="tabela-kosztow">
+              <thead>
+                <tr>
+                  <th scope="col">Pozycja</th>
+                  <th scope="col">Rocznie</th>
+                  <th scope="col">Przez 12 lat</th>
+                  <th scope="col">Uwagi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Karma super-premium</td>
+                  <td>3 000–6 000 zł</td>
+                  <td>36 000–72 000 zł</td>
+                  <td>Dla psa 15–25 kg. Duże rasy: ×1,5–2</td>
+                </tr>
+                <tr>
+                  <td>Profilaktyka weterynaryjna</td>
+                  <td>1 000–2 000 zł</td>
+                  <td>12 000–24 000 zł</td>
+                  <td>Szczepienia, odrobaczanie, badania. Minimum raz w roku, zalecane dwa razy</td>
+                </tr>
+                <tr>
+                  <td>Ubezpieczenie (OC i leczenie)</td>
+                  <td>500–1 200 zł</td>
+                  <td>6 000–14 400 zł</td>
+                  <td>Porównanie ofert — rozdział 45 książki</td>
+                </tr>
+                <tr>
+                  <td>Grooming</td>
+                  <td>1 200–2 400 zł</td>
+                  <td>14 400–28 800 zł</td>
+                  <td>Co 6–8 tygodni, jeśli rasa tego wymaga</td>
+                </tr>
+                <tr>
+                  <td>Hotel lub pet-sitter</td>
+                  <td>1 400–3 000 zł</td>
+                  <td>16 800–36 000 zł</td>
+                  <td>Przy dwóch tygodniach urlopu rocznie. Hotel: 80–150 zł za dobę</td>
+                </tr>
+                <tr>
+                  <td>Akcesoria i wyposażenie</td>
+                  <td>500–1 000 zł</td>
+                  <td>6 000–12 000 zł</td>
+                  <td>Legowiska, smycze, zabawki. Wymieniane średnio co 1–3 lata</td>
+                </tr>
+                <tr>
+                  <td>Szkolenie i zoopsycholog</td>
+                  <td>—</td>
+                  <td>2 000–8 000 zł</td>
+                  <td>Główne wydatki przypadają na pierwszy rok życia</td>
+                </tr>
+                <tr>
+                  <td>Nagła pomoc weterynaryjna</td>
+                  <td>—</td>
+                  <td>4 500–12 000 zł</td>
+                  <td>Średnio raz na 3–4 lata. Operacje: od 3 000 do 10 000 zł i więcej</td>
+                </tr>
+                <tr>
+                  <td>Stomatologia</td>
+                  <td>—</td>
+                  <td>2 000–5 000 zł</td>
+                  <td>Usuwanie kamienia w narkozie. Szczególnie istotne u małych ras</td>
+                </tr>
+                <tr>
+                  <td>Łącznie</td>
+                  <td>8 000–15 000 zł+</td>
+                  <td>80 000–200 000 zł+</td>
+                  <td>Bez onkologii i chorób przewlekłych</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="dwie-karty">
+            <div class="pulapka">
+              <strong>Góra lodowa</strong>
+              <p>
+                Karma to około jednej czwartej budżetu — i jedyna część, którą widać przed
+                pojawieniem się psa w domu. Pod powierzchnią zostają nieprzewidziane koszty
+                weterynaryjne, szkolenie, hotel na czas urlopu, ubezpieczenie i grooming.
+              </p>
+              <p>
+                Dlatego zderzenie z rachunkiem następuje zwykle nie w pierwszym miesiącu,
+                tylko w pierwszym roku.
+              </p>
+            </div>
+
+            <div class="pulapka">
+              <strong>Paradoks taniej karmy</strong>
+              <p>
+                Przejście z karmy za 25–30 zł za kilogram na karmę za 8–10 zł pozwala
+                zaoszczędzić około 3 000 zł rocznie. Brzmi jak oczywista decyzja.
+              </p>
+              <p>
+                Tyle że przy długotrwałym stosowaniu karm niskiej jakości realne jest ryzyko
+                kosztów leczenia rzędu 5 000–15 000 zł. Lekarze weterynarii notowali wzrost
+                wizyt związanych z problemami skórnymi, trawiennymi i wczesnymi objawami
+                patologii nerek w ciągu 6–12 miesięcy od takiej zmiany.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="koszty-sekcja" style="background:var(--cream);border-block:1px solid var(--line)">
+        <div class="shell">
+          <h2>Ile trzeba wyłożyć na starcie</h2>
+          <p class="koszty-sekcja__wstep">
+            Pierwsze wydatki różnią się przede wszystkim tym, skąd pies trafia do domu.
+            Przy adopcji zwierzę jest zwykle już zaszczepione i wysterylizowane, co zdejmuje
+            z rachunku kilka pozycji naraz.
+          </p>
+
+          <div class="start-grid">
+            <div class="start-karta">
+              <h3>Szczenię z hodowli ZKwP/FCI</h3>
+              <p class="start-karta__suma">7 500–17 000 zł+</p>
+              <ul>
+                <li><span>Szczenię</span><span>4 000–9 000 zł</span></li>
+                <li><span>Zestaw startowy</span><span>800–2 500 zł</span></li>
+                <li><span>Pakiet weterynaryjny</span><span>300–600 zł</span></li>
+                <li><span>Czipowanie i rejestracja</span><span>50–100 zł</span></li>
+                <li><span>Kennel do domu i auta</span><span>300–1 200 zł</span></li>
+                <li><span>Pierwszy kurs szkolenia</span><span>1 500–3 500 zł</span></li>
+              </ul>
+            </div>
+
+            <div class="start-karta start-karta--adopcja">
+              <h3>Adopcja ze schroniska</h3>
+              <p class="start-karta__suma">2 000–7 000 zł</p>
+              <ul>
+                <li><span>Wkład organizacyjny</span><span>0–400 zł</span></li>
+                <li><span>Zestaw startowy</span><span>800–2 500 zł</span></li>
+                <li><span>Pakiet weterynaryjny</span><span>zwykle w cenie</span></li>
+                <li><span>Czipowanie i rejestracja</span><span>zwykle bezpłatnie</span></li>
+                <li><span>Kennel do domu i auta</span><span>300–1 200 zł</span></li>
+                <li><span>Pierwszy kurs szkolenia</span><span>1 500–3 500 zł</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="dwie-karty">
+            <div class="info-karta">
+              <strong>Sterylizacja i kastracja</strong>
+              <p>
+                Pozycja, która w pierwszym roku zaskakuje najczęściej — bo prawie nikt jej
+                nie planuje. W Warszawie w latach 2025–2026 sterylizacja suki o wadze około
+                20 kg kosztuje 800–1 500 zł łącznie z badaniem krwi (200–350 zł), znieczuleniem
+                i kołnierzem pooperacyjnym. Kastracja samca jest tańsza: 400–800 zł.
+                W mniejszych miastach ceny są o 20–30% niższe.
+              </p>
+              <p>
+                Przy psie ze schroniska zabieg jest zwykle już wykonany i wliczony.
+              </p>
+            </div>
+
+            <div class="info-karta">
+              <strong>Gmina może to sfinansować</strong>
+              <p>
+                Wiele gmin corocznie przeznacza budżet na programy „Akcja sterylizacja
+                i czipowanie” — bezpłatne czipowanie i kastrację psów mieszkańców. Regularnie
+                uruchamiają je gminy województw małopolskiego, mazowieckiego i dolnośląskiego.
+              </p>
+              <p>
+                Wystarczy złożyć wniosek przez BIP swojej gminy albo w urzędzie, zwykle
+                w pierwszym kwartale roku. Można w ten sposób zaoszczędzić ponad tysiąc złotych
+                na dwóch pozycjach naraz.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="scenariusze">
+        <div class="shell">
+          <h2>Trzy scenariusze na całe życie psa</h2>
+          <p>
+            Większość ludzi myśli o psie w kategoriach miesięcznych. Ale liczba, którą warto znać
+            z wyprzedzeniem, to koszt przez całe dwanaście–czternaście lat. Poniżej trzy typowe
+            polskie warianty, ceny 2025–2026, Warszawa.
+          </p>
+
+          <div class="scenariusze__grid">
+            <div class="scenariusz">
+              <b>Scenariusz A</b>
+              <strong>Mieszaniec ze schroniska</strong>
+              <p class="scenariusz__kwota">96–110 tys. zł</p>
+              <p>Karma ekonomiczna, bez ubezpieczenia. Najtańszy realny wariant — i wciąż sześciocyfrowy.</p>
+            </div>
+
+            <div class="scenariusz">
+              <b>Scenariusz B</b>
+              <strong>Labrador z hodowli</strong>
+              <p class="scenariusz__kwota">185–220 tys. zł</p>
+              <p>Karma premium, podstawowe ubezpieczenie. Duży pies to większa miska i wyższe dawki leków.</p>
+            </div>
+
+            <div class="scenariusz">
+              <b>Scenariusz C</b>
+              <strong>Mops lub buldog francuski</strong>
+              <p class="scenariusz__kwota">145–200 tys. zł</p>
+              <p>Karma weterynaryjna, pełne ubezpieczenie. Mały pies bywa droższy od dużego — decyduje zdrowie rasy.</p>
+            </div>
+          </div>
+
+          <div class="scenariusze__wniosek">
+            <strong>Wniosek, który warto przyjąć przed, a nie po</strong>
+            <p>
+              W każdym scenariuszu pies to zobowiązanie finansowe porównywalne z samochodem klasy
+              średniej. Nie jest to argument przeciwko psu — jest to argument za tym, żeby wiedzieć,
+              na co się decydujesz, zanim zwierzę pojawi się w domu.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="koszty-sekcja">
+        <div class="shell">
+          <h2>Opłata od posiadania psów</h2>
+          <p class="koszty-sekcja__wstep">
+            Wbrew potocznej nazwie nie jest to podatek, tylko opłata lokalna — i o jej wprowadzeniu
+            decyduje samodzielnie każda gmina. Warszawa, Poznań i Gdańsk zniosły ją całkowicie.
+          </p>
+
+          <div class="dwie-karty" style="margin-top:0">
+            <div class="info-karta">
+              <strong>Stawka i termin</strong>
+              <p>
+                Maksymalna stawka na 2026 rok to <strong>186,29 zł rocznie</strong> — górną granicę
+                ustala obwieszczenie Ministra Finansów. Gmina może ustalić niższą albo nie pobierać
+                opłaty wcale.
+              </p>
+              <p>
+                Zgłoszenie posiadania psa składa się <strong>w ciągu 14 dni od nabycia</strong>,
+                w urzędzie gminy osobiście albo przez ePUAP. Tryb określa lokalna uchwała.
+              </p>
+            </div>
+
+            <div class="info-karta">
+              <strong>Sprawdź, zanim zapłacisz</strong>
+              <p>
+                Zacznij od strony BIP swojej gminy — wyszukaj „opłata od posiadania psów
+                [nazwa gminy] BIP”. Możliwe, że w twoim miejscu opłaty po prostu nie ma.
+              </p>
+              <p>
+                Ustawa przewiduje też zwolnienia, między innymi dla osób ze znacznym stopniem
+                niepełnosprawności, posiadaczy certyfikowanych psów asystujących oraz samotnych
+                emerytów powyżej 65. roku życia. Gminy mogą tę listę rozszerzać — Kraków zwalnia
+                na przykład właścicieli psów wykastrowanych i pochodzących ze schroniska.
+              </p>
+            </div>
+          </div>
+
+          <p class="zrodla">
+            Dane pochodzą z rozdziału 2 książki „Pies w Polsce”, opartego na cennikach polskich
+            klinik, sklepów zoologicznych i ubezpieczycieli oraz na danych rynkowych NielsenIQ
+            i GfK Polska. Podstawa prawna opłaty: ustawa z 12 stycznia 1991 r. o podatkach
+            i opłatach lokalnych; górna granica stawki na 2026 r. — obwieszczenie Ministra Finansów
+            z 1 sierpnia 2025 r. (M.P. 2025 poz. 726). Ceny mają charakter orientacyjny i zmieniają
+            się szybciej niż przepisy — przed decyzją sprawdź aktualne cenniki.
+          </p>
+        </div>
+      </section>
+
+      <section class="koszty-dalej">
+        <div class="shell">
+          <div class="section-heading reveal" style="margin-bottom:30px">
+            <p class="kicker">Idź dalej</p>
+            <h2 style="font-size:clamp(1.8rem,3.2vw,2.6rem);margin:0">Pieniądze to jeden rozdział z sześćdziesięciu jeden</h2>
+          </div>
+          <div class="koszty-dalej__grid">
+            <a href="../#rozdzialy">
+              <strong>Rozdział 2 i odcinek podcastu</strong>
+              <small>Pełna analiza rynku, inflacji i kanałów zakupu.</small>
+            </a>
+            <a href="../narzedzia/">
+              <strong>Narzędzia</strong>
+              <small>Wiek psa, terminarz szczepień, gdzie wolno wejść z psem.</small>
+            </a>
+            <a href="../mapa/">
+              <strong>Mapa weterynarzy</strong>
+              <small>Prawie 2000 lecznic i schronisk w całej Polsce.</small>
+            </a>
+            <a href="../pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf" download>
+              <strong>Cała książka za darmo</strong>
+              <small>618 stron, 61 rozdziałów, PDF bez rejestracji.</small>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell site-footer__top">
+        <a class="wordmark wordmark--footer" href="../">
+          <span class="wordmark__seal" aria-hidden="true">P</span>
+          <span class="wordmark__text"><strong>Pies w Polsce</strong><small>Mykola Hrytskov · 2026</small></span>
+        </a>
+        <div class="site-footer__links">
+          <a href="../pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf" download>Pobierz książkę</a>
+          <a href="../#rozdzialy">Rozdziały</a>
+          <a href="../kropik/">KROPiK</a>
+          <a href="../narzedzia/">Narzędzia</a>
+          <a href="../mapa/">Mapa</a>
+          <a href="../zatrucia/">Zatrucia</a>
+        </div>
+      </div>
+      <div class="shell site-footer__legal">
+        <p>
+          Treści na stronie i w książce mają charakter informacyjny oraz edukacyjny. Nie stanowią
+          indywidualnej porady prawnej, podatkowej ani weterynaryjnej. Ceny i przepisy mogą się
+          zmieniać; przed podjęciem decyzji sprawdź aktualne źródła.
+        </p>
+        <p>© 2026 Mykola Hrytskov</p>
+      </div>
+    </footer>
+
+    <script src="../script.js" defer></script>
+    <script>
+      document.querySelectorAll("[data-preset]").forEach(function (przycisk) {
+        przycisk.addEventListener("click", function () {
+          var suwak = document.querySelector("[data-monthly]");
+          if (!suwak) return;
+          suwak.value = przycisk.getAttribute("data-preset");
+          suwak.dispatchEvent(new Event("input", { bubbles: true }));
+          document.querySelectorAll("[data-preset]").forEach(function (b) {
+            b.setAttribute("aria-pressed", String(b === przycisk));
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
