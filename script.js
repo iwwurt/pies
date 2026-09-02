@@ -443,11 +443,7 @@ updateMobileBuy();
 window.addEventListener("scroll", requestMobileBuyUpdate, { passive: true });
 window.addEventListener("resize", requestMobileBuyUpdate);
 
-/* Linki, ktore czekaja na uzupelnienie (playlista YouTube, wsparcie autora). */
-document.querySelectorAll("[data-donate]").forEach((element) => {
-  if ((element.getAttribute("href") || "").startsWith("{{")) element.remove();
-});
-
+/* Link do podcastu na YouTube uzupelniany z dane/rozdzialy.json. */
 document.querySelectorAll("[data-yt-playlist]").forEach((element) => {
   const href = element.getAttribute("href") || "";
   if (!/^https?:/.test(href)) return;
