@@ -3396,3 +3396,19 @@ a.rozdzial__podcast:hover {
   color: var(--ink);
   font-weight: 700;
 }
+
+.faq__tematy {
+  margin: 22px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+.faq__tematy a {
+  border-bottom: 1px solid var(--gold);
+  color: var(--ink);
+  font-weight: 700;
+  white-space: nowrap;
+}
