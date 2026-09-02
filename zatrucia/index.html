@@ -310,6 +310,19 @@
         font-weight: 700;
       }
 
+      /* Na ekranie dotykowym szesc odnosnikow po 20 px jeden pod drugim
+         to loteria. Powiekszamy sam obszar dotkniecia, wyglad zostaje. */
+      @media (pointer: coarse) {
+        .do-lecznicy li:has(a) {
+          padding-block: 6px;
+        }
+
+        .do-lecznicy li a {
+          display: inline-block;
+          padding-block: 8px;
+        }
+      }
+
       .zastrzezenie-med {
         padding: 26px 30px;
         margin-top: clamp(36px, 4vw, 56px);

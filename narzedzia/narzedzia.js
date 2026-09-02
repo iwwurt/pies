@@ -48,6 +48,25 @@
   otworzZKotwicy();
   window.addEventListener("hashchange", otworzZKotwicy);
 
+  var pasek = document.querySelector(".narz-zakladki");
+  if (pasek) {
+    var oznaczPrzewijanie = function () {
+      var zostalo = pasek.scrollWidth - pasek.clientWidth - pasek.scrollLeft;
+      if (zostalo > 2) {
+        pasek.setAttribute("data-przewija", "");
+      } else {
+        pasek.removeAttribute("data-przewija");
+      }
+    };
+    oznaczPrzewijanie();
+    pasek.addEventListener("scroll", oznaczPrzewijanie, { passive: true });
+    // zdarzenie scroll bywa dlawione przy przewijaniu palcem, wiec
+    // domykamy stan po zakonczeniu gestu
+    pasek.addEventListener("touchend", oznaczPrzewijanie, { passive: true });
+    pasek.addEventListener("pointerup", oznaczPrzewijanie, { passive: true });
+    window.addEventListener("resize", oznaczPrzewijanie);
+  }
+
   /* --------------------------------------------------------- wiek psa --- */
 
   var TEMPO = { maly: 4, sredni: 5, duzy: 6, olbrzymi: 7 };

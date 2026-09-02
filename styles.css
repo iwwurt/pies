@@ -3446,3 +3446,30 @@ a.rozdzial__podcast:hover {
   border-bottom-color: currentColor;
   color: #fff6f0;
 }
+
+/* ============================================================
+   Poprawki dla ekranow dotykowych
+   ============================================================ */
+
+/* Suwaki mialy 3-4 px wysokosci, wiec na telefonie nie dalo sie ich
+   chwycic palcem. Element rosnie do 40 px, ale sam pasek zostaje cienki:
+   gradient jest rysowany jako tlo o wysokosci 4 px wysrodkowane w pionie. */
+@media (pointer: coarse) {
+  .reader__controls input[type="range"],
+  .range-field input[type="range"] {
+    height: 40px;
+    margin-block: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 4px;
+  }
+}
+
+@media (max-width: 760px) {
+  /* 0.55rem to 8.8 px - czytelne na duzym ekranie obok okladki,
+     na telefonie juz nie. */
+  .hero__book figcaption span,
+  .hero__visual-note span {
+    font-size: 0.68rem;
+  }
+}
