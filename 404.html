@@ -1,27 +1,260 @@
 <!doctype html>
-<html lang="pl">
+<html lang="pl" class="no-js">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex" />
     <title>Nie znaleziono strony — Pies w Polsce</title>
+    <meta name="theme-color" content="#3a3733" />
+
+    <!-- Wszystkie sciezki musza byc liczone od korzenia. GitHub Pages
+         serwuje ten plik pod dowolnym nieistniejacym adresem, wiec
+         "./" z /kropik/literowka prowadziloby do /kropik/, a nie na
+         strone glowna. -->
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+
     <style>
-      :root { color-scheme: light; }
-      * { box-sizing: border-box; }
-      body { display: grid; min-height: 100vh; margin: 0; padding: 30px; place-items: center; background: #f8f5ef; color: #3a3733; font-family: Aptos, "Segoe UI", Arial, sans-serif; }
-      main { width: min(640px, 100%); text-align: center; }
-      p:first-child { margin: 0 0 20px; color: #b0833f; font-size: .7rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
-      h1 { margin: 0; font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif; font-size: clamp(3rem, 10vw, 6rem); font-weight: 400; letter-spacing: -.045em; line-height: 1; }
-      p { color: #756f66; }
-      a { display: inline-flex; min-height: 54px; align-items: center; margin-top: 20px; padding: 0 26px; border-radius: 999px; background: #3a3733; color: #fffdf9; font-size: .78rem; font-weight: 700; text-decoration: none; }
+      .nf {
+        padding-block: clamp(56px, 8vw, 110px) clamp(40px, 5vw, 70px);
+        border-bottom: 1px solid var(--line);
+        background: var(--cream);
+      }
+
+      .nf__kod {
+        margin: 0 0 20px;
+        color: var(--gold-dark);
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .nf h1 {
+        max-width: 16ch;
+        margin: 0 0 22px;
+        font-size: clamp(2.4rem, 6vw, 5rem);
+        line-height: 1.02;
+      }
+
+      .nf__lead {
+        max-width: 58ch;
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.02rem;
+        line-height: 1.72;
+      }
+
+      .nf-gdzie {
+        padding-block: clamp(48px, 6vw, 84px);
+      }
+
+      .nf-gdzie h2 {
+        margin: 0 0 30px;
+        font-size: clamp(1.7rem, 3vw, 2.4rem);
+      }
+
+      .nf-gdzie__grid {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+
+      .nf-gdzie a {
+        display: block;
+        padding: 28px 30px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        background: var(--white);
+        transition: border-color 180ms ease, transform 180ms ease;
+      }
+
+      .nf-gdzie a:hover {
+        border-color: var(--gold);
+        transform: translateY(-2px);
+      }
+
+      .nf-gdzie strong {
+        display: block;
+        margin-bottom: 8px;
+        font-family: var(--display);
+        font-size: 1.22rem;
+        font-weight: 500;
+      }
+
+      .nf-gdzie small {
+        color: var(--muted);
+        font-size: 0.83rem;
+        line-height: 1.6;
+      }
+
+      .nf-gdzie a.nf-pilne {
+        border-left: 3px solid #a24a2c;
+      }
+
+      .nf-ksiazka {
+        padding-block: clamp(46px, 5vw, 80px);
+        background: var(--ink-deep);
+        color: var(--paper);
+      }
+
+      .nf-ksiazka__grid {
+        display: grid;
+        align-items: center;
+        gap: clamp(26px, 4vw, 60px);
+        grid-template-columns: minmax(0, 1fr) auto;
+      }
+
+      .nf-ksiazka h2 {
+        margin: 0 0 14px;
+        font-size: clamp(1.7rem, 3vw, 2.4rem);
+      }
+
+      .nf-ksiazka p {
+        max-width: 56ch;
+        margin: 0;
+        color: rgba(248, 245, 239, 0.7);
+        line-height: 1.7;
+      }
+
+      @media (max-width: 760px) {
+        .nf-ksiazka__grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
     </style>
   </head>
+
   <body>
-    <main>
-      <p>Błąd 404</p>
-      <h1>Ta strona gdzieś pobiegła.</h1>
-      <p>Wróć do przewodnika „Pies w Polsce”.</p>
-      <a href="./">Wróć na stronę główną</a>
+    <a class="skip-link" href="#main">Przejdź do treści</a>
+
+    <header class="site-header" data-header>
+      <div class="shell site-header__inner">
+        <a class="wordmark" href="/" aria-label="Pies w Polsce — strona główna">
+          <span class="wordmark__seal" aria-hidden="true">P</span>
+          <span class="wordmark__text">
+            <strong>Pies w Polsce</strong>
+            <small>Kochaj · Rozum · Szanuj</small>
+          </span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Otwórz menu"
+          data-menu-toggle
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Główna nawigacja" data-nav>
+          <a href="/#rozdzialy">Rozdziały</a>
+          <a href="/koszty/">Koszty</a>
+          <a href="/kropik/">KROPiK</a>
+          <a href="/narzedzia/">Narzędzia</a>
+          <a href="/mapa/">Mapa</a>
+          <a class="button button--primary button--compact" href="/pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf" download>
+            Pobierz za darmo
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="nf">
+        <div class="shell">
+          <p class="nf__kod">Błąd 404</p>
+          <h1>Ta strona gdzieś pobiegła.</h1>
+          <p class="nf__lead">
+            Adres, pod który trafiłeś, nie istnieje albo się zmienił. Nic nie zginęło —
+            cała książka i wszystko, co wokół niej, są kilka linijek niżej.
+          </p>
+        </div>
+      </section>
+
+      <section class="nf-gdzie">
+        <div class="shell">
+          <h2>Czego szukasz?</h2>
+          <div class="nf-gdzie__grid">
+            <a class="nf-pilne" href="/zatrucia/">
+              <strong>Pies zjadł coś trującego</strong>
+              <small>Co robić w pierwszych minutach i czego nie robić nigdy.</small>
+            </a>
+            <a class="nf-pilne" href="/mapa/#calodobowe">
+              <strong>Lecznica czynna teraz</strong>
+              <small>Mapa placówek całodobowych w całej Polsce.</small>
+            </a>
+            <a href="/#rozdzialy">
+              <strong>61 rozdziałów i podcast</strong>
+              <small>Pełny spis treści z odnośnikami do odcinków.</small>
+            </a>
+            <a href="/koszty/">
+              <strong>Ile kosztuje pies</strong>
+              <small>Rocznie, na start i przez całe wspólne życie.</small>
+            </a>
+            <a href="/kropik/">
+              <strong>KROPiK i czipowanie</strong>
+              <small>Co zmienia ustawa i od kiedy naprawdę obowiązuje.</small>
+            </a>
+            <a href="/narzedzia/">
+              <strong>Narzędzia</strong>
+              <small>Wiek psa, szczepienia, gdzie wolno wejść z psem, opłata gminna.</small>
+            </a>
+            <a href="/apteczka/">
+              <strong>Apteczka dla psa</strong>
+              <small>Lista do odhaczenia i wydrukowania.</small>
+            </a>
+            <a href="/mapa/">
+              <strong>Weterynarze i schroniska</strong>
+              <small>Prawie 2000 miejsc na jednej mapie.</small>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="nf-ksiazka">
+        <div class="shell nf-ksiazka__grid">
+          <div>
+            <h2>A jeśli po prostu przyszedłeś po książkę</h2>
+            <p>
+              618 stron o prawie, zdrowiu i codzienności z psem w Polsce. Za darmo,
+              bez rejestracji i bez podawania adresu e-mail.
+            </p>
+          </div>
+          <a class="button button--gold button--large" href="/pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf" download>
+            Pobierz PDF <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="shell site-footer__top">
+        <a class="wordmark wordmark--footer" href="/">
+          <span class="wordmark__seal" aria-hidden="true">P</span>
+          <span class="wordmark__text"><strong>Pies w Polsce</strong><small>Mykola Hrytskov · 2026</small></span>
+        </a>
+        <div class="site-footer__links">
+          <a href="/">Strona główna</a>
+          <a href="/#rozdzialy">Rozdziały</a>
+          <a href="/#podcast">Podcast</a>
+          <a href="/narzedzia/">Narzędzia</a>
+          <a href="/mapa/">Mapa</a>
+          <a href="/zatrucia/">Zatrucia</a>
+          <a href="/apteczka/">Apteczka</a>
+        </div>
+      </div>
+      <div class="shell site-footer__legal">
+        <p>
+          Treści na stronie i w książce mają charakter informacyjny oraz edukacyjny.
+          Nie stanowią indywidualnej porady prawnej ani weterynaryjnej.
+        </p>
+        <p>© 2026 Mykola Hrytskov</p>
+      </div>
+    </footer>
+
+    <script src="/script.js" defer></script>
   </body>
 </html>
