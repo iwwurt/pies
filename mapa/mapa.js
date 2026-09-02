@@ -16,8 +16,25 @@
 
   if (!elLista || typeof L === "undefined") return;
 
+  // Celowo waska lista: lepiej pominac czynna lecznice, niz wyslac kogos
+  // o trzeciej w nocy pod zamkniete drzwi. "Sa 00:00-24:00" to sobota na
+  // caly dzien, a nie calodobowosc - takie zapisy tu nie przechodza.
+  var CALODOBOWE = [
+    "24/7",
+    "00:00-24:00",
+    "mo-su00:00-24:00",
+    "mo-su,ph00:00-24:00",
+    "24/7;ph24/7",
+  ];
+
+  function calodobowa(p) {
+    if (!p.h) return false;
+    return CALODOBOWE.indexOf(p.h.toLowerCase().replace(/\s/g, "")) !== -1;
+  }
+
   var punkty = [];
   var widoczneTypy = { v: true, s: true };
+  var tylkoCalodobowe = false;
   var mojaPozycja = null;
   var markery = {};
 
@@ -75,7 +92,7 @@
 
   function trescPopupu(p) {
     var czesci = ["<strong>" + bezpieczny(p.n) + "</strong>"];
-    czesci.push("<em>" + TYPY[p.t] + "</em>");
+    czesci.push("<em>" + TYPY[p.t] + (p._24 ? " · czynne całą dobę" : "") + "</em>");
     var adres = [p.a, p.m].filter(Boolean).join(", ");
     if (adres) czesci.push(bezpieczny(adres));
     if (p.h) czesci.push("Godziny: " + bezpieczny(p.h));
@@ -109,7 +126,9 @@
   function aktualne() {
     var fraza = (elSzukaj && elSzukaj.value.trim()) || "";
     return punkty.filter(function (p) {
-      return widoczneTypy[p.t] && pasujeDoFrazy(p, fraza);
+      if (!widoczneTypy[p.t]) return false;
+      if (tylkoCalodobowe && !p._24) return false;
+      return pasujeDoFrazy(p, fraza);
     });
   }
 
@@ -155,6 +174,7 @@
           '">' +
           TYPY[p.t] +
           "</span>" +
+          (p._24 ? '<span class="mapa-karta__typ mapa-karta__typ--24">całą dobę</span>' : "") +
           '<p class="mapa-karta__nazwa">' +
           bezpieczny(p.n) +
           "</p>" +
@@ -227,6 +247,28 @@
     });
   });
 
+  var przelacznik24 = document.querySelector("[data-tylko-24]");
+  if (przelacznik24) {
+    przelacznik24.addEventListener("click", function () {
+      tylkoCalodobowe = przelacznik24.getAttribute("aria-pressed") !== "true";
+      przelacznik24.setAttribute("aria-pressed", String(tylkoCalodobowe));
+      odswiez(false);
+    });
+  }
+
+  function zKotwicy() {
+    // /zatrucia/ prowadzi tu przez #calodobowe - filtr ma byc juz wlaczony
+    if (window.location.hash !== "#calodobowe" || !przelacznik24) return;
+    tylkoCalodobowe = true;
+    przelacznik24.setAttribute("aria-pressed", "true");
+  }
+
+  window.addEventListener("hashchange", function () {
+    // dziala tez, gdy ktos zmieni adres bez przeladowania strony
+    zKotwicy();
+    if (punkty.length) odswiez(false);
+  });
+
   var opoznienie;
   if (elSzukaj) {
     elSzukaj.addEventListener("input", function () {
@@ -275,8 +317,15 @@
     .then(function (dane) {
       punkty = dane.map(function (p, i) {
         p.id = "p" + i;
+        p._24 = calodobowa(p);
         return p;
       });
+
+      var ile24 = punkty.filter(function (p) {
+        return p._24;
+      }).length;
+      var etykieta = document.querySelector("[data-liczba-24]");
+      if (etykieta) etykieta.textContent = ile24;
 
       var miasta = {};
       punkty.forEach(function (p) {
@@ -293,6 +342,7 @@
           .join("");
       }
 
+      zKotwicy();
       odswiez(false);
     })
     .catch(function (err) {
