@@ -154,6 +154,13 @@ SEKCJE = [
         "ton": "alarm",
     },
     {
+        "slug": "smierc-psa",
+        "dzial": "Zdrowie",
+        "tytul": "Gdy pies umiera",
+        "podtytul": "Co mówi prawo i co wolno zrobić",
+        "ton": "zloty",
+    },
+    {
         "slug": "lek-separacyjny",
         "dzial": "Zdrowie",
         "tytul": "Lęk separacyjny",

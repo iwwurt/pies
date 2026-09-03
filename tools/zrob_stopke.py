@@ -60,6 +60,7 @@ KOLUMNY = [
         ("Kleszcze", "kleszcze/", "strona"),
         ("Apteczka", "apteczka/", "strona"),
         ("Lęk separacyjny", "lek-separacyjny/", "strona"),
+        ("Gdy pies umiera", "smierc-psa/", "strona"),
     ]),
     ("Codzienność", [
         ("Adopcja i wybór psa", "adopcja/", "strona"),

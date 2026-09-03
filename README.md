@@ -64,6 +64,7 @@ danymi strukturalnymi i wpisem w `sitemap.xml`:
 - `/apteczka/` — lista kontrolna apteczki
 - `/kamera/` — domowa kamera a RODO: wyjątek domowy, sąsiedzi, dźwięk
 - `/rasy-agresywne/` — wykaz MSWiA, zezwolenie, mieszańce i ubezpieczenie
+- `/smierc-psa/` — status prawny zwłok, kremacja, wyrejestrowanie, eutanazja
 - `/o-ksiazce/` — czym jest książka, dlaczego jest bezpłatna, jak ją cytować
 
 Dodając kolejną stronę, pamiętaj o pięciu rzeczach: okruchy chleba
