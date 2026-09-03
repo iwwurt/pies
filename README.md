@@ -23,12 +23,14 @@ Następnie otworzyć `http://localhost:8080`.
 - `dane/rozdzialy.json` — źródło spisu 61 rozdziałów i linków do podcastów.
 - `tools/build_rozdzialy.py` — generator sekcji „Rozdziały” w `index.html`.
 - `tools/pobierz_punkty.py` — aktualizator danych mapy z OpenStreetMap.
+- `tools/zrob_og.py` — generator kart Open Graph dla podstron.
 - `dane/punkty.json` — lecznice i schroniska pokazywane na `/mapa/`.
 - `pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf` — pełna książka, 618 stron.
 - `pliki/Pies-w-Polsce-fragment-rozdzialy-1-5.pdf` — fragment, 52 strony.
 - `pliki/Checklista-pies-w-Polsce-2026.pdf` — checklista, 2 strony.
 - `pliki/podglad/str-01.webp` … `str-52.webp` — strony czytnika online.
 - `assets/photos/` — zoptymalizowane zdjęcia strony.
+- `assets/og/` — karty Open Graph podstron (po jednej na sekcję).
 
 Nie zmieniać nazw PDF ani plików `str-NN.webp`: czytnik i przyciski pobierania korzystają z tych ścieżek.
 
@@ -59,9 +61,10 @@ danymi strukturalnymi i wpisem w `sitemap.xml`:
 - `/zatrucia/` — postępowanie przy zatruciu
 - `/apteczka/` — lista kontrolna apteczki
 
-Dodając kolejną stronę, pamiętaj o czterech rzeczach: okruchy chleba
+Dodając kolejną stronę, pamiętaj o pięciu rzeczach: okruchy chleba
 z `BreadcrumbList`, wpis w `sitemap.xml`, odnośnik w stopkach pozostałych
-stron i `canonical` we własnym nagłówku.
+stron, `canonical` we własnym nagłówku i własna karta Open Graph
+(patrz niżej).
 
 ## Mapa: jak odświeżyć dane
 
@@ -91,6 +94,33 @@ Po aktualizacji wystarczy sprawdzić `/mapa/` w przeglądarce i zrobić commit.
 
 Dane są udostępniane na licencji ODbL i wymagają podania źródła — informacja
 o OpenStreetMap znajduje się w stopce sekcji na stronie mapy. Nie usuwać jej.
+
+## Karty Open Graph
+
+Obrazek, który pokazuje się przy wklejeniu linku na Facebooku, LinkedInie,
+WhatsAppie czy Signalu. Strona główna ma własny — `assets/og.png` ze zdjęciem
+psa. Każda podstrona ma swój w `assets/og/<sekcja>.png`.
+
+```powershell
+python tools/zrob_og.py                 # przerysuj wszystkie karty
+python tools/zrob_og.py kleszcze mapa   # tylko wybrane sekcje
+python tools/zrob_og.py --lista         # wypisz sekcje i ścieżki plików
+```
+
+Skrypt rysuje karty lokalnie (Pillow + kroje pisma z systemu), nie wysyła
+nic do sieci i nie korzysta z żadnego generatora online. Karta to tło,
+ramka, łapka i tekst, więc plik waży ok. 25 kB zamiast setek kilobajtów.
+
+**Dodając nową podstronę**, dopisz sekcję do listy `SEKCJE` w
+`tools/zrob_og.py` (slug, dział, tytuł, podtytuł, ton), uruchom skrypt
+i wskaż nowy plik w `og:image` oraz `twitter:image` w nagłówku strony.
+Pola `og:image:width`, `og:image:height` i `og:image:alt` też są wymagane —
+bez nich część komunikatorów pokazuje link bez obrazka.
+
+Tony są dwa. `zloty` to domyślny kolor serwisu. `alarm` — ciemna czerwień
+z `/zatrucia/` — jest zarezerwowany dla stron, na które trafia się w panice
+(zatrucie, zaginięcie, kleszcze). Nie rozszerzać go na resztę: cały sens
+polega na tym, że taki link wygląda inaczej niż pozostałe.
 
 ## GitHub Pages
 
