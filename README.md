@@ -60,6 +60,7 @@ danymi strukturalnymi i wpisem w `sitemap.xml`:
 - `/mapa/` — lecznice i schroniska z OpenStreetMap
 - `/zatrucia/` — postępowanie przy zatruciu
 - `/apteczka/` — lista kontrolna apteczki
+- `/kamera/` — domowa kamera a RODO: wyjątek domowy, sąsiedzi, dźwięk
 
 Dodając kolejną stronę, pamiętaj o pięciu rzeczach: okruchy chleba
 z `BreadcrumbList`, wpis w `sitemap.xml`, odnośnik w stopkach pozostałych

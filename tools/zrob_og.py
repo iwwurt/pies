@@ -154,6 +154,13 @@ SEKCJE = [
         "ton": "zloty",
     },
     {
+        "slug": "kamera",
+        "dzial": "Prawo",
+        "tytul": "Kamera w domu a RODO",
+        "podtytul": "Co wolno nagrywać we własnym mieszkaniu",
+        "ton": "zloty",
+    },
+    {
         "slug": "rozwod",
         "dzial": "Prawo",
         "tytul": "Pies po rozwodzie",
