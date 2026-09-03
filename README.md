@@ -98,7 +98,7 @@ o OpenStreetMap znajduje się w stopce sekcji na stronie mapy. Nie usuwać jej.
 ## Karty Open Graph
 
 Obrazek, który pokazuje się przy wklejeniu linku na Facebooku, LinkedInie,
-WhatsAppie czy Signalu. Strona główna ma własny — `assets/og.png` ze zdjęciem
+WhatsAppie czy Signalu. Strona główna ma własny — `assets/og.jpg` ze zdjęciem
 psa. Każda podstrona ma swój w `assets/og/<sekcja>.png`.
 
 ```powershell

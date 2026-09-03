@@ -278,6 +278,7 @@ document.querySelectorAll("[data-reader]").forEach((reader) => {
   let currentPage = 1;
   let touchStartX = null;
   let touchStartY = null;
+  let preloadAllowed = false;
 
   if (!totalPages || !pattern || !stage || !primary || !range) return;
 
@@ -290,7 +291,7 @@ document.querySelectorAll("[data-reader]").forEach((reader) => {
   }
 
   function preload(page) {
-    if (page < 1 || page > totalPages) return;
+    if (!preloadAllowed || page < 1 || page > totalPages) return;
     const image = new Image();
     image.src = pageSource(page);
   }
@@ -407,6 +408,26 @@ document.querySelectorAll("[data-reader]").forEach((reader) => {
 
   spreadQuery.addEventListener?.("change", () => showPage(currentPage));
   showPage(1);
+
+  function allowPreload() {
+    if (preloadAllowed) return;
+    preloadAllowed = true;
+    showPage(currentPage);
+  }
+
+  if ("IntersectionObserver" in window) {
+    const nearby = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        nearby.disconnect();
+        allowPreload();
+      },
+      { rootMargin: "400px" }
+    );
+    nearby.observe(reader);
+  } else {
+    allowPreload();
+  }
 });
 
 document.querySelectorAll(".faq-list details").forEach((item) => {

@@ -15,7 +15,7 @@ Nic nie jest pobierane z sieci. Kroj pisma bierzemy z systemu (Palatino
 Linotype i Segoe UI na Windows, DejaVu jako zapas), a caly rysunek to
 gradient, ramka, lapka i tekst — zadnych zdjec, wiec plik wychodzi lekki.
 
-Strona glowna zostaje przy assets/og.png ze zdjeciem psa: to okladka calego
+Strona glowna zostaje przy assets/og.jpg ze zdjeciem psa: to okladka calego
 serwisu i jedyna karta, na ktorej zdjecie ma sens.
 """
 
