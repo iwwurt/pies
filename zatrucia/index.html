@@ -6,7 +6,7 @@
     <title>Pies zjadł coś trującego — co robić teraz | Pies w Polsce</title>
     <meta
       name="description"
-      content="Pies zjadł czekoladę, ksylitol albo lek? Co zrobić w pierwszych minutach, czego nie robić nigdy i co zabrać do lecznicy."
+      content="Pies zjadł czekoladę, ksylitol albo coś z trawnika? Co zrobić w pierwszych minutach, czego nie robić nigdy i które rośliny polskich parków są śmiertelne."
     />
     <meta name="author" content="Mykola Hrytskov" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -19,7 +19,7 @@
     <meta property="og:title" content="Pies zjadł coś trującego — co robić teraz" />
     <meta
       property="og:description"
-      content="Pies zjadł czekoladę, ksylitol albo lek? Co zrobić w pierwszych minutach, czego nie robić nigdy i co zabrać do lecznicy."
+      content="Pies zjadł czekoladę, ksylitol albo coś z trawnika? Co zrobić w pierwszych minutach, czego nie robić nigdy i które rośliny polskich parków są śmiertelne."
     />
     <meta property="og:url" content="https://pieswpolsce.pl/zatrucia/" />
     <meta property="og:image" content="https://pieswpolsce.pl/assets/og/zatrucia.png" />
@@ -29,7 +29,7 @@
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Pies zjadł coś trującego — co robić teraz" />
-    <meta name="twitter:description" content="Pies zjadł czekoladę, ksylitol albo lek? Co zrobić w pierwszych minutach, czego nie robić nigdy i co zabrać do lecznicy." />
+    <meta name="twitter:description" content="Pies zjadł czekoladę, ksylitol albo coś z trawnika? Co zrobić w pierwszych minutach, czego nie robić nigdy i które rośliny polskich parków są śmiertelne." />
     <meta name="twitter:image" content="https://pieswpolsce.pl/assets/og/zatrucia.png" />
 
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
@@ -96,6 +96,41 @@
             "position": 2,
             "name": "Pies zjadł coś trującego",
             "item": "https://pieswpolsce.pl/zatrucia/"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://pieswpolsce.pl/zatrucia/#faq",
+        "inLanguage": "pl-PL",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Czy cis jest trujący dla psa?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tak, i to skrajnie. 5–10 jagód to dawka śmiertelna dla psa o masie 5 kg. Toksyczne są wszystkie części rośliny oprócz czerwonej, mięsistej osnówki jagody. Taksyny blokują kanały jonowe serca, antidotum nie istnieje, a śmierć następuje w ciągu 1–3 godzin. Cis rośnie na wszystkich polskich cmentarzach i w większości parków miejskich."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Pies zjadł grzyba, ale wygląda normalnie — czy można poczekać?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nie. Muchomor sromotnikowy ma okres utajenia 6–24 godziny całkowicie bez objawów, podczas gdy komórki wątroby już umierają. Do lecznicy trzeba jechać natychmiast po zjedzeniu grzyba, a nie po pojawieniu się objawów."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czy żołędzie i kasztany szkodzą psu?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nie od jednego kęsa, ale przy systematycznym zjadaniu tak. Żołędzie zawierają taniny i kwas galusowy uszkadzające nerki; objawy pojawiają się dopiero po 24–48 godzinach. Kasztanowiec działa przez eskulinę i saponiny — wymioty, biegunka, ataksja. Szczyt zagrożenia przypada na wrzesień–listopad, najgroźniej jest u szczeniąt i ras małych."
+            }
           }
         ]
       }
@@ -311,6 +346,147 @@
       }
 
       .trucizna__tresc strong {
+        color: var(--ink);
+      }
+
+      /* Zagrozenia z zewnatrz: park, las, cmentarz. Rozdzial 18 ksiazki. */
+      .spacer {
+        padding-block: clamp(52px, 6vw, 90px);
+        border-top: 1px solid var(--line);
+        background: var(--cream);
+      }
+
+      .spacer h2 {
+        margin: 0 0 22px;
+        font-size: clamp(1.9rem, 3.6vw, 3rem);
+      }
+
+      .spacer__wstep {
+        max-width: 68ch;
+        margin: 0 0 34px;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .spacer__wstep strong {
+        color: var(--ink);
+      }
+
+      .spacer__alarmy {
+        display: grid;
+        gap: 22px;
+        margin-bottom: 40px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+
+      .spacer__alarm {
+        padding: 26px 28px 28px;
+        border: 1px solid rgba(125, 45, 31, 0.28);
+        border-left: 3px solid #7d2d1f;
+        border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        background: #fff6f0;
+      }
+
+      .spacer__alarm b {
+        display: block;
+        color: #7d2d1f;
+        font-family: var(--display);
+        font-size: 1.55rem;
+        font-weight: 500;
+        line-height: 1.2;
+      }
+
+      .spacer__alarm i {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 0.8rem;
+        font-style: normal;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .spacer__alarm p {
+        margin: 16px 0 0;
+        color: var(--ink);
+        font-size: 0.95rem;
+        line-height: 1.72;
+      }
+
+      .spacer__tabela-wrap {
+        overflow-x: auto;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        background: var(--white);
+      }
+
+      .spacer__tabela {
+        width: 100%;
+        min-width: 760px;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+      }
+
+      .spacer__tabela th,
+      .spacer__tabela td {
+        padding: 15px 18px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .spacer__tabela thead th {
+        color: var(--gold-dark);
+        font-size: 0.66rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .spacer__tabela tbody th {
+        width: 22%;
+        color: var(--ink);
+        font-weight: 700;
+      }
+
+      .spacer__tabela tbody th em {
+        display: block;
+        margin-top: 3px;
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-weight: 400;
+      }
+
+      .spacer__tabela td {
+        color: var(--muted);
+        line-height: 1.62;
+      }
+
+      .spacer__tabela tbody tr:last-child th,
+      .spacer__tabela tbody tr:last-child td {
+        border-bottom: 0;
+      }
+
+      .spacer__podpowiedz {
+        margin: 0 0 14px;
+        color: var(--muted);
+        font-size: 0.8rem;
+      }
+
+      .spacer__nota {
+        max-width: 74ch;
+        margin: 30px 0 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.75;
+      }
+
+      .spacer__nota a {
+        border-bottom: 1px solid var(--gold-pale);
+        color: var(--gold-dark);
+      }
+
+      .spacer__nota strong {
         color: var(--ink);
       }
 
@@ -688,6 +864,10 @@
                   Jeżeli nie wiesz, co to za roślina — zrób zdjęcie i zabierz fragment
                   do lecznicy. Rozpoznanie gatunku bywa kluczowe.
                 </p>
+                <p>
+                  Rośliny i grzyby, na które pies trafia <strong>poza domem</strong> — w parku,
+                  lesie i na cmentarzu — mają niżej własną tabelę z dawkami i objawami.
+                </p>
               </div>
             </details>
 
@@ -706,6 +886,160 @@
               </div>
             </details>
           </div>
+        </div>
+      </section>
+
+      <section class="spacer">
+        <div class="shell">
+          <p class="kicker">Rozdział 18 · park, las, cmentarz</p>
+          <h2>Co truje na spacerze</h2>
+          <p class="spacer__wstep">
+            Lista wyżej dotyczy tego, co pies znajdzie w domu. Poza domem obowiązuje osobny
+            rejestr, w którym najgroźniejsze pozycje rosną w miejscach uważanych za
+            całkowicie zwyczajne. <strong>Wiele z tych trucizn działa gwałtownie, a swoiste
+            antidotum nie istnieje.</strong>
+          </p>
+
+          <div class="spacer__alarmy">
+            <div class="spacer__alarm">
+              <b>5–10 jagód</b>
+              <i>Cis pospolity</i>
+              <p>
+                Tyle wystarczy, żeby zabić psa o masie 5 kg. Cis rośnie na
+                <strong>wszystkich polskich cmentarzach</strong>, w większości parków
+                miejskich i w wielu prywatnych ogrodach. Antidotum nie istnieje, śmierć
+                następuje w ciągu 1–3 godzin.
+              </p>
+            </div>
+            <div class="spacer__alarm">
+              <b>6–24 godziny</b>
+              <i>Muchomor sromotnikowy</i>
+              <p>
+                Tyle trwa okres utajenia — <strong>całkowicie bez objawów</strong>. Pies
+                wygląda normalnie, a komórki wątroby już umierają. Do lecznicy trzeba jechać
+                natychmiast po zjedzeniu grzyba, nie po pojawieniu się objawów.
+              </p>
+            </div>
+          </div>
+
+          <p class="spacer__podpowiedz">Przesuń tabelę w bok, żeby zobaczyć wszystkie kolumny.</p>
+          <div class="spacer__tabela-wrap">
+            <table class="spacer__tabela">
+              <caption class="visually-hidden">
+                Trujące rośliny i grzyby polskich parków, lasów i cmentarzy: gdzie występują,
+                poziom zagrożenia oraz mechanizm działania i objawy
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Roślina lub grzyb</th>
+                  <th scope="col">Gdzie występuje</th>
+                  <th scope="col">Zagrożenie</th>
+                  <th scope="col">Co robi i po czym poznać</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Cis pospolity <em>Taxus baccata</em></th>
+                  <td>Wszystkie polskie cmentarze, większość parków miejskich, wiele prywatnych ogrodów</td>
+                  <td><span class="trucizna__poziom trucizna__poziom--skrajne">Śmiertelne</span></td>
+                  <td>
+                    Taksyny A i B blokują kanały jonowe serca — arytmia i niewydolność krążenia.
+                    Toksyczne są wszystkie części rośliny <strong>oprócz</strong> czerwonej, mięsistej
+                    osnówki jagody. Objawy: osłabienie, drżenie, ataksja, bradykardia. Antidotum nie ma;
+                    natychmiast do lecznicy całodobowej.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Muchomor sromotnikowy <em>Amanita phalloides</em></th>
+                  <td>Lasy liściaste i mieszane w całej Polsce</td>
+                  <td><span class="trucizna__poziom trucizna__poziom--skrajne">Śmiertelne</span></td>
+                  <td>
+                    Amatoksyny hamują polimerazę RNA II — giną komórki wątroby i nerek. Okres utajenia
+                    6–24 godziny bez żadnych objawów, potem ostra niewydolność wątroby. Bez leczenia
+                    śmierć po 2–4 dniach. Do kliniki natychmiast, <strong>także gdy pies wygląda
+                    zdrowo</strong>.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Muchomor czerwony <em>Amanita muscaria</em></th>
+                  <td>Lasy iglaste i mieszane</td>
+                  <td><span class="trucizna__poziom trucizna__poziom--wysokie">Wysokie</span></td>
+                  <td>
+                    Muscymol i kwas ibotenowy działają na receptory GABA. Objawy: omamy, ataksja,
+                    nadmierne ślinienie, przyspieszona albo zwolniona akcja serca, drgawki.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Konwalia majowa <em>Convallaria majalis</em></th>
+                  <td>Lasy, ogrody, cmentarze. Popularna roślina ozdobna</td>
+                  <td><span class="trucizna__poziom trucizna__poziom--wysokie">Wysokie</span></td>
+                  <td>
+                    Glikozydy nasercowe (konwalatoksyna) wywołują arytmię. Toksyczne są
+                    <strong>wszystkie części rośliny, łącznie z wodą z wazonu</strong>, w którym
+                    stały konwalie.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Naparstnica purpurowa <em>Digitalis purpurea</em></th>
+                  <td>Skraje lasów, rejony górskie, skarpy przydrożne</td>
+                  <td><span class="trucizna__poziom trucizna__poziom--wysokie">Wysokie</span></td>
+                  <td>
+                    Digitoksyna i digoksyna: ciężkie zaburzenia rytmu serca, wymioty, biegunka,
+                    obniżenie świadomości.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Żołędzie i liście dębu <em>Quercus spp.</em></th>
+                  <td>Powszechnie. Szczyt zagrożenia: wrzesień–listopad</td>
+                  <td><span class="trucizna__poziom trucizna__poziom--wysokie">Wysokie</span></td>
+                  <td>
+                    Taniny i kwas galusowy uszkadzają nerki przy systematycznym zjadaniu. Objawy
+                    dopiero po 24–48 godzinach: wymioty, biegunka, ospałość, mniej moczu.
+                    Najgroźniejsze dla szczeniąt i ras małych.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Kasztanowiec zwyczajny <em>Aesculus hippocastanum</em></th>
+                  <td>Powszechnie w polskich miastach: aleje, parki, boiska szkolne</td>
+                  <td><span class="trucizna__poziom trucizna__poziom--zmienne">Średnie</span></td>
+                  <td>
+                    Eskulina i saponiny. Trujące są owoce, liście i kora. Objawy: wymioty, biegunka,
+                    ataksja, drżenia mięśniowe, przyspieszona akcja serca.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Barszcz Sosnowskiego <em>Heracleum sosnowskyi</em></th>
+                  <td>Wschód Polski, pobocza dróg, tereny zalewowe rzek. Gatunek inwazyjny</td>
+                  <td><span class="trucizna__poziom trucizna__poziom--zmienne">Oparzenia</span></td>
+                  <td>
+                    Furanokumaryny uczulają skórę na światło: sok na skórze plus ultrafiolet daje
+                    ciężkie oparzenia chemiczne I–III stopnia. Po kontakcie spłukać wodą, zabrać psa
+                    ze słońca i pokazać go lekarzowi weterynarii.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="spacer__nota">
+            <strong>Jesienna pułapka.</strong> Żołędzie i kasztany nie działają od jednego kęsa —
+            trują wtedy, gdy pies zjada je regularnie przez cały sezon. Właśnie dlatego łatwo je
+            przeoczyć: nic złego się nie dzieje, aż zaczyna się dziać. Od września do listopada
+            warto pilnować tego, co pies podnosi z ziemi w parku.
+          </p>
+          <p class="spacer__nota">
+            <strong>Nie zgaduj gatunku.</strong> Jeśli nie wiesz, co pies zjadł, zrób zdjęcie
+            rośliny albo grzyba i zabierz fragment do lecznicy — rozpoznanie gatunku bywa
+            decydujące dla leczenia. Ta sama lista pochodzi z rozdziału o zagrożeniach
+            naturalnych, w którym opisane są też
+            <a href="../kleszcze/">kleszcze, babeszjoza i borelioza</a>.
+          </p>
+          <p class="spacer__nota">
+            Źródła tej części:
+            <a href="https://www.merckvetmanual.com/toxicology/poisonous-mushrooms/toxin-latent-period-6-hours-after-ingestion-of-mushrooms" rel="noopener noreferrer" target="_blank">Merck Veterinary Manual o okresie utajenia po zjedzeniu grzybów</a>,
+            <a href="https://www.merckvetmanual.com/toxicology/poisonous-plants/houseplants-and-ornamentals-toxic-to-animals" rel="noopener noreferrer" target="_blank">Merck Veterinary Manual o roślinach ozdobnych toksycznych dla zwierząt</a>
+            oraz <a href="https://www.aspca.org/pet-care/animal-poison-control/dogs-plant-list" rel="noopener noreferrer" target="_blank">lista roślin ASPCA Animal Poison Control</a>.
+          </p>
         </div>
       </section>
 
