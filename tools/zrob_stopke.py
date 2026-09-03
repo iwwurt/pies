@@ -53,6 +53,7 @@ KOLUMNY = [
         ("Transport", "transport/", "strona"),
         ("Pies po rozwodzie", "rozwod/", "strona"),
         ("Kamera i RODO", "kamera/", "strona"),
+        ("Rasy agresywne", "rasy-agresywne/", "strona"),
     ]),
     ("Zdrowie", [
         ("Zatrucia", "zatrucia/", "strona"),

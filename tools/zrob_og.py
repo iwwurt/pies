@@ -112,6 +112,13 @@ SEKCJE = [
         "ton": "zloty",
     },
     {
+        "slug": "rasy-agresywne",
+        "dzial": "Prawo",
+        "tytul": "Rasy uznawane za agresywne",
+        "podtytul": "Jedenaście ras, zezwolenie i ubezpieczenie",
+        "ton": "zloty",
+    },
+    {
         "slug": "ugryzienie",
         "dzial": "Prawo",
         "tytul": "Pies kogoś ugryzł",

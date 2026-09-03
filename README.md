@@ -63,6 +63,7 @@ danymi strukturalnymi i wpisem w `sitemap.xml`:
 - `/zatrucia/` — postępowanie przy zatruciu
 - `/apteczka/` — lista kontrolna apteczki
 - `/kamera/` — domowa kamera a RODO: wyjątek domowy, sąsiedzi, dźwięk
+- `/rasy-agresywne/` — wykaz MSWiA, zezwolenie, mieszańce i ubezpieczenie
 - `/o-ksiazce/` — czym jest książka, dlaczego jest bezpłatna, jak ją cytować
 
 Dodając kolejną stronę, pamiętaj o pięciu rzeczach: okruchy chleba
