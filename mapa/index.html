@@ -341,6 +341,15 @@
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       }
 
+      /* Blokow jest cztery, wiec od szerokosci desktopowej ukladamy je
+         w kwadrat 2x2. Samo auto-fit dawaloby trzy w rzedzie i jeden
+         osierocony nizej. */
+      @media (min-width: 900px) {
+        .mapa-info__grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
       .mapa-info__grid h2 {
         margin: 0 0 16px;
         font-family: var(--display);
@@ -525,6 +534,19 @@
             </div>
 
             <div>
+              <h2>Zaginął pies</h2>
+              <p>
+                Zaginiony pies trafia do schroniska gminnego — dlatego schroniska z tej mapy
+                są jednym z pierwszych miejsc, do których warto zadzwonić. Drugim jest
+                straż miejska pod numerem 986.
+              </p>
+              <p>
+                Co zrobić w pierwszej godzinie, co musi zawierać ogłoszenie i ile czasu
+                realnie masz: <a href="../zaginiony/">poradnik o zaginięciu psa</a>.
+              </p>
+            </div>
+
+            <div>
               <h2>Nagły wypadek</h2>
               <p>
                 Jeśli pies właśnie coś połknął albo dzieje się coś niepokojącego, nie szukaj
@@ -570,6 +592,7 @@
           <a href="../narzedzia/">Narzędzia</a>
           <a href="../kleszcze/">Kleszcze</a>
           <a href="../apteczka/">Apteczka</a>
+          <a href="../zaginiony/">Zaginiony pies</a>
           <a href="https://www.youtube.com/@PieswPolsce" target="_blank" rel="noopener">Kanał YouTube</a>
         </div>
       </div>
