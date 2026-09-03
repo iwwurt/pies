@@ -112,6 +112,19 @@ button {
   transform: translateY(0);
 }
 
+/* Tresc widoczna tylko dla czytnikow ekranu - podpisy tabel, etykiety. */
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .status-bar {
   position: relative;
   z-index: 80;
