@@ -62,6 +62,7 @@ danymi strukturalnymi i wpisem w `sitemap.xml`:
 - `/zatrucia/` — postępowanie przy zatruciu
 - `/apteczka/` — lista kontrolna apteczki
 - `/kamera/` — domowa kamera a RODO: wyjątek domowy, sąsiedzi, dźwięk
+- `/o-ksiazce/` — czym jest książka, dlaczego jest bezpłatna, jak ją cytować
 
 Dodając kolejną stronę, pamiętaj o pięciu rzeczach: okruchy chleba
 z `BreadcrumbList`, wpis w `sitemap.xml`, pozycja w stopce (`tools/zrob_stopke.py`),

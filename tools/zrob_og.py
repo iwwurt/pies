@@ -63,6 +63,13 @@ SCIEZKI_PISM = [
 # dzieki niej link od razu widac, z ktorej czesci serwisu pochodzi.
 SEKCJE = [
     {
+        "slug": "o-ksiazce",
+        "dzial": "Książka",
+        "tytul": "O książce",
+        "podtytul": "618 stron, 61 rozdziałów, za darmo",
+        "ton": "zloty",
+    },
+    {
         "slug": "kropik",
         "dzial": "Prawo",
         "tytul": "KROPiK — czipowanie psa",

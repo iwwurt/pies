@@ -37,6 +37,7 @@ KATALOG = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 KOLUMNY = [
     ("Książka", [
         ("Pobierz książkę", "pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf", "plik"),
+        ("O książce", "o-ksiazce/", "strona"),
         ("61 rozdziałów", "#rozdzialy", "kotwica"),
         ("Podcast", "#podcast", "kotwica"),
         ("Checklista", "#checklista", "kotwica"),
