@@ -25,6 +25,7 @@ Następnie otworzyć `http://localhost:8080`.
 - `tools/pobierz_punkty.py` — aktualizator danych mapy z OpenStreetMap.
 - `tools/zrob_og.py` — generator kart Open Graph dla podstron.
 - `tools/zrob_stopke.py` — generator bloku odnośników w stopce.
+- `tools/checklista.html` — źródło checklisty do druku (PDF generowany z tego pliku).
 - `dane/punkty.json` — lecznice i schroniska pokazywane na `/mapa/`.
 - `pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf` — pełna książka, 618 stron.
 - `pliki/Pies-w-Polsce-fragment-rozdzialy-1-5.pdf` — fragment, 52 strony.
@@ -117,6 +118,26 @@ atrybuty `download` i `target` — skrypt liczy sam.
 
 Skrypt podmienia wyłącznie fragment `<nav class="site-footer__kolumny">…</nav>`.
 Znaku wodnego i noty prawnej pod nim nie dotyka.
+
+## Checklista do druku
+
+`pliki/Checklista-pies-w-Polsce-2026.pdf` nie jest eksportowany z Worda ani
+z ONLYOFFICE — powstaje z `tools/checklista.html` przez drukowanie do PDF
+w przeglądarce, tym samym silnikiem, który renderuje resztę serwisu:
+
+```powershell
+& "C:\Program Files\Google\Chrome\Application\chrome.exe" --headless=new --disable-gpu --no-pdf-header-footer --print-to-pdf="pliki\Checklista-pies-w-Polsce-2026.pdf" "file:///C:/Users/uto4k/Desktop/kfryryw/pies-site/tools/checklista.html"
+```
+
+Treść poprawia się w `tools/checklista.html` i uruchamia polecenie ponownie.
+Plik ma **mieścić się na jednej stronie A4** — po zmianie treści warto otworzyć
+`tools/checklista.html` w przeglądarce przy szerokości okna 680 px i sprawdzić,
+czy `document.body.scrollHeight` nie przekracza ok. 1020 px (271 mm przestrzeni
+druku po odjęciu marginesów z reguły `@page`).
+
+Kratki przy pozycjach są po to, żeby odhaczać je długopisem — to lista do
+powieszenia na lodówce, nie do czytania na ekranie. Wersję ekranową ma
+`/apteczka/`, z zapisem stanu w przeglądarce.
 
 ## Karty Open Graph
 
