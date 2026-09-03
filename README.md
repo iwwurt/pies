@@ -24,6 +24,7 @@ Następnie otworzyć `http://localhost:8080`.
 - `tools/build_rozdzialy.py` — generator sekcji „Rozdziały” w `index.html`.
 - `tools/pobierz_punkty.py` — aktualizator danych mapy z OpenStreetMap.
 - `tools/zrob_og.py` — generator kart Open Graph dla podstron.
+- `tools/zrob_stopke.py` — generator bloku odnośników w stopce.
 - `dane/punkty.json` — lecznice i schroniska pokazywane na `/mapa/`.
 - `pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf` — pełna książka, 618 stron.
 - `pliki/Pies-w-Polsce-fragment-rozdzialy-1-5.pdf` — fragment, 52 strony.
@@ -63,9 +64,9 @@ danymi strukturalnymi i wpisem w `sitemap.xml`:
 - `/kamera/` — domowa kamera a RODO: wyjątek domowy, sąsiedzi, dźwięk
 
 Dodając kolejną stronę, pamiętaj o pięciu rzeczach: okruchy chleba
-z `BreadcrumbList`, wpis w `sitemap.xml`, odnośnik w stopkach pozostałych
-stron, `canonical` we własnym nagłówku i własna karta Open Graph
-(patrz niżej).
+z `BreadcrumbList`, wpis w `sitemap.xml`, pozycja w stopce (`tools/zrob_stopke.py`),
+`canonical` we własnym nagłówku i własna karta Open Graph (`tools/zrob_og.py`).
+Obie ostatnie rzeczy opisane są niżej.
 
 ## Mapa: jak odświeżyć dane
 
@@ -95,6 +96,26 @@ Po aktualizacji wystarczy sprawdzić `/mapa/` w przeglądarce i zrobić commit.
 
 Dane są udostępniane na licencji ODbL i wymagają podania źródła — informacja
 o OpenStreetMap znajduje się w stopce sekcji na stronie mapy. Nie usuwać jej.
+
+## Stopka
+
+Stopka jest jedynym blokiem, który trzeba ruszyć przy każdej nowej podstronie,
+i właśnie dlatego psuła się najczęściej — raz strona linkowała sama do siebie,
+raz brakowało jej w stopkach pozostałych. Dlatego nie edytuje się jej ręcznie:
+
+```powershell
+python tools/zrob_stopke.py           # przepisz stopki na wszystkich stronach
+python tools/zrob_stopke.py --sucho   # pokaż, co by się zmieniło
+```
+
+Odnośniki są ułożone w cztery kolumny odpowiadające czterem częściom książki
+pokazywanym na stronie głównej: **Książka**, **Prawo**, **Zdrowie**,
+**Codzienność**. Nowa podstrona to jedna linijka w tablicy `KOLUMNY` na górze
+skryptu; resztę — prefiksy ścieżek, pominięcie odnośnika do samej siebie,
+atrybuty `download` i `target` — skrypt liczy sam.
+
+Skrypt podmienia wyłącznie fragment `<nav class="site-footer__kolumny">…</nav>`.
+Znaku wodnego i noty prawnej pod nim nie dotyka.
 
 ## Karty Open Graph
 

@@ -2144,12 +2144,12 @@ button {
 }
 
 .site-footer__top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  align-items: start;
   gap: 40px;
-  padding-bottom: 40px;
+  padding-bottom: 44px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  grid-template-columns: minmax(150px, 200px) minmax(0, 1fr);
 }
 
 .wordmark--footer .wordmark__seal {
@@ -2169,15 +2169,41 @@ button {
   color: rgba(255, 255, 255, 0.48);
 }
 
-.site-footer__links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px 28px;
-  font-size: 0.72rem;
-  font-weight: 650;
+/* Stopka rosla razem z serwisem i przy dwudziestu odnosnikach w jednym
+   rzedzie przestala cokolwiek porzadkowac. Cztery kolumny odpowiadaja
+   czterem czesciom ksiazki pokazywanym na glownej. */
+.site-footer__kolumny {
+  display: grid;
+  gap: 30px 26px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
-.site-footer__links a:hover {
+.site-footer__naglowek {
+  margin: 0 0 14px;
+  color: var(--gold-pale);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.site-footer__kolumna ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer__kolumna a {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.site-footer__kolumna a:hover,
+.site-footer__kolumna a:focus-visible {
   color: var(--gold-pale);
 }
 
@@ -2797,10 +2823,14 @@ button {
   }
 
   .source-note,
-  .sample__after,
-  .site-footer__top {
+  .sample__after {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .site-footer__top {
+    gap: 34px;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .source-note {
@@ -2997,13 +3027,8 @@ button {
     white-space: normal;
   }
 
-  .site-footer__top {
-    display: flex;
-  }
-
-  .site-footer__links {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+  .site-footer__kolumny {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .site-footer__legal {
