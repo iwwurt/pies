@@ -6,10 +6,10 @@
   --white: #fffdf9;
   --ink: #3a3733;
   --ink-deep: #25221f;
-  --muted: #756f66;
-  --muted-light: #a9a195;
+  --muted: #5f5a52;
+  --muted-light: #6d6860;
   --gold: #b0833f;
-  --gold-dark: #86602b;
+  --gold-dark: #7f5a26;
   --gold-pale: #e7d6b8;
   --line: #ded7c9;
   --line-dark: rgba(255, 255, 255, 0.16);
@@ -84,9 +84,14 @@ button {
   color: var(--white);
 }
 
+/* Obwodka fokusa musi byc widoczna i na papierze, i na ciemnych sekcjach,
+   i na czerwieni z /zatrucia/. Zadne pojedyncze zloto tego nie robi - samo
+   zloto ma wobec czerwieni 2,7:1. Stad dwa pierscienie: ciemny outline
+   z jasna poswiata pod spodem. Na jasnym tle widac ciemny, na ciemnym jasna. */
 :focus-visible {
-  outline: 3px solid rgba(176, 131, 63, 0.52);
-  outline-offset: 4px;
+  outline: 3px solid var(--ink-deep);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(255, 253, 249, 0.92);
 }
 
 .shell {
@@ -784,7 +789,7 @@ button {
 }
 
 .promise > span {
-  color: var(--gold);
+  color: var(--gold-dark);
   font-family: var(--display);
   font-size: 0.82rem;
   font-style: italic;
@@ -1139,7 +1144,7 @@ button {
 }
 
 .law-card > span {
-  color: var(--gold);
+  color: var(--gold-dark);
   font-family: var(--display);
   font-size: 0.8rem;
   font-style: italic;
@@ -1586,7 +1591,7 @@ button {
 }
 
 .reader__topbar small {
-  color: rgba(255, 255, 255, 0.38);
+  color: rgba(255, 255, 255, 0.48);
   font-size: 0.58rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1727,7 +1732,7 @@ button {
 
 .reader__hint {
   margin: 0;
-  color: rgba(255, 255, 255, 0.36);
+  color: rgba(255, 255, 255, 0.48);
   font-size: 0.59rem;
   letter-spacing: 0.04em;
 }
@@ -2110,14 +2115,14 @@ button {
 
 .final-cta__micro {
   margin: 18px 0 0;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.48);
   font-size: 0.65rem;
 }
 
 .final-cta__motto {
   position: relative;
   margin: clamp(90px, 12vw, 160px) 0 0;
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.36);
   font-family: var(--display);
   font-size: clamp(2.2rem, 6vw, 6rem);
   letter-spacing: 0.08em;
@@ -2161,7 +2166,7 @@ button {
 }
 
 .wordmark--footer .wordmark__text small {
-  color: rgba(255, 255, 255, 0.38);
+  color: rgba(255, 255, 255, 0.48);
 }
 
 .site-footer__links {
@@ -2186,7 +2191,7 @@ button {
 .site-footer__legal p {
   max-width: 940px;
   margin: 0;
-  color: rgba(255, 255, 255, 0.34);
+  color: rgba(255, 255, 255, 0.48);
   font-size: 0.64rem;
   line-height: 1.65;
 }
@@ -3447,7 +3452,7 @@ a.rozdzial__podcast:hover {
 }
 
 .okruchy--jasne {
-  color: rgba(255, 246, 240, 0.55);
+  color: rgba(255, 246, 240, 0.7);
 }
 
 .okruchy--jasne a {
