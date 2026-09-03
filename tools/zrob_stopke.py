@@ -54,6 +54,7 @@ KOLUMNY = [
         ("Pies po rozwodzie", "rozwod/", "strona"),
         ("Kamera i RODO", "kamera/", "strona"),
         ("Rasy agresywne", "rasy-agresywne/", "strona"),
+        ("Odebranie psa", "odebranie-psa/", "strona"),
     ]),
     ("Zdrowie", [
         ("Zatrucia", "zatrucia/", "strona"),

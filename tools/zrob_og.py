@@ -112,6 +112,13 @@ SEKCJE = [
         "ton": "zloty",
     },
     {
+        "slug": "odebranie-psa",
+        "dzial": "Prawo",
+        "tytul": "Odebranie psa",
+        "podtytul": "Trzy dni na odwołanie, nie czternaście",
+        "ton": "zloty",
+    },
+    {
         "slug": "rasy-agresywne",
         "dzial": "Prawo",
         "tytul": "Rasy uznawane za agresywne",
