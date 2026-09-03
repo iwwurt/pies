@@ -65,6 +65,7 @@ danymi strukturalnymi i wpisem w `sitemap.xml`:
 - `/kamera/` — domowa kamera a RODO: wyjątek domowy, sąsiedzi, dźwięk
 - `/rasy-agresywne/` — wykaz MSWiA, zezwolenie, mieszańce i ubezpieczenie
 - `/smierc-psa/` — status prawny zwłok, kremacja, wyrejestrowanie, eutanazja
+- `/schroniska/` — oficjalne dane GLW za 2024 i jak sprawdzić placówkę
 - `/o-ksiazce/` — czym jest książka, dlaczego jest bezpłatna, jak ją cytować
 
 Dodając kolejną stronę, pamiętaj o pięciu rzeczach: okruchy chleba

@@ -168,6 +168,13 @@ SEKCJE = [
         "ton": "zloty",
     },
     {
+        "slug": "schroniska",
+        "dzial": "Codzienność",
+        "tytul": "Schroniska w liczbach",
+        "podtytul": "Oficjalne dane z raportu za 2024",
+        "ton": "zloty",
+    },
+    {
         "slug": "adopcja",
         "dzial": "Pierwszy pies",
         "tytul": "Adopcja i wybór psa",
