@@ -161,6 +161,13 @@ SEKCJE = [
         "ton": "alarm",
     },
     {
+        "slug": "spadek",
+        "dzial": "Prawo",
+        "tytul": "Pies w spadku",
+        "podtytul": "Co się stanie, gdy zabraknie właściciela",
+        "ton": "zloty",
+    },
+    {
         "slug": "smierc-psa",
         "dzial": "Zdrowie",
         "tytul": "Gdy pies umiera",

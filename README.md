@@ -67,6 +67,7 @@ danymi strukturalnymi i wpisem w `sitemap.xml`:
 - `/smierc-psa/` — status prawny zwłok, kremacja, wyrejestrowanie, eutanazja
 - `/schroniska/` — oficjalne dane GLW za 2024 i jak sprawdzić placówkę
 - `/odebranie-psa/` — art. 7 UoOZ, dwa tryby odebrania, terminy i koszty
+- `/spadek/` — pies jako część spadku, polecenie testamentowe, spadek wakujący
 - `/o-ksiazce/` — czym jest książka, dlaczego jest bezpłatna, jak ją cytować
 
 Dodając kolejną stronę, pamiętaj o pięciu rzeczach: okruchy chleba

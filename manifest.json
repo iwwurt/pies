@@ -1,0 +1,60 @@
+{
+  "name": "Pies w Polsce — prawo, zdrowie, codzienność",
+  "short_name": "Pies w Polsce",
+  "description": "Bezpłatny przewodnik dla opiekunów psów w Polsce: prawo, weterynaria, zachowanie i codzienna ekonomia opieki. Cała książka i podcast za darmo.",
+  "lang": "pl",
+  "dir": "ltr",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f8f5ef",
+  "theme_color": "#4f5b43",
+  "categories": ["books", "education", "lifestyle"],
+  "icons": [
+    {
+      "src": "/assets/ikony/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/ikony/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/ikony/icon-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Pies zjadł coś trującego",
+      "short_name": "Zatrucie",
+      "description": "Co robić w pierwszych minutach",
+      "url": "/zatrucia/?source=pwa"
+    },
+    {
+      "name": "Zaginął pies",
+      "short_name": "Zaginięcie",
+      "description": "Pierwsza godzina i co dalej",
+      "url": "/zaginiony/?source=pwa"
+    },
+    {
+      "name": "Mapa lecznic",
+      "short_name": "Mapa",
+      "description": "Lecznice i schroniska, filtr całodobowych",
+      "url": "/mapa/?source=pwa"
+    },
+    {
+      "name": "Apteczka",
+      "short_name": "Apteczka",
+      "description": "Lista kontrolna do odhaczenia",
+      "url": "/apteczka/?source=pwa"
+    }
+  ]
+}
