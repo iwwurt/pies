@@ -24,7 +24,7 @@ Następnie otworzyć `http://localhost:8080`.
 - `tools/build_rozdzialy.py` — generator sekcji „Rozdziały” w `index.html`.
 - `tools/pobierz_punkty.py` — aktualizator danych mapy z OpenStreetMap.
 - `tools/zrob_og.py` — generator kart Open Graph dla podstron.
-- `tools/zrob_stopke.py` — generator bloku odnośników w stopce.
+- `tools/zrob_naglowek.py` (jedna nawigacja na całym serwisie) i `tools/zrob_stopke.py` — generator bloku odnośników w stopce.
 - `tools/checklista.html` — źródło checklisty do druku (PDF generowany z tego pliku).
 - `dane/punkty.json` — lecznice i schroniska pokazywane na `/mapa/`.
 - `pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf` — pełna książka, 618 stron.
@@ -71,6 +71,8 @@ danymi strukturalnymi i wpisem w `sitemap.xml`:
 - `/szkolenie/` — szkolenie psa: cztery kwadranty Skinnera, zasada LIMA, obalenie teorii dominacji, kwalifikacja elektroobroży i kolczatek przez art. 6 i 35 ustawy o ochronie zwierząt, treser kontra behawiorysta. Rozdział 37.
 - `/dziecko/` — pies i dziecko: dlaczego ryzyko jest w domu, protokół kontrolowanego zapoznania, sygnały ostrzegawcze oraz art. 426, 427, 431, 445 i 442¹ § 4 KC. Rozdział 16.
 - `/psy-asystujace/` — pies asystujący i miejsca publiczne: art. 20a ustawy o rehabilitacji, trzy warunki statusu, żółta wstążka kontra certyfikat, art. 270 KK za podrobiony dokument. Rozdział 9.
+- `/rozdzialy/` — pełny spis 61 rozdziałów w pięciu częściach, z numerami stron i odnośnikami do odcinków. Generowany przez `python tools/zrob_rozdzialy.py` z `dane/rozdzialy.json`.
+- `/podcast/` — strona podcastu: opublikowane odcinki, kanał i Dysk. Ten sam generator.
 - `/o-ksiazce/` — czym jest książka, dlaczego jest bezpłatna, jak ją cytować
 
 Dodając kolejną stronę, pamiętaj o pięciu rzeczach: okruchy chleba

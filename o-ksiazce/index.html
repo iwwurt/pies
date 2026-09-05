@@ -10,7 +10,7 @@
     />
     <meta name="author" content="Mykola Hrytskov" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
-    <meta name="theme-color" content="#3a3733" />
+    <meta name="theme-color" content="#fcfbff" />
     <link rel="canonical" href="https://pieswpolsce.pl/o-ksiazce/" />
 
     <meta property="og:locale" content="pl_PL" />
@@ -32,6 +32,8 @@
     <meta name="twitter:description" content="618 stron, 61 rozdziałów, pięć części. Skąd się wzięła, dlaczego jest za darmo i jak ją cytować." />
     <meta name="twitter:image" content="https://pieswpolsce.pl/assets/og/o-ksiazce.png" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="/manifest.json" />
     <link rel="apple-touch-icon" href="/assets/ikony/icon-192.png" />
@@ -491,8 +493,46 @@
         </button>
 
         <nav class="site-nav" id="site-nav" aria-label="Główna nawigacja" data-nav>
-          <a href="../#rozdzialy">Rozdziały</a>
-          <a href="../#podcast">Podcast</a>
+          <a href="../o-ksiazce/" aria-current="page">Książka</a>
+          <a href="../rozdzialy/">Rozdziały</a>
+          <a href="../podcast/">Podcast</a>
+          <div class="nx-drop" data-drop>
+            <button class="nx-drop__trigger" type="button" aria-expanded="false" data-drop-trigger>
+              Poradniki <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+            </button>
+            <div class="nx-drop__panel">
+              <div class="nx-drop__grupa">
+                <p>Prawo</p>
+                <a href="../kropik/">KROPiK i czipowanie</a>
+                <a href="../ugryzienie/">Pogryzienie</a>
+                <a href="../mieszkanie/">Pies w bloku</a>
+                <a href="../transport/">Transport</a>
+                <a href="../psy-asystujace/">Pies asystujący</a>
+                <a href="../rasy-agresywne/">Rasy agresywne</a>
+                <a href="../rozwod/">Pies po rozwodzie</a>
+                <a href="../spadek/">Pies w spadku</a>
+                <a href="../odebranie-psa/">Odebranie psa</a>
+                <a href="../kamera/">Kamera i RODO</a>
+              </div>
+              <div class="nx-drop__grupa">
+                <p>Zdrowie</p>
+                <a href="../zatrucia/">Zatrucia</a>
+                <a href="../kleszcze/">Kleszcze</a>
+                <a href="../apteczka/">Apteczka</a>
+                <a href="../lek-separacyjny/">Lęk separacyjny</a>
+                <a href="../smierc-psa/">Gdy pies umiera</a>
+              </div>
+              <div class="nx-drop__grupa">
+                <p>Codzienność</p>
+                <a href="../adopcja/">Adopcja i wybór psa</a>
+                <a href="../dziecko/">Pies i dziecko</a>
+                <a href="../szkolenie/">Szkolenie psa</a>
+                <a href="../schroniska/">Schroniska w liczbach</a>
+                <a href="../koszty/">Koszty</a>
+                <a href="../zaginiony/">Zaginiony pies</a>
+              </div>
+            </div>
+          </div>
           <a href="../narzedzia/">Narzędzia</a>
           <a href="../mapa/">Mapa</a>
           <a class="button button--primary button--compact" href="../pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf" download>
@@ -526,7 +566,7 @@
             <a class="button button--primary" href="../pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf" download>
               Pobierz całą książkę
             </a>
-            <a class="button" href="../#rozdzialy">Zobacz spis 61 rozdziałów</a>
+            <a class="button" href="../rozdzialy/">Zobacz spis 61 rozdziałów</a>
           </div>
         </div>
       </section>
@@ -648,7 +688,7 @@
             <a href="https://drive.google.com/drive/folders/1g86EYIpOq0Y_I152-HYB8P9jFjz8trbG" rel="noopener noreferrer" target="_blank">folderze na Dysku Google</a>,
             a odcinki pojawiają się kolejno na
             <a href="https://www.youtube.com/@PieswPolsce" rel="noopener noreferrer" target="_blank">kanale YouTube @PieswPolsce</a>.
-            <a href="../#rozdzialy">Lista rozdziałów</a> na stronie głównej prowadzi wprost do tych,
+            <a href="../rozdzialy/">Lista rozdziałów</a> na stronie głównej prowadzi wprost do tych,
             które są już opublikowane.
           </p>
           <p class="ks-wstep">
@@ -832,7 +872,7 @@
             <a class="button button--primary" href="../pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf" download>
               Pobierz książkę (PDF, 618 stron)
             </a>
-            <a class="button" href="../#fragment">Zajrzyj do środka w czytniku</a>
+            <a class="button" href="../pliki/Pies-w-Polsce-fragment-rozdzialy-1-5.pdf" download>Zajrzyj do środka w czytniku</a>
           </div>
         </div>
       </section>
@@ -849,9 +889,9 @@
             <p class="site-footer__naglowek">Książka</p>
             <ul>
               <li><a href="../pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf" download>Pobierz książkę</a></li>
-              <li><a href="../#rozdzialy">61 rozdziałów</a></li>
-              <li><a href="../#podcast">Podcast</a></li>
-              <li><a href="../#checklista">Checklista</a></li>
+              <li><a href="../rozdzialy/">61 rozdziałów</a></li>
+              <li><a href="../podcast/">Podcast</a></li>
+              <li><a href="../pliki/Checklista-pies-w-Polsce-2026.pdf" download>Checklista</a></li>
               <li><a href="https://www.youtube.com/@PieswPolsce" target="_blank" rel="noopener">Kanał YouTube</a></li>
               <li><a href="https://drive.google.com/drive/folders/1g86EYIpOq0Y_I152-HYB8P9jFjz8trbG" target="_blank" rel="noopener">Nagrania na Dysku Google</a></li>
             </ul>

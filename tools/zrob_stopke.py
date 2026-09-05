@@ -38,9 +38,9 @@ KOLUMNY = [
     ("Książka", [
         ("Pobierz książkę", "pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf", "plik"),
         ("O książce", "o-ksiazce/", "strona"),
-        ("61 rozdziałów", "#rozdzialy", "kotwica"),
-        ("Podcast", "#podcast", "kotwica"),
-        ("Checklista", "#checklista", "kotwica"),
+        ("61 rozdziałów", "rozdzialy/", "strona"),
+        ("Podcast", "podcast/", "strona"),
+        ("Checklista", "pliki/Checklista-pies-w-Polsce-2026.pdf", "plik"),
         ("Kanał YouTube", "https://www.youtube.com/@PieswPolsce", "zewnetrzny"),
         ("Nagrania na Dysku Google",
          "https://drive.google.com/drive/folders/1g86EYIpOq0Y_I152-HYB8P9jFjz8trbG",

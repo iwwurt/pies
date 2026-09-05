@@ -476,3 +476,80 @@ document.querySelectorAll("[data-yt-playlist]").forEach((element) => {
   const arrow = element.querySelector(".button__arrow");
   if (arrow) arrow.textContent = "↗";
 });
+
+/* ===================================================================
+   Warstwa nowoczesna 2026
+   =================================================================== */
+
+/* Pasek postepu czytania. */
+const progress = document.querySelector("[data-progress]");
+if (progress) {
+  const rysuj = () => {
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - doc.clientHeight;
+    progress.style.width = max > 0 ? `${(doc.scrollTop / max) * 100}%` : "0%";
+  };
+  addEventListener("scroll", rysuj, { passive: true });
+  addEventListener("resize", rysuj);
+  rysuj();
+}
+
+/* Rozwijane menu "Poradniki". Na mobile panel jest zwykla lista w menu,
+   wiec sterujemy tylko atrybutem aria-expanded - reszte robi CSS. */
+document.querySelectorAll("[data-drop]").forEach((drop) => {
+  const trigger = drop.querySelector("[data-drop-trigger]");
+  if (!trigger) return;
+
+  const ustaw = (otwarte) => trigger.setAttribute("aria-expanded", String(otwarte));
+
+  trigger.addEventListener("click", (event) => {
+    event.stopPropagation();
+    ustaw(trigger.getAttribute("aria-expanded") !== "true");
+  });
+
+  /* Na duzym ekranie menu reaguje takze na najechanie - szybciej niz klik. */
+  const duzyEkran = matchMedia("(min-width: 761px)");
+  drop.addEventListener("mouseenter", () => duzyEkran.matches && ustaw(true));
+  drop.addEventListener("mouseleave", () => duzyEkran.matches && ustaw(false));
+
+  drop.addEventListener("focusout", (event) => {
+    if (!drop.contains(event.relatedTarget)) ustaw(false);
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!drop.contains(event.target)) ustaw(false);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") ustaw(false);
+  });
+});
+
+/* Lekkie przechylenie okladki za kursorem. Wylaczone przy dotyku
+   i przy prefers-reduced-motion - tam ruch bez intencji tylko przeszkadza. */
+const bezRuchu = matchMedia("(prefers-reduced-motion: reduce)");
+document.querySelectorAll("[data-tilt]").forEach((tilt) => {
+  const inner = tilt.querySelector(".nx-cover__inner");
+  if (!inner || bezRuchu.matches || !matchMedia("(hover: hover)").matches) return;
+
+  tilt.addEventListener("pointermove", (event) => {
+    const pole = tilt.getBoundingClientRect();
+    const x = (event.clientX - pole.left) / pole.width - 0.5;
+    const y = (event.clientY - pole.top) / pole.height - 0.5;
+    inner.style.setProperty("--ry", `${x * 11}deg`);
+    inner.style.setProperty("--rx", `${-y * 11}deg`);
+  });
+
+  tilt.addEventListener("pointerleave", () => {
+    inner.style.setProperty("--ry", "0deg");
+    inner.style.setProperty("--rx", "0deg");
+  });
+});
+
+/* Pasek tematow: szerokosc animacji zalezy od liczby kafelkow, wiec
+   tempo dobieramy tak, zeby zawsze bylo tak samo szybkie w pikselach. */
+document.querySelectorAll("[data-marquee]").forEach((track) => {
+  if (bezRuchu.matches) return;
+  const szerokosc = track.scrollWidth / 2;
+  if (szerokosc > 0) track.style.animationDuration = `${Math.round(szerokosc / 46)}s`;
+});

@@ -1,27 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
 /* Pies w Polsce — editorial system */
 :root {
-  --paper: #f8f5ef;
-  --paper-deep: #f1eadf;
-  --cream: #f5f1ea;
-  --white: #fffdf9;
-  --ink: #3a3733;
-  --ink-deep: #25221f;
-  --muted: #5f5a52;
-  --muted-light: #6d6860;
-  --gold: #b0833f;
-  --gold-dark: #7f5a26;
-  --gold-pale: #e7d6b8;
-  --line: #ded7c9;
+  /* --- powierzchnie: chlodna biel zamiast bezu --- */
+  --white: #ffffff;
+  --paper: #fcfbff;
+  --paper-deep: #f3efff;
+  --cream: #f6f4ff;
+
+  /* --- tekst --- */
+  --ink: #14111f;
+  --ink-deep: #150f2a;
+  --muted: #56506e;
+  --muted-light: #635c7d;
+
+  /* --- akcent: rozowy i blekitny, zawsze w gradiencie --- */
+  --pink: #f38ad8;
+  --blue: #7ccbff;
+  --violet: #b98ce8;
+  /* Stare nazwy zostaja, zeby 25 podstron przemalowalo sie bez ruszania
+     ich wlasnych stylow: --gold to teraz roz (obwodki i linie), --gold-dark
+     to ciemna magenta (tekst akcentowy, 5,4:1 na bialym), --gold-pale to
+     jasny roz (podkreslenia). */
+  --gold: #f38ad8;
+  --gold-dark: #b8309b;
+  --gold-pale: #f9d3f0;
+
+  --grad: linear-gradient(115deg, #f38ad8 0%, #b98ce8 48%, #7ccbff 100%);
+  --grad-rev: linear-gradient(115deg, #7ccbff 0%, #b98ce8 52%, #f38ad8 100%);
+  --grad-soft: linear-gradient(115deg, rgba(243, 138, 216, 0.16), rgba(124, 203, 255, 0.16));
+
+  --line: #e9e4f8;
   --line-dark: rgba(255, 255, 255, 0.16);
-  --shadow: 0 28px 80px rgba(57, 48, 38, 0.14);
-  --shadow-soft: 0 14px 42px rgba(57, 48, 38, 0.09);
-  --display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
-  --sans: Aptos, "Segoe UI", Inter, Arial, sans-serif;
+  --shadow: 0 34px 80px -26px rgba(74, 38, 112, 0.28);
+  --shadow-soft: 0 16px 44px -16px rgba(74, 38, 112, 0.2);
+  --shadow-glow: 0 24px 60px -20px rgba(243, 138, 216, 0.6);
+
+  --display: "Space Grotesk", "Segoe UI", Inter, system-ui, sans-serif;
+  --sans: Inter, "Segoe UI", system-ui, -apple-system, sans-serif;
+
   --shell: min(1280px, calc(100vw - 80px));
-  --section-space: clamp(96px, 10vw, 168px);
-  --radius-sm: 10px;
-  --radius-md: 20px;
+  --section-space: clamp(88px, 9vw, 150px);
+  --radius-sm: 12px;
+  --radius-md: 22px;
   --radius-lg: 34px;
+  --radius-xl: 46px;
   color-scheme: light;
   font-synthesis: none;
 }
@@ -3515,4 +3537,1391 @@ a.rozdzial__podcast:hover {
   .hero__visual-note span {
     font-size: 0.68rem;
   }
+}
+
+/* =====================================================================
+   NOWOCZESNA WARSTWA — 2026
+   Dopisywana na koncu styles.css, wiec wygrywa kaskada przy tej samej
+   specyficznosci. Zmienia chrome (naglowek, nawigacja, przyciski, stopka)
+   i dodaje komponenty nowej strony glownej z prefiksem nx-.
+   ===================================================================== */
+
+body {
+  font-family: var(--sans);
+  font-size: 16.5px;
+  letter-spacing: -0.011em;
+}
+
+::selection {
+  background: var(--pink);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 3px solid var(--gold-dark);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.9);
+}
+
+/* ── pasek postepu czytania ───────────────────────────────────────── */
+.nx-progress {
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: transparent;
+  pointer-events: none;
+}
+
+.nx-progress span {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: 0 3px 3px 0;
+  background: var(--grad);
+  transition: width 90ms linear;
+}
+
+/* ── naglowek ─────────────────────────────────────────────────────── */
+.site-header {
+  border-bottom: 1px solid transparent;
+  background: rgba(252, 251, 255, 0.72);
+  backdrop-filter: blur(22px) saturate(150%);
+}
+
+.site-header.is-scrolled {
+  border-color: var(--line);
+  background: rgba(252, 251, 255, 0.92);
+  box-shadow: 0 10px 34px -22px rgba(74, 38, 112, 0.5);
+}
+
+.site-header__inner {
+  min-height: 74px;
+}
+
+.wordmark__seal {
+  border: 0;
+  background: var(--grad);
+  box-shadow: var(--shadow-glow);
+  color: #fff;
+  font-family: var(--display);
+  font-weight: 700;
+}
+
+.wordmark__seal::after {
+  display: none;
+}
+
+.wordmark__text strong {
+  font-family: var(--display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.wordmark__text small {
+  color: var(--muted-light);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.site-nav {
+  gap: 4px;
+}
+
+.site-nav > a:not(.button) {
+  padding: 9px 14px;
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 0.93rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.site-nav > a:not(.button)::after {
+  display: none;
+}
+
+.site-nav > a:not(.button):hover,
+.site-nav > a:not(.button):focus-visible {
+  background: var(--paper-deep);
+}
+
+.site-nav > a[aria-current="page"] {
+  background: var(--grad-soft);
+  color: var(--gold-dark);
+}
+
+/* ── rozwijane menu poradnikow ────────────────────────────────────── */
+.nx-drop {
+  position: relative;
+}
+
+.nx-drop__trigger {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 14px;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 0.93rem;
+  font-weight: 600;
+  gap: 6px;
+  letter-spacing: -0.01em;
+}
+
+.nx-drop__trigger:hover,
+.nx-drop__trigger[aria-expanded="true"] {
+  background: var(--paper-deep);
+}
+
+.nx-drop__trigger svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 200ms ease;
+}
+
+.nx-drop__trigger[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+.nx-drop__panel {
+  position: absolute;
+  z-index: 90;
+  top: calc(100% + 14px);
+  left: 50%;
+  display: grid;
+  width: min(720px, calc(100vw - 48px));
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  box-shadow: var(--shadow);
+  gap: 8px 26px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  opacity: 0;
+  transform: translate(-50%, -8px);
+  transition: opacity 180ms ease, transform 180ms ease, visibility 180ms;
+  visibility: hidden;
+}
+
+.nx-drop__trigger[aria-expanded="true"] + .nx-drop__panel {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  visibility: visible;
+}
+
+.nx-drop__grupa p {
+  margin: 0 0 8px;
+  color: var(--muted-light);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.nx-drop__grupa a {
+  display: block;
+  padding: 7px 10px;
+  border-radius: 10px;
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.nx-drop__grupa a:hover {
+  background: var(--paper-deep);
+  color: var(--gold-dark);
+}
+
+/* ── przyciski ────────────────────────────────────────────────────── */
+.button {
+  border-radius: 999px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  transition: transform 200ms cubic-bezier(0.2, 0.9, 0.3, 1), box-shadow 200ms ease,
+    background 200ms ease;
+}
+
+.button--primary,
+.button--gold {
+  border: 0;
+  background: var(--grad);
+  box-shadow: var(--shadow-glow);
+  color: #fff;
+}
+
+.button--primary:hover,
+.button--gold:hover {
+  background: var(--grad-rev);
+  box-shadow: 0 26px 64px -18px rgba(243, 138, 216, 0.75);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.button:not(.button--primary):not(.button--gold) {
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink);
+}
+
+.button:not(.button--primary):not(.button--gold):hover {
+  border-color: var(--pink);
+  transform: translateY(-2px);
+}
+
+/* ── nadlinie sekcji ──────────────────────────────────────────────── */
+.kicker {
+  color: var(--gold-dark);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.kicker::before {
+  width: 26px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--grad);
+}
+
+.okruchy a {
+  color: var(--muted);
+}
+
+.okruchy a:hover {
+  color: var(--gold-dark);
+}
+
+/* ── stopka ───────────────────────────────────────────────────────── */
+.site-footer {
+  background: var(--ink-deep);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.site-footer::before {
+  display: block;
+  height: 3px;
+  background: var(--grad);
+  content: "";
+}
+
+.site-footer__naglowek {
+  color: #fff;
+  font-weight: 700;
+}
+
+.site-footer__kolumna a:hover,
+.site-footer__kolumna a:focus-visible {
+  color: var(--pink);
+}
+
+/* ── odsloniecie przy przewijaniu ─────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* =====================================================================
+   STRONA GLOWNA
+   ===================================================================== */
+
+/* ── hero z zorza ─────────────────────────────────────────────────── */
+.nx-hero {
+  position: relative;
+  padding-block: clamp(48px, 7vw, 104px) clamp(56px, 8vw, 120px);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.nx-aurora {
+  position: absolute;
+  z-index: -1;
+  inset: -30% -10% auto;
+  height: 150%;
+  pointer-events: none;
+}
+
+.nx-aurora i {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.55;
+}
+
+.nx-aurora i:nth-child(1) {
+  top: 4%;
+  left: 2%;
+  width: 46vw;
+  max-width: 620px;
+  height: 46vw;
+  max-height: 620px;
+  background: radial-gradient(circle, rgba(243, 138, 216, 0.9), transparent 68%);
+  animation: nx-drift-a 22s ease-in-out infinite;
+}
+
+.nx-aurora i:nth-child(2) {
+  top: 0;
+  right: 0;
+  width: 44vw;
+  max-width: 600px;
+  height: 44vw;
+  max-height: 600px;
+  background: radial-gradient(circle, rgba(124, 203, 255, 0.9), transparent 68%);
+  animation: nx-drift-b 26s ease-in-out infinite;
+}
+
+.nx-aurora i:nth-child(3) {
+  top: 30%;
+  left: 34%;
+  width: 34vw;
+  max-width: 460px;
+  height: 34vw;
+  max-height: 460px;
+  background: radial-gradient(circle, rgba(185, 140, 232, 0.75), transparent 70%);
+  animation: nx-drift-c 30s ease-in-out infinite;
+}
+
+@keyframes nx-drift-a {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(9%, 7%, 0) scale(1.12); }
+}
+
+@keyframes nx-drift-b {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1.05); }
+  50% { transform: translate3d(-11%, 9%, 0) scale(0.94); }
+}
+
+@keyframes nx-drift-c {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(0.96); }
+  50% { transform: translate3d(6%, -10%, 0) scale(1.15); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nx-aurora i {
+    animation: none;
+  }
+}
+
+.nx-hero__inner {
+  display: grid;
+  align-items: center;
+  gap: clamp(34px, 5vw, 70px);
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+}
+
+.nx-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 8px 7px 7px;
+  border: 1px solid rgba(243, 138, 216, 0.4);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(10px);
+  color: var(--ink);
+  font-size: 0.8rem;
+  font-weight: 600;
+  gap: 10px;
+}
+
+.nx-badge b {
+  padding: 3px 11px;
+  border-radius: 999px;
+  background: var(--grad);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.nx-hero h1 {
+  max-width: 15ch;
+  margin: 22px 0 0;
+  font-family: var(--display);
+  font-size: clamp(2.7rem, 6.4vw, 5.1rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+}
+
+.nx-grad-text {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.nx-hero__lead {
+  max-width: 52ch;
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: clamp(1.02rem, 1.4vw, 1.16rem);
+  line-height: 1.65;
+}
+
+.nx-hero__lead strong {
+  color: var(--ink);
+  font-weight: 650;
+}
+
+.nx-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 32px 0 0;
+  gap: 12px;
+}
+
+.nx-hero__micro {
+  margin: 18px 0 0;
+  color: var(--muted-light);
+  font-size: 0.86rem;
+}
+
+/* okladka z lekkim przechylem za mysza */
+.nx-cover {
+  position: relative;
+  display: block;
+  margin: 0;
+  perspective: 1200px;
+}
+
+.nx-cover__inner {
+  position: relative;
+  border-radius: var(--radius-md);
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transform-style: preserve-3d;
+  transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nx-cover__inner::after {
+  position: absolute;
+  z-index: -1;
+  border-radius: var(--radius-xl);
+  background: var(--grad);
+  content: "";
+  filter: blur(46px);
+  inset: 12% 8%;
+  opacity: 0.62;
+}
+
+.nx-cover img {
+  width: 100%;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+}
+
+.nx-cover__tag {
+  position: absolute;
+  right: -14px;
+  bottom: 22px;
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-soft);
+  font-size: 0.84rem;
+  font-weight: 650;
+  gap: 9px;
+  transform: translateZ(60px);
+}
+
+.nx-cover__tag b {
+  color: var(--gold-dark);
+}
+
+/* ── liczby ───────────────────────────────────────────────────────── */
+.nx-stats {
+  display: grid;
+  margin: 40px 0 0;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+.nx-stat {
+  padding: 18px 20px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(10px);
+}
+
+.nx-stat b {
+  display: block;
+  font-family: var(--display);
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.nx-stat span {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted-light);
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+/* ── pasek przewijany ─────────────────────────────────────────────── */
+.nx-marquee {
+  padding-block: 18px;
+  border-block: 1px solid var(--line);
+  background: var(--white);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.nx-marquee__track {
+  display: flex;
+  width: max-content;
+  animation: nx-slide 42s linear infinite;
+  gap: 14px;
+}
+
+.nx-marquee:hover .nx-marquee__track {
+  animation-play-state: paused;
+}
+
+@keyframes nx-slide {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nx-marquee__track {
+    animation: none;
+  }
+}
+
+.nx-marquee a {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 550;
+  gap: 9px;
+  white-space: nowrap;
+}
+
+.nx-marquee a:hover {
+  border-color: var(--pink);
+  background: var(--grad-soft);
+}
+
+.nx-marquee svg {
+  width: 17px;
+  height: 17px;
+  color: var(--gold-dark);
+  flex: none;
+}
+
+/* ── sekcje ───────────────────────────────────────────────────────── */
+.nx-sekcja {
+  padding-block: var(--section-space);
+}
+
+.nx-sekcja--cream {
+  background: var(--cream);
+}
+
+.nx-naglowek {
+  max-width: 60ch;
+}
+
+.nx-naglowek h2 {
+  margin: 14px 0 0;
+  font-family: var(--display);
+  font-size: clamp(1.9rem, 4vw, 3.1rem);
+  font-weight: 700;
+  letter-spacing: -0.032em;
+  line-height: 1.05;
+}
+
+.nx-naglowek p {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 1.03rem;
+  line-height: 1.72;
+}
+
+/* ── bento ────────────────────────────────────────────────────────── */
+.nx-bento {
+  display: grid;
+  margin: 46px 0 0;
+  gap: 16px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.nx-kafel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 28px 30px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  grid-column: span 2;
+  overflow: hidden;
+  transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 260ms ease,
+    border-color 260ms ease;
+}
+
+.nx-kafel::before {
+  position: absolute;
+  height: 3px;
+  background: var(--grad);
+  content: "";
+  inset: 0 0 auto;
+  opacity: 0;
+  transition: opacity 260ms ease;
+}
+
+.nx-kafel:hover {
+  border-color: rgba(243, 138, 216, 0.55);
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-4px);
+}
+
+.nx-kafel:hover::before {
+  opacity: 1;
+}
+
+.nx-kafel--szeroki {
+  grid-column: span 3;
+}
+
+.nx-kafel--pelny {
+  grid-column: span 6;
+}
+
+.nx-ikona {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: var(--grad-soft);
+  color: var(--gold-dark);
+  place-items: center;
+}
+
+.nx-ikona svg {
+  width: 24px;
+  height: 24px;
+}
+
+.nx-kafel h3 {
+  margin: 18px 0 0;
+  font-family: var(--display);
+  font-size: 1.24rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.nx-kafel p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.68;
+}
+
+.nx-kafel__link {
+  margin-top: auto;
+  padding-top: 18px;
+  color: var(--gold-dark);
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+
+.nx-kafel__link::after {
+  display: inline-block;
+  margin-left: 6px;
+  content: "→";
+  transition: transform 220ms ease;
+}
+
+.nx-kafel:hover .nx-kafel__link::after {
+  transform: translateX(4px);
+}
+
+/* obrazek w kaflu */
+.nx-kafel__foto {
+  margin: -28px -28px 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.nx-kafel__foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nx-kafel:hover .nx-kafel__foto img {
+  transform: scale(1.05);
+}
+
+/* ── ciemna sekcja z gradientem ───────────────────────────────────── */
+.nx-ciemna {
+  position: relative;
+  padding-block: var(--section-space);
+  background: var(--ink-deep);
+  color: rgba(255, 255, 255, 0.78);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.nx-ciemna::before {
+  position: absolute;
+  z-index: -1;
+  top: -40%;
+  left: 50%;
+  width: 120%;
+  height: 130%;
+  background:
+    radial-gradient(closest-side, rgba(243, 138, 216, 0.34), transparent),
+    radial-gradient(closest-side, rgba(124, 203, 255, 0.3), transparent);
+  background-position: 20% 30%, 78% 62%;
+  background-repeat: no-repeat;
+  background-size: 62% 62%, 58% 58%;
+  content: "";
+  transform: translateX(-50%);
+}
+
+.nx-ciemna h2 {
+  margin: 14px 0 0;
+  color: #fff;
+  font-family: var(--display);
+  font-size: clamp(1.9rem, 4vw, 3.1rem);
+  font-weight: 700;
+  letter-spacing: -0.032em;
+  line-height: 1.05;
+}
+
+.nx-ciemna .kicker {
+  color: var(--pink);
+}
+
+.nx-ciemna .kicker::before {
+  background: var(--pink);
+}
+
+.nx-ciemna > .shell > p {
+  max-width: 62ch;
+  margin: 18px 0 0;
+  line-height: 1.72;
+}
+
+.nx-alarm {
+  display: grid;
+  margin: 42px 0 0;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.nx-alarm a {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 24px 26px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  transition: background 240ms ease, transform 240ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 240ms ease;
+}
+
+.nx-alarm a:hover {
+  border-color: rgba(243, 138, 216, 0.6);
+  background: rgba(255, 255, 255, 0.11);
+  transform: translateY(-4px);
+}
+
+.nx-alarm svg {
+  width: 26px;
+  height: 26px;
+  color: var(--pink);
+}
+
+.nx-alarm b {
+  display: block;
+  margin-top: 16px;
+  font-family: var(--display);
+  font-size: 1.1rem;
+  font-weight: 650;
+}
+
+.nx-alarm span {
+  display: block;
+  margin-top: 7px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.89rem;
+  line-height: 1.6;
+}
+
+/* ── licznik ──────────────────────────────────────────────────────── */
+.nx-liczby {
+  display: grid;
+  margin: 44px 0 0;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.nx-liczba {
+  padding: 30px 28px 32px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--white);
+}
+
+.nx-liczba b {
+  display: block;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: var(--display);
+  font-size: clamp(2.2rem, 4.4vw, 3.3rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.nx-liczba span {
+  display: block;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* ── karty linkow ─────────────────────────────────────────────────── */
+.nx-karty {
+  display: grid;
+  margin: 44px 0 0;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.nx-karta {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  overflow: hidden;
+  transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 260ms ease;
+}
+
+.nx-karta:hover {
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-5px);
+}
+
+.nx-karta__foto {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.nx-karta__foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nx-karta:hover .nx-karta__foto img {
+  transform: scale(1.06);
+}
+
+.nx-karta__tresc {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 24px 24px 26px;
+}
+
+.nx-karta h3 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 1.16rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.nx-karta p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 0.93rem;
+  line-height: 1.65;
+}
+
+/* ── FAQ ──────────────────────────────────────────────────────────── */
+.nx-faq {
+  margin: 40px 0 0;
+}
+
+.nx-faq details {
+  border-bottom: 1px solid var(--line);
+}
+
+.nx-faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 0;
+  cursor: pointer;
+  font-family: var(--display);
+  font-size: clamp(1.02rem, 1.7vw, 1.2rem);
+  font-weight: 600;
+  gap: 20px;
+  letter-spacing: -0.018em;
+  list-style: none;
+}
+
+.nx-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.nx-faq summary::after {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  content: "+";
+  flex: none;
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  font-weight: 500;
+  place-items: center;
+  transition: transform 240ms ease, background 240ms ease, color 240ms ease;
+}
+
+.nx-faq details[open] summary::after {
+  background: var(--grad);
+  color: #fff;
+  transform: rotate(45deg);
+}
+
+.nx-faq details p {
+  max-width: 72ch;
+  margin: 0 0 24px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.nx-faq details a {
+  border-bottom: 1px solid var(--gold-pale);
+  color: var(--gold-dark);
+}
+
+/* ── domykajace wezwanie ──────────────────────────────────────────── */
+.nx-cta {
+  position: relative;
+  padding-block: clamp(64px, 8vw, 120px);
+  overflow: hidden;
+  isolation: isolate;
+  text-align: center;
+}
+
+.nx-cta::before {
+  position: absolute;
+  z-index: -1;
+  background: var(--grad);
+  content: "";
+  inset: 0;
+  opacity: 0.13;
+}
+
+.nx-cta h2 {
+  max-width: 18ch;
+  margin: 16px auto 0;
+  font-family: var(--display);
+  font-size: clamp(2rem, 4.6vw, 3.4rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.03;
+}
+
+.nx-cta p {
+  max-width: 56ch;
+  margin: 20px auto 0;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.nx-cta__akcje {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 32px 0 0;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* ── lista rozdzialow (podstrona) ─────────────────────────────────── */
+.nx-czesc {
+  margin: 0 0 clamp(44px, 5vw, 76px);
+}
+
+.nx-czesc__glowa {
+  display: flex;
+  align-items: baseline;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--ink);
+  gap: 16px;
+}
+
+.nx-czesc__nr {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.nx-czesc__glowa h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  font-weight: 650;
+  letter-spacing: -0.022em;
+}
+
+.nx-czesc__glowa span {
+  margin-left: auto;
+  color: var(--muted-light);
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.nx-rozdzialy {
+  display: grid;
+  margin: 22px 0 0;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  padding: 0;
+  list-style: none;
+}
+
+.nx-rozdzial {
+  display: flex;
+  align-items: flex-start;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  gap: 14px;
+  transition: border-color 220ms ease, transform 220ms ease;
+}
+
+.nx-rozdzial:hover {
+  border-color: rgba(243, 138, 216, 0.55);
+  transform: translateX(3px);
+}
+
+.nx-rozdzial__nr {
+  min-width: 2ch;
+  color: var(--gold-dark);
+  font-family: var(--display);
+  font-size: 0.86rem;
+  font-weight: 700;
+  padding-top: 2px;
+}
+
+.nx-rozdzial__tytul {
+  flex: 1;
+  font-size: 0.94rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.nx-rozdzial__meta {
+  display: flex;
+  align-items: center;
+  color: var(--muted-light);
+  font-size: 0.76rem;
+  gap: 8px;
+  padding-top: 3px;
+}
+
+.nx-rozdzial a.nx-rozdzial__yt {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: var(--grad);
+  color: #fff;
+  flex: none;
+  place-items: center;
+}
+
+.nx-rozdzial a.nx-rozdzial__yt svg {
+  width: 14px;
+  height: 14px;
+}
+
+.nx-rozdzial__wkrotce {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--paper-deep);
+  color: var(--muted-light);
+  font-size: 0.7rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ── responsywnosc ────────────────────────────────────────────────── */
+@media (max-width: 1000px) {
+  .nx-hero__inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nx-cover {
+    max-width: 380px;
+    margin-inline: auto;
+  }
+
+  .nx-bento {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nx-kafel,
+  .nx-kafel--szeroki,
+  .nx-kafel--pelny {
+    grid-column: span 1;
+  }
+
+  .nx-drop__panel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --shell: calc(100vw - 36px);
+  }
+
+  .nx-bento {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nx-drop {
+    width: 100%;
+  }
+
+  .nx-drop__trigger {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nx-drop__panel {
+    position: static;
+    width: 100%;
+    padding: 4px 0 12px;
+    border: 0;
+    background: none;
+    box-shadow: none;
+    grid-template-columns: minmax(0, 1fr);
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+  }
+
+  .nx-drop__trigger[aria-expanded="false"] + .nx-drop__panel {
+    display: none;
+  }
+
+  .nx-drop__trigger[aria-expanded="true"] + .nx-drop__panel {
+    transform: none;
+  }
+
+  .nx-cover__tag {
+    right: 8px;
+  }
+
+  .nx-rozdzialy {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nx-czesc__glowa {
+    flex-wrap: wrap;
+  }
+
+  .nx-czesc__glowa span {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* ── galeria stron ksiazki ────────────────────────────────────────── */
+.nx-galeria {
+  display: flex;
+  margin: 44px 0 34px;
+  padding-bottom: 18px;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+}
+
+.nx-galeria::-webkit-scrollbar {
+  height: 8px;
+}
+
+.nx-galeria::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: var(--gold-pale);
+}
+
+.nx-galeria img {
+  width: clamp(180px, 22vw, 260px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  box-shadow: var(--shadow-soft);
+  flex: none;
+  scroll-snap-align: center;
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nx-galeria img:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
+/* przyciski w sekcji CTA i galerii maja byc wysrodkowane na mobile */
+@media (max-width: 620px) {
+  .nx-hero__actions .button,
+  .nx-cta__akcje .button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Przycisk drugoplanowy musi byc widoczny na bialym tle - sama linia
+   #e9e4f8 gubi sie przy skalowaniu i na slabszych ekranach. */
+.button:not(.button--primary):not(.button--gold) {
+  border: 1.5px solid #d8d0f0;
+  background: var(--white);
+  box-shadow: 0 2px 10px -4px rgba(74, 38, 112, 0.18);
+  color: var(--ink);
+}
+
+.button:not(.button--primary):not(.button--gold):hover {
+  border-color: var(--pink);
+  background: var(--paper-deep);
+}
+
+/* Cyfra rzymska czesci: jako gradient w tekscie znikala przy waskich
+   glifach ("I", "II"), wiec jest teraz plytka z gradientem w tle. */
+.nx-czesc__nr {
+  display: grid;
+  min-width: 46px;
+  height: 46px;
+  padding-inline: 10px;
+  border-radius: 14px;
+  background: var(--grad);
+  -webkit-text-fill-color: #fff;
+  color: #fff;
+  font-size: 1.15rem;
+  place-items: center;
+}
+
+.nx-czesc__glowa {
+  align-items: center;
+  border-bottom-color: var(--line);
+}
+
+/* ── menu mobilne ─────────────────────────────────────────────────── */
+@media (max-width: 980px) {
+  /* Naglowek ma backdrop-filter, a to czyni go blokiem zawierajacym dla
+     potomkow z position: fixed. Menu liczone przez "inset: X 0 0" mierzylo
+     wiec dol wzgledem paska naglowka, nie okna, i mialo 128 px wysokosci.
+     Dlatego zamiast dolnej krawedzi podajemy wprost wysokosc okna. */
+  .site-nav {
+    top: var(--nav-top, 76px);
+    right: 0;
+    bottom: auto;
+    left: 0;
+    height: calc(100dvh - var(--nav-top, 76px));
+    padding: 18px 22px 110px;
+    /* Bez przezroczystosci i bez backdrop-filter: naglowek juz ma wlasny
+       filtr, a zagniezdzone rozmycia Chromium sklada tak, ze tresc strony
+       przebija przez menu. Pelne krycie rozwiazuje to raz na zawsze. */
+    background: #fcfbff;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .site-nav > a:not(.button) {
+    padding: 15px 14px;
+    border-radius: 12px;
+    font-size: 1.05rem;
+  }
+
+  .nx-drop__trigger {
+    padding: 15px 14px;
+    border-radius: 12px;
+    font-size: 1.05rem;
+  }
+
+  .nx-drop__panel {
+    padding-left: 14px;
+    border-left: 2px solid var(--gold-pale);
+    margin-block: 4px 10px;
+  }
+
+  .nx-drop__grupa + .nx-drop__grupa {
+    margin-top: 14px;
+  }
+
+  .site-nav .button {
+    width: 100%;
+    justify-content: center;
+    margin-top: 18px;
+  }
+}
+
+/* Sekcja tuz pod hero nie potrzebuje pelnego odstepu z gory - hero ma juz
+   wlasny padding i razem robila sie dziura na dwiescie pikseli. */
+.nx-sekcja--tuz {
+  padding-top: clamp(20px, 2.5vw, 40px);
 }
