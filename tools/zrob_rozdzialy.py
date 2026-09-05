@@ -127,7 +127,7 @@ def strona_rozdzialow(dane):
 
     w = [glowa(
         "rozdzialy",
-        "Spis 61 rozdziałów — Pies w Polsce",
+        "Spis treści: 61 rozdziałów | Pies w Polsce",
         "Pełny spis treści książki Pies w Polsce: pięć części, 61 rozdziałów, numery stron "
         "i odnośniki do odcinków podcastu. Wszystko na jednej stronie, bez zakładek.",
         "Spis 61 rozdziałów",
@@ -232,7 +232,7 @@ def strona_podcastu(dane):
 
     w = [glowa(
         "podcast",
-        "Podcast Pies w Polsce — odcinek do każdego rozdziału",
+        "Podcast o psie w Polsce — 61 odcinków | Pies w Polsce",
         "Audio do książki Pies w Polsce: docelowo 61 odcinków, po jednym do każdego rozdziału. "
         "Bezpłatnie, bez subskrypcji i bez reklam, na YouTube i na Dysku Google.",
         "Podcast Pies w Polsce",
