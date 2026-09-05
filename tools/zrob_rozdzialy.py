@@ -14,6 +14,10 @@ identyfikatory YouTube, wystarczy je wpisac w dane/rozdzialy.json
 i uruchomic ten plik ponownie.
 
 Naglowek i stopke wypelniaja pozniej zrob_naglowek.py i zrob_stopke.py.
+
+UWAGA: ten generator nadpisuje cale <body>, wiec kasuje wpiety
+licznik odwiedzin. Po kazdym uruchomieniu wywolaj ponownie:
+    python tools/zrob_analityke.py --cloudflare TOKEN
 """
 
 import io

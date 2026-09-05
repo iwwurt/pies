@@ -38,9 +38,13 @@ WZOR = re.compile(
 
 
 def snippet_cloudflare(token):
+    # Dokladnie taka postac, jaka podaje kreator Cloudflare: type="module"
+    # i bez defer, bo moduly sa odroczone z definicji. Beacon jest wydawany
+    # jako modul ES, wiec wciagniecie go jako zwyklego skryptu potrafi sie
+    # wywrocic - dlatego nie "poprawiam" tego zapisu.
     return (
         '    <script\n'
-        '      defer\n'
+        '      type="module"\n'
         '      src="https://static.cloudflareinsights.com/beacon.min.js"\n'
         '      data-cf-beacon=\'{"token": "%s"}\'\n'
         '    ></script>\n' % token

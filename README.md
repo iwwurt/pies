@@ -24,7 +24,7 @@ Następnie otworzyć `http://localhost:8080`.
 - `tools/build_rozdzialy.py` — generator sekcji „Rozdziały” w `index.html`.
 - `tools/pobierz_punkty.py` — aktualizator danych mapy z OpenStreetMap.
 - `tools/zrob_og.py` — generator kart Open Graph dla podstron.
-- `tools/zrob_analityke.py` (licznik odwiedzin na wszystkich stronach), `tools/zrob_naglowek.py` (jedna nawigacja na całym serwisie) i `tools/zrob_stopke.py` — generator bloku odnośników w stopce.
+- `tools/zrob_analityke.py` (licznik odwiedzin na wszystkich stronach) — po każdym uruchomieniu `zrob_glowna.py` albo `zrob_rozdzialy.py` licznik trzeba wpiąć ponownie, bo te generatory nadpisują całe `<body>`, `tools/zrob_naglowek.py` (jedna nawigacja na całym serwisie) i `tools/zrob_stopke.py` — generator bloku odnośników w stopce.
 - `tools/checklista.html` — źródło checklisty do druku (PDF generowany z tego pliku).
 - `dane/punkty.json` — lecznice i schroniska pokazywane na `/mapa/`.
 - `pliki/Pies-w-Polsce-2026-cala-ksiazka.pdf` — pełna książka, 618 stron.

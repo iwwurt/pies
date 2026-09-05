@@ -12,6 +12,10 @@ zrob_naglowek.py i zrob_stopke.py - tutaj zostaja tylko puste ramy.
 
 Ikony sa rysowane w kodzie, a nie pobierane z zewnetrznej biblioteki:
 strona nie ma laczyc sie z niczym, czego nie kontrolujemy.
+
+UWAGA: ten generator nadpisuje cale <body>, wiec kasuje wpiety
+licznik odwiedzin. Po kazdym uruchomieniu wywolaj ponownie:
+    python tools/zrob_analityke.py --cloudflare TOKEN
 """
 
 import io
