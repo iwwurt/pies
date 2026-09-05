@@ -161,6 +161,13 @@ SEKCJE = [
         "ton": "alarm",
     },
     {
+        "slug": "psy-asystujace",
+        "dzial": "Prawo",
+        "tytul": "Pies asystujący",
+        "podtytul": "Gdzie muszą wpuścić — i dlaczego żółta wstążka nie wystarczy",
+        "ton": "zloty",
+    },
+    {
         "slug": "spadek",
         "dzial": "Prawo",
         "tytul": "Pies w spadku",

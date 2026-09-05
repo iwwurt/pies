@@ -68,6 +68,7 @@ danymi strukturalnymi i wpisem w `sitemap.xml`:
 - `/schroniska/` — oficjalne dane GLW za 2024 i jak sprawdzić placówkę
 - `/odebranie-psa/` — art. 7 UoOZ, dwa tryby odebrania, terminy i koszty
 - `/spadek/` — pies jako część spadku, polecenie testamentowe, spadek wakujący
+- `/psy-asystujace/` — pies asystujący i miejsca publiczne: art. 20a ustawy o rehabilitacji, trzy warunki statusu, żółta wstążka kontra certyfikat, art. 270 KK za podrobiony dokument. Rozdział 9.
 - `/o-ksiazce/` — czym jest książka, dlaczego jest bezpłatna, jak ją cytować
 
 Dodając kolejną stronę, pamiętaj o pięciu rzeczach: okruchy chleba
