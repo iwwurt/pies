@@ -654,34 +654,46 @@
     </header>
 
     <main id="main">
-      <section class="apt-hero">
-        <div class="shell">
-          <p class="okruchy">
-            <a href="../">Pies w Polsce</a> <span aria-hidden="true">/</span> Apteczka dla psa
-          </p>
-          <p class="kicker">Lista kontrolna · zaznaczenia zapisują się same</p>
-          <h1>Apteczka dla psa</h1>
-          <p class="apt-hero__lead">
-            Domowa apteczka nie jest mini przychodnią ani zestawem leków „na wszelki wypadek”.
-            <strong>Ma zatamować krwawienie, przemyć ranę, zabezpieczyć ją, zmierzyć temperaturę
-            i pozwolić bezpiecznie dojechać do lekarza.</strong> Tyle. Wszystko poza tym należy
-            do weterynarza.
-          </p>
-          <p class="apt-hero__lead">
-            Odhacz to, co już masz. Zaznaczenia zostają w tej przeglądarce — nic nie wysyłamy
-            i nie ma tu żadnego formularza. Listę można też wydrukować i powiesić przy apteczce.
-          </p>
+      <section class="apt-hero nx-hero2">
+          <div class="nx-aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="shell nx-hero2__siatka">
+            <div class="nx-hero2__tresc">
+            <p class="okruchy">
+              <a href="../">Pies w Polsce</a> <span aria-hidden="true">/</span> Apteczka dla psa
+            </p>
+            <p class="kicker">Lista kontrolna · zaznaczenia zapisują się same</p>
+            <h1>Apteczka dla psa</h1>
+            <p class="apt-hero__lead">
+              Domowa apteczka nie jest mini przychodnią ani zestawem leków „na wszelki wypadek”.
+              <strong>Ma zatamować krwawienie, przemyć ranę, zabezpieczyć ją, zmierzyć temperaturę
+              i pozwolić bezpiecznie dojechać do lekarza.</strong> Tyle. Wszystko poza tym należy
+              do weterynarza.
+            </p>
+            <p class="apt-hero__lead">
+              Odhacz to, co już masz. Zaznaczenia zostają w tej przeglądarce — nic nie wysyłamy
+              i nie ma tu żadnego formularza. Listę można też wydrukować i powiesić przy apteczce.
+            </p>
 
-          <div class="apt-pasek">
-            <div class="apt-postep">
-              <div class="apt-postep__tor" role="presentation">
-                <div class="apt-postep__wypelnienie" data-postep-wypelnienie></div>
+            <div class="apt-pasek">
+              <div class="apt-postep">
+                <div class="apt-postep__tor" role="presentation">
+                  <div class="apt-postep__wypelnienie" data-postep-wypelnienie></div>
+                </div>
+                <span data-postep-tekst aria-live="polite">0 z 0 skompletowane</span>
               </div>
-              <span data-postep-tekst aria-live="polite">0 z 0 skompletowane</span>
+              <button class="button button--primary" type="button" data-drukuj>Wydrukuj listę</button>
+              <button class="apt-przycisk-tekst" type="button" data-wyczysc>Odznacz wszystko</button>
             </div>
-            <button class="button button--primary" type="button" data-drukuj>Wydrukuj listę</button>
-            <button class="apt-przycisk-tekst" type="button" data-wyczysc>Odznacz wszystko</button>
-          </div>
+            </div>
+            <figure class="nx-hero2__foto">
+              <img
+                src="../assets/photos/apteczka.webp"
+                alt="Zawartość apteczki dla psa rozłożona na jasnym blacie"
+                width="1400"
+                height="788"
+                fetchpriority="high"
+              />
+            </figure>
         </div>
       </section>
 
@@ -1052,15 +1064,27 @@
             <h2 style="font-size:clamp(1.8rem,3.2vw,2.6rem);margin:0">Zanim będzie potrzebne</h2>
           </div>
           <div class="apt-dalej__grid">
-            <a href="../zatrucia/">
+            <a class="nx-dalej--zfoto" href="../zatrucia/">
+              <span class="nx-dalej__foto">
+                <img src="../assets/photos/apteczka.webp" alt="Zawartość apteczki dla psa rozłożona na jasnym blacie"
+                     width="1400" height="788" loading="lazy" />
+              </span>
               <strong>Zjadł coś trującego</strong>
               <small>Pierwsze minuty, czego nie robić nigdy i lista substancji.</small>
             </a>
-            <a href="../mapa/">
+            <a class="nx-dalej--zfoto" href="../mapa/">
+              <span class="nx-dalej__foto">
+                <img src="../assets/photos/spacer.webp" alt="Pies na smyczy idzie chodnikiem obok tramwaju"
+                     width="1400" height="788" loading="lazy" />
+              </span>
               <strong>Mapa lecznic</strong>
               <small>Znajdź najbliższą i zapisz numer, zanim będzie pilnie.</small>
             </a>
-            <a href="../narzedzia/">
+            <a class="nx-dalej--zfoto" href="../narzedzia/">
+              <span class="nx-dalej__foto">
+                <img src="../assets/photos/apteczka.webp" alt="Zawartość apteczki dla psa rozłożona na jasnym blacie"
+                     width="1400" height="788" loading="lazy" />
+              </span>
               <strong>Terminarz szczepień</strong>
               <small>Profilaktyka to najtańsza część całej opieki.</small>
             </a>
