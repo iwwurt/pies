@@ -67,6 +67,7 @@ KOLUMNY = [
     ]),
     ("Codzienność", [
         ("Adopcja i wybór psa", "adopcja/", "strona"),
+        ("Pies i dziecko", "dziecko/", "strona"),
         ("Schroniska w liczbach", "schroniska/", "strona"),
         ("Koszty", "koszty/", "strona"),
         ("Zaginiony pies", "zaginiony/", "strona"),

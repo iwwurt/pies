@@ -161,6 +161,13 @@ SEKCJE = [
         "ton": "alarm",
     },
     {
+        "slug": "dziecko",
+        "dzial": "Bezpieczeństwo",
+        "tytul": "Pies i dziecko",
+        "podtytul": "Protokół zapoznania i prawo, które działa inaczej",
+        "ton": "zloty",
+    },
+    {
         "slug": "psy-asystujace",
         "dzial": "Prawo",
         "tytul": "Pies asystujący",
