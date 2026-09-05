@@ -161,6 +161,13 @@ SEKCJE = [
         "ton": "alarm",
     },
     {
+        "slug": "szkolenie",
+        "dzial": "Zachowanie",
+        "tytul": "Szkolenie psa",
+        "podtytul": "Nauka kontra mity — i granica odpowiedzialności karnej",
+        "ton": "zloty",
+    },
+    {
         "slug": "dziecko",
         "dzial": "Bezpieczeństwo",
         "tytul": "Pies i dziecko",
